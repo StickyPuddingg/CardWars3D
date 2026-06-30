@@ -39,7 +39,9 @@ public class ConnectivityController : MonoBehaviour
 	{
 	}
 
-	public bool CheckInternet()
+    //original check internet source
+
+    /* public bool CheckInternet()
 	{
 		switch (Network.TestConnection())
 		{
@@ -56,9 +58,16 @@ public class ConnectivityController : MonoBehaviour
 		{
 		}
 		return isValid;
-	}
+	}*/
 
-	public void CheckServer()
+    public bool CheckInternet()
+    {
+        isValid = true;
+        return isValid;
+    }
+
+
+    public void CheckServer()
 	{
 		SessionManager instance = SessionManager.GetInstance();
 		instance.TestConnectivity();

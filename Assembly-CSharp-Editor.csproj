@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{F51EBF50-C982-2885-FDF9-676677F79CCE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_6;UNITY_5_6;UNITY_5;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WWW;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;UNITY_N3DS;UNITY_N3DS_API;ENABLE_AUDIO;ENABLE_CLOTH;ENABLE_MICROPHONE;MIC_NOT_SUPPORTED_BY_FMOD;ENABLE_PLATFORMSOCKETS;SUPPORT_THREADS;ENABLE_NETWORK;ENABLE_UNET;ENABLE_WEBCAM;ENABLE_IL2CPP;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;ENABLE_DUCK_TYPING</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>C:/Program Files/Unity/Unity/Editor/Data/PlaybackEngines/N3DS/Tools/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>C:/Program Files/Unity/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Editor\RID-Tools\RIDToolsCore.cs" />
+     <Compile Include="Assets\Editor\RID-Tools\UI\configMenu.cs" />
+     <Compile Include="Assets\Editor\RID-Tools\tools\AutoBuildHook.cs" />
+     <Compile Include="Assets\Editor\RID-Tools\tools\N3DSExPatcher.cs" />
+     <Compile Include="Assets\Editor\RID-Tools\tools\SetSM.cs" />
+     <Compile Include="Assets\Editor\RID-Tools\tools\cciToCia.cs" />
+     <Compile Include="Assets\Editor\RID-Tools\tools\ridsmalldb.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\BMFontReader.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\ComponentSelector.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\NGUIEditorTools.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\NGUIJson.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\NGUIMenu.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\NGUISelectionTools.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\NGUISettings.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\NGUITransformInspector.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\SpriteSelector.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UIAtlasInspector.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UIAtlasMaker.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UICameraTool.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UICreateNewUIWizard.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UICreateWidgetWizard.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UIDrawCallInspector.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UIFilledSpriteInspector.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UIFontInspector.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UIFontMaker.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UIImageButtonInspector.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UILabelInspector.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UIPanelInspector.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UIPanelTool.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UIPopupListInspector.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UIScrollBarInspector.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UISlicedSpriteInspector.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UISliderInspector.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UISpriteAnimationInspector.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UISpriteInspector.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UITextureInspector.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UITexturePacker.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UITiledSpriteInspector.cs" />
+     <Compile Include="Assets\NGUI270Revive\Scripts\Editor\UIWidgetInspector.cs" />
+     <None Include="Assets\Resources\shaders\Unlit-Alpha-With-Fade.shader" />
+     <None Include="Assets\Resources\shaders\Unlit - Transparent Colored (Packed) (SoftClip).shader" />
+     <None Include="Assets\Shader\TransparencyWithZ.shader" />
+     <None Include="Assets\StreamingAssets\debugLogChannels.txt" />
+     <None Include="Assets\Editor\RID-Tools\tools\3dsreleases.xml" />
+     <None Include="Assets\Resources\shaders\Unlit - Depth.shader" />
+     <None Include="Assets\Shader\UnitColoredTransparent.shader" />
+     <None Include="Assets\Resources\shaders\GUI - Text Shader (AlphaClip).shader" />
+     <None Include="Assets\Resources\shaders\Unlit - Premultiplied Colored (AlphaClip).shader" />
+     <None Include="Assets\Resources\shaders\Unlit - Transparent Colored (AlphaClip).shader" />
+     <None Include="Assets\Editor\RID-Tools\ExtTools\ignore_3dstool.txt" />
+     <None Include="Assets\Resources\shaders\Unlit - Dynamic Font.shader" />
+     <None Include="Assets\Resources\shaders\Unlit - Masked Colored.shader" />
+     <None Include="Assets\Resources\shaders\Unlit - Additive Colored.shader" />
+     <None Include="Assets\Resources\shaders\GUI - Text Shader (SoftClip).shader" />
+     <None Include="Assets\Shader\Unlit - Transparent Colored Overlay.shader" />
+     <None Include="Assets\Resources\shaders\Unlit - Transparent Colored (Packed) (AlphaClip) .shader" />
+     <None Include="Assets\Resources\shaders\Unlit - Dynamic Font (AlphaClip).shader" />
+     <None Include="Assets\Resources\shaders\Unlit - Premultiplied Colored.shader" />
+     <None Include="Assets\Resources\shaders\Unlit - Transparent Colored (SoftClip).shader" />
+     <None Include="Assets\Resources\shaders\Unlit - Premultiplied Colored (SoftClip).shader" />
+     <None Include="Assets\Resources\shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\Resources\shaders\Unlit-Alpha-With-Fade2.shader" />
+     <None Include="Assets\Resources\shaders\Unlit - Depth Cutout.shader" />
+     <None Include="Assets\Resources\shaders\Unlit - Dynamic Font (SoftClip).shader" />
+     <None Include="Assets\Editor\RID-Tools\ExtTools\boot9\place your boo9.bin here.txt" />
+     <None Include="Assets\Editor\RID-Tools\ExtTools\comercialreleases.xml" />
+     <None Include="Assets\Resources\shaders\Unlit - Transparent Colored (Packed).shader" />
+ <Reference Include="UnityEditor.Advertisements">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Networking">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.TestRunner">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.TreeEditor">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Analytics">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/Editor/UnityEditor.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.HoloLens">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/Editor/UnityEditor.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Purchasing">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing/Editor/UnityEditor.Purchasing.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.VR">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VR">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.N3DS.Extensions">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/PlaybackEngines/N3DS/UnityEditor.N3DS.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+ <HintPath>C:/Program Files/Unity/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="0Harmony">
+ <HintPath>C:/Users/carlo/OneDrive/Desktop/dev3ds/Practice/CardWars3D/Assets/Plugins/Editor/Extra/0Harmony.dll</HintPath>
+ </Reference>
+ <Reference Include="N3DSExtraPatcher">
+ <HintPath>C:/Users/carlo/OneDrive/Desktop/dev3ds/Practice/CardWars3D/Assets/Plugins/Editor/Extra/N3DSExtraPatcher.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
