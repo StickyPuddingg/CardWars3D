@@ -28,6 +28,7 @@ It's CARD WARS!
 ![CardWars_F7nDRbIxel](https://i.imgur.com/N3BH326.jpg)
 
 ## Contributing
+shishkabob27 (game source)
 Extintor
 Xanax
 Pudding
