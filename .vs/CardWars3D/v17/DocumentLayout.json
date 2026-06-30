@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\slotscenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\slotscenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SLOTSceneManager.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTSceneManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\SLOTSceneManager.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTSceneManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\SLOTSceneManager.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAMwEIAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-30T10:28:16.979Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

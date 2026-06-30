@@ -7,7 +7,7 @@
 				<Create Author="carlo" Date="2026-06-30T04:03:59" Source="" FullPathOfSource="C:/Users/carlo/OneDrive/Documents/maya/projects/default/">
 					<ToolDescriptions Name="NW4C_Export for Maya 2014 x64" Version="1.8.5" />
 				</Create>
-				<Modify Date="2026-06-30T04:06:45">
+				<Modify Date="2026-06-30T05:34:05">
 					<ToolDescriptions Name="NintendoWare Creative Studio." Version="1.4.5.44943" />
 				</Modify>
 			</MetaData>
@@ -131,9 +131,9 @@
 					</GraphicsAnimationGroupDescription>
 				</AnimationGroupDescriptions>
 				<Transform>
-					<Scale X="1" Y="1" Z="1" />
+					<Scale X="0.5" Y="0.5" Z="0.5" />
 					<Rotate X="0" Y="0" Z="0" />
-					<Translate X="0" Y="0" Z="0" />
+					<Translate X="0" Y="-5" Z="0" />
 				</Transform>
 				<Shapes>
 					<SeparateDataShapeCtr>
@@ -7176,7 +7176,7 @@
 						<FragmentShader LayerConfig="ConfigurationType0">
 							<BufferColor R="0" G="0" B="0" A="1" />
 							<FragmentBump BumpTextureIndex="Texture0" BumpMode="NotUsed" IsBumpRenormalize="false" />
-							<FragmentLighting FresnelConfig="No" IsClampHighLight="false" IsDistribution0Enabled="true" IsDistribution1Enabled="false" IsGeometricFactor0Enabled="false" IsGeometricFactor1Enabled="false" IsReflectionEnabled="false" />
+							<FragmentLighting FresnelConfig="No" IsClampHighLight="false" IsDistribution0Enabled="false" IsDistribution1Enabled="false" IsGeometricFactor0Enabled="false" IsGeometricFactor1Enabled="false" IsReflectionEnabled="false" />
 							<FragmentLightingTable>
 								<ReflectanceRSampler IsAbs="true" Input="CosNormalHalf" Scale="One">
 									<NullLookupTableCtr />
@@ -7253,7 +7253,7 @@
 						<FragmentShader LayerConfig="ConfigurationType0">
 							<BufferColor R="0" G="0" B="0" A="1" />
 							<FragmentBump BumpTextureIndex="Texture0" BumpMode="NotUsed" IsBumpRenormalize="false" />
-							<FragmentLighting FresnelConfig="No" IsClampHighLight="false" IsDistribution0Enabled="true" IsDistribution1Enabled="false" IsGeometricFactor0Enabled="false" IsGeometricFactor1Enabled="false" IsReflectionEnabled="false" />
+							<FragmentLighting FresnelConfig="No" IsClampHighLight="false" IsDistribution0Enabled="false" IsDistribution1Enabled="false" IsGeometricFactor0Enabled="false" IsGeometricFactor1Enabled="false" IsReflectionEnabled="false" />
 							<FragmentLightingTable>
 								<ReflectanceRSampler IsAbs="true" Input="CosNormalHalf" Scale="One">
 									<NullLookupTableCtr />
