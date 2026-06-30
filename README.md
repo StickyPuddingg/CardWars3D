@@ -20,13 +20,14 @@ It's CARD WARS!
 
 ## Download
 
-* [Latest Windows Version](https://github.com/shishkabob27/CardWars/releases/latest/download/CardWars-Windows.zip)
-* Mac Version - Coming Soon
-* Linux Version - Coming Soon
+* [Original Windows Version by shishkabob27](https://github.com/shishkabob27/CardWars/releases/latest/download/CardWars-Windows.zip)
+* [3DS Version](ComingSoon)
 
 ## Images
 ![CardWars_r8d9H393Tp](https://i.imgur.com/cXUolY0.jpg)
 ![CardWars_F7nDRbIxel](https://i.imgur.com/N3BH326.jpg)
 
 ## Contributing
-Card Wars uses Unity 2017.4.40f1. No other dependencies are required.
+Extintor
+Xanax
+Pudding
