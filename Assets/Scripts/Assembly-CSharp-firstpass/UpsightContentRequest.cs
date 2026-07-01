@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UpsightContentRequest : MonoBehaviour
 {
-	public string placementID;
+/*	public string placementID;
 
 	public bool showsOverlayImmediately = true;
 
@@ -43,5 +43,5 @@ public class UpsightContentRequest : MonoBehaviour
 
 	private void contentDismissed(string placementID, string dismissType)
 	{
-	}
+	}*/
 }

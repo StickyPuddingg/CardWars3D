@@ -450,9 +450,9 @@ public class DailyGiftController : MonoBehaviour
 		if (MetricsGemsSpent)
 		{
 			MetricsGemsSpent = false;
-			Singleton<AnalyticsManager>.Instance.LogExtraDailySpinPurchase(DailyGiftDataManager.Instance.RetyGemCost);
-		}
-	}
+            //Singleton<AnalyticsManager>.Instance.LogExtraDailySpinPurchase(DailyGiftDataManager.Instance.RetyGemCost); - more analytical shit removed -s
+        }
+    }
 
 	private void OnConfirm()
 	{

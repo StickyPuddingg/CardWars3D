@@ -27,7 +27,7 @@ public class SLOTSceneManager : SLOTGameSingleton<SLOTSceneManager>
 	{
 		if (SLOTGame.IsLowEndDevice())
 		{
-			return "low_" + name;
+			return name; //"low_" + name; low end scenes dont exist in this repo for whatever reason so we cant load them...-s
 		}
 		return name;
 	}

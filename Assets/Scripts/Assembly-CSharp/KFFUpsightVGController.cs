@@ -227,4 +227,5 @@ public class KFFUpsightVGController : MonoBehaviour
 		}
 		yield return null;
 	}
+
 }

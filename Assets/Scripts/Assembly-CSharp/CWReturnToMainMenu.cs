@@ -11,9 +11,9 @@ public class CWReturnToMainMenu : MonoBehaviour
 		}
 		if (GameState.Instance.BattleResolver == null || !GameState.Instance.BattleResolver.SkipRegularLogic())
 		{
-			Singleton<AnalyticsManager>.Instance.LogQuestQuit();
-		}
-		GlobalFlags.Instance.ReturnToMainMenu = true;
+            //Singleton<AnalyticsManager>.Instance.LogQuestQuit(); - more analytical shit removed -s
+        }
+        GlobalFlags.Instance.ReturnToMainMenu = true;
 		PlayerInfoScript.GetInstance().Tutorial = false;
 		StartCoroutine(LoadScene(0.5f));
 	}

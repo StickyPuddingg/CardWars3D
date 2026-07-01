@@ -540,7 +540,7 @@ public class PlayerInfoScript : MonoBehaviour
 
 	private void Initialize()
 	{
-		CrashAnalytics.LogBreadcrumb("playerreset " + PlayerName);
+		//CrashAnalytics.LogBreadcrumb("playerreset " + PlayerName);
 		DeckManager.InitializeNewPlayer();
 		LeaderManager.Instance.FillLeadersWithDummyData();
 		string text;
@@ -559,11 +559,11 @@ public class PlayerInfoScript : MonoBehaviour
 		catch (Exception ex2)
 		{
 			TFUtils.ErrorLog(ex2.ToString());
-			CrashAnalytics.LogException(ex2);
+			//CrashAnalytics.LogException(ex2);
 			text = GetDefaultGameStateJson();
 		}
 		Deserialize(text);
-		CrashAnalytics.LogBreadcrumb("playerloaded " + g_playerInfoScript.PlayerName);
+		//CrashAnalytics.LogBreadcrumb("playerloaded " + g_playerInfoScript.PlayerName);
 	}
 
 	public string GetValue(string fieldName)
@@ -624,14 +624,14 @@ public class PlayerInfoScript : MonoBehaviour
 	public void AcceptTOS()
 	{
 		TOSVersionAgreedTo = TOSCurrentVersion;
-		Singleton<AnalyticsManager>.Instance.LogDebug("Accept_ToS", TOSCurrentVersion);
+		//Singleton<AnalyticsManager>.Instance.LogDebug("Accept_ToS", TOSCurrentVersion);
 		Save();
 	}
 
 	public void AcceptPP()
 	{
 		PPVersionAgreedTo = PPCurrentVersion;
-		Singleton<AnalyticsManager>.Instance.LogDebug("Accept_PP", PPCurrentVersion);
+		//Singleton<AnalyticsManager>.Instance.LogDebug("Accept_PP", PPCurrentVersion);
 		Save();
 	}
 
@@ -1812,8 +1812,8 @@ public class PlayerInfoScript : MonoBehaviour
 		}
 		catch (Exception e)
 		{
-			Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize");
-			CrashAnalytics.LogException(e);
+			//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize");
+			//CrashAnalytics.LogException(e);
 			dictionary = GetDefaultGameStateDictionary();
 		}
 		version = TFUtils.LoadInt(dictionary, "PlayerInfoVersion", 4);
@@ -1858,8 +1858,8 @@ public class PlayerInfoScript : MonoBehaviour
 			}
 			catch (Exception e2)
 			{
-				Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 10);
-				CrashAnalytics.LogException(e2);
+				//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 10);
+				//CrashAnalytics.LogException(e2);
 				MultiplayerRank = null;
 			}
 			try
@@ -1869,8 +1869,8 @@ public class PlayerInfoScript : MonoBehaviour
 			}
 			catch (Exception e3)
 			{
-				Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
-				CrashAnalytics.LogException(e3);
+				//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
+				//CrashAnalytics.LogException(e3);
 				TFUtils.ErrorLog("Bad/corrupted DailyGiftTimestamp in save game.");
 				DailyGiftTimestamp = TFUtils.ServerTime;
 			}
@@ -1881,8 +1881,8 @@ public class PlayerInfoScript : MonoBehaviour
 			}
 			catch (Exception e4)
 			{
-				Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
-				CrashAnalytics.LogException(e4);
+				//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
+				//CrashAnalytics.LogException(e4);
 				TFUtils.ErrorLog("Bad/corrupted LastGiftTimestamp in save game.");
 				LastGiftTimestamp = GetNow();
 			}
@@ -1894,8 +1894,8 @@ public class PlayerInfoScript : MonoBehaviour
 			}
 			catch (Exception e5)
 			{
-				Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
-				CrashAnalytics.LogException(e5);
+				//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
+				//CrashAnalytics.LogException(e5);
 				TFUtils.ErrorLog("Bad/corrupted LastGiftTimestamp in save game.");
 				LastGiftTimestamp = GetNow();
 			}
@@ -1911,8 +1911,8 @@ public class PlayerInfoScript : MonoBehaviour
 			}
 			catch (Exception e6)
 			{
-				Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
-				CrashAnalytics.LogException(e6);
+				//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
+				//CrashAnalytics.LogException(e6);
 				TFUtils.ErrorLog("Bad/corrupted FirstCalendarTimestamp in save game.");
 				FirstCalendarTimestamp = GetNow();
 			}
@@ -1927,8 +1927,8 @@ public class PlayerInfoScript : MonoBehaviour
 			}
 			catch (Exception e7)
 			{
-				Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
-				CrashAnalytics.LogException(e7);
+				//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
+				//CrashAnalytics.LogException(e7);
 				TFUtils.ErrorLog("Bad/corrupted LastCalendarTimestamp in save game.");
 				LastCalendarTimestamp = GetNow();
 			}
@@ -1973,8 +1973,8 @@ public class PlayerInfoScript : MonoBehaviour
 				}
 				catch (InvalidCastException e8)
 				{
-					Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 30);
-					CrashAnalytics.LogException(e8);
+					//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 30);
+					//CrashAnalytics.LogException(e8);
 				}
 			}
 			if (dictionary.ContainsKey("Tags"))
@@ -2020,8 +2020,8 @@ public class PlayerInfoScript : MonoBehaviour
 				}
 				catch (Exception e9)
 				{
-					Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 40);
-					CrashAnalytics.LogException(e9);
+					//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 40);
+					//CrashAnalytics.LogException(e9);
 				}
 			}
 			if (dictionary.ContainsKey("OccuranceCounter"))
@@ -2040,8 +2040,8 @@ public class PlayerInfoScript : MonoBehaviour
 				}
 				catch (Exception e10)
 				{
-					Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 40);
-					CrashAnalytics.LogException(e10);
+					//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 40);
+					//CrashAnalytics.LogException(e10);
 				}
 				DebugFlagsScript instance = DebugFlagsScript.GetInstance();
 				if (null != instance)
@@ -2065,8 +2065,8 @@ public class PlayerInfoScript : MonoBehaviour
 				}
 				catch (InvalidCastException e11)
 				{
-					Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 50);
-					CrashAnalytics.LogException(e11);
+					//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 50);
+					//CrashAnalytics.LogException(e11);
 				}
 			}
 			if (dictionary.ContainsKey("Fusion"))
@@ -2174,8 +2174,8 @@ public class PlayerInfoScript : MonoBehaviour
 			}
 			catch (InvalidCastException e12)
 			{
-				Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 30);
-				CrashAnalytics.LogException(e12);
+				//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 30);
+				//CrashAnalytics.LogException(e12);
 				BonusQuests["fc"] = new BonusQuestStats();
 			}
 			catch (ApplicationException)
@@ -2308,8 +2308,8 @@ public class PlayerInfoScript : MonoBehaviour
 		}
 		catch (InvalidCastException e)
 		{
-			Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 30);
-			CrashAnalytics.LogException(e);
+			//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 30);
+			//CrashAnalytics.LogException(e);
 		}
 	}
 
@@ -2343,8 +2343,8 @@ public class PlayerInfoScript : MonoBehaviour
 			catch (Exception e)
 			{
 				TFUtils.DebugLog("remote_save_exception", "saveload");
-				Singleton<AnalyticsManager>.Instance.LogDebug("remote_save_exception", 0, 0, e);
-				CrashAnalytics.LogException(e);
+				//Singleton<AnalyticsManager>.Instance.LogDebug("remote_save_exception", 0, 0, e);
+				//CrashAnalytics.LogException(e);
 				break;
 			}
 			DateTime timeOutTime = TFUtils.ServerTime + SAVE_TIMEOUT_TIME;
@@ -2353,7 +2353,7 @@ public class PlayerInfoScript : MonoBehaviour
 				if (TFUtils.ServerTime >= timeOutTime)
 				{
 					TFUtils.DebugLog("remote_save_timeout", "saveload");
-					Singleton<AnalyticsManager>.Instance.LogDebug("remote_save_timeout");
+					//Singleton<AnalyticsManager>.Instance.LogDebug("remote_save_timeout");
 					break;
 				}
 				yield return null;
@@ -2385,8 +2385,8 @@ public class PlayerInfoScript : MonoBehaviour
 		catch (Exception ex)
 		{
 			TFUtils.ErrorLog(ex.ToString());
-			Singleton<AnalyticsManager>.Instance.LogDebug("save_exception", 0, 0, ex);
-			CrashAnalytics.LogException(ex);
+			//Singleton<AnalyticsManager>.Instance.LogDebug("save_exception", 0, 0, ex);
+			//CrashAnalytics.LogException(ex);
 		}
 	}
 
@@ -2406,11 +2406,11 @@ public class PlayerInfoScript : MonoBehaviour
 			try
 			{
 				string[] array = SessionManager.GetInstance().PlayerID.Split('_');
-				Singleton<AnalyticsManager>.Instance.LogDebug("corrupted_save", Convert.ToInt32(array[0]) / 8, Convert.ToInt32(array[1]));
+				//Singleton<AnalyticsManager>.Instance.LogDebug("corrupted_save", Convert.ToInt32(array[0]) / 8, Convert.ToInt32(array[1]));
 			}
 			catch (Exception)
 			{
-				Singleton<AnalyticsManager>.Instance.LogDebug("corrupted_save", -1, -1);
+				//Singleton<AnalyticsManager>.Instance.LogDebug("corrupted_save", -1, -1);
 			}
 			SessionManager.GetInstance().ClearSaveStateLocal();
 		}

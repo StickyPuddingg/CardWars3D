@@ -291,8 +291,8 @@ public class LeaderManager : ILoadable
 				string text = (string)dictionary["form"];
 				if (!leaderForms.ContainsKey(text))
 				{
-					Singleton<AnalyticsManager>.Instance.LogDebug("badleader_" + text);
-					CrashAnalytics.LogException(new Exception("Leader not found - " + text));
+					//Singleton<AnalyticsManager>.Instance.LogDebug("badleader_" + text);
+					//CrashAnalytics.LogException(new Exception("Leader not found - " + text));
 				}
 				else
 				{
@@ -322,8 +322,8 @@ public class LeaderManager : ILoadable
 		}
 		catch (InvalidCastException e)
 		{
-			Singleton<AnalyticsManager>.Instance.LogDebug("exception_inventoryfromdict");
-			CrashAnalytics.LogException(e);
+			//Singleton<AnalyticsManager>.Instance.LogDebug("exception_inventoryfromdict");
+			//CrashAnalytics.LogException(e);
 		}
 	}
 

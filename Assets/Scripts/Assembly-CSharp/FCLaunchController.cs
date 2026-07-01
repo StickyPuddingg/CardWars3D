@@ -59,7 +59,7 @@ public class FCLaunchController : MonoBehaviour
 		if (questData != null)
 		{
 			PlayerInfoScript.GetInstance().SetHasStartedFCDemo();
-			Singleton<AnalyticsManager>.Instance.LogFCDemoStart();
+			//Singleton<AnalyticsManager>.Instance.LogFCDemoStart();
 			GlobalFlags.Instance.InMPMode = false;
 			if (!string.IsNullOrEmpty(loadingScreenTextureName))
 			{

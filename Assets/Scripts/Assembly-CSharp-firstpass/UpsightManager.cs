@@ -5,8 +5,7 @@ using MiniJSON;
 using UnityEngine;
 
 public class UpsightManager : MonoBehaviour
-{
-	[method: MethodImpl(32)]
+{	[method: MethodImpl(32)]
 	public static event Action<Dictionary<string, object>> openRequestSucceededEvent;
 
 	[method: MethodImpl(32)]

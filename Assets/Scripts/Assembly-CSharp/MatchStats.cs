@@ -55,8 +55,8 @@ public class MatchStats : ICWSerializable
 		}
 		catch (Exception ex)
 		{
-			Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize");
-			CrashAnalytics.LogException(ex);
+			//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize");
+			//CrashAnalytics.LogException(ex);
 			throw ex;
 		}
 	}

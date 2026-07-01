@@ -25,7 +25,7 @@ public class SearchOpponentAfterPaying : AsyncData<string>
 			instance.Gems--;
 			instance.Coins += RankManager.Instance.FindRank(instance.DeckManager.GetHighestLeaderRank()).PVPSearchCostCoins;
 			instance.Save();
-			Singleton<AnalyticsManager>.Instance.LogDeckFindWarOpponentPurchase(1, 0);
+			//Singleton<AnalyticsManager>.Instance.LogDeckFindWarOpponentPurchase(1, 0);
 			global::Multiplayer.Multiplayer.GetRank(SessionManager.GetInstance().theSession, false, StringCallback);
 			SearchOpponent.SendMessage("OnClick", SendMessageOptions.DontRequireReceiver);
 		}
@@ -47,7 +47,7 @@ public class SearchOpponentAfterPaying : AsyncData<string>
 			Asyncdata.processed = true;
 			if (Asyncdata.MP_Data != null)
 			{
-				Singleton<AnalyticsManager>.Instance.LogPVPGemsSpentByRank(1, Convert.ToInt32(Asyncdata.MP_Data));
+				//Singleton<AnalyticsManager>.Instance.LogPVPGemsSpentByRank(1, Convert.ToInt32(Asyncdata.MP_Data));
 			}
 		}
 	}

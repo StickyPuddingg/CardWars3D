@@ -562,7 +562,7 @@ public class MenuController : ReloadHandler
 				yield return StartCoroutine(youGotThisController.AwardLeader("Leader_Fionna"));
 				yield return StartCoroutine(youGotThisController.AwardLeader("Leader_Cake"));
 				PlayerInfoScript.GetInstance().SetHasReceivedFCCards();
-				Singleton<AnalyticsManager>.Instance.LogFCHeroesAwarded();
+				//Singleton<AnalyticsManager>.Instance.LogFCHeroesAwarded();
 				yield return new WaitForSeconds(2.5f);
 			}
 			if (!pinfo.HasSeenFCUpsellScreen() && null != FCMapButton)

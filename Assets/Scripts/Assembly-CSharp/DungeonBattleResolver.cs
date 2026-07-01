@@ -43,6 +43,7 @@ public class DungeonBattleResolver : BattleResolver
 
 	public void SetResult(PlayerType winner)
 	{
+
 		DungeonBattleResult dungeonBattleResult = new DungeonBattleResult();
 		dungeonBattleResult.DungeonID = dungeonId;
 		dungeonBattleResult.QuestIndex = questIndex;
@@ -52,11 +53,11 @@ public class DungeonBattleResolver : BattleResolver
 			dungeonBattleResult2.SetCleared(false);
 			if (winner == null)
 			{
-				Singleton<AnalyticsManager>.Instance.LogDungeonQuestQuit(dungeonId, questIndex);
+				//Singleton<AnalyticsManager>.Instance.LogDungeonQuestQuit(dungeonId, questIndex);
 			}
 			else
 			{
-				Singleton<AnalyticsManager>.Instance.LogDungeonQuestLoss(dungeonId, questIndex);
+				//Singleton<AnalyticsManager>.Instance.LogDungeonQuestLoss(dungeonId, questIndex);
 			}
 		}
 		else
@@ -72,7 +73,7 @@ public class DungeonBattleResolver : BattleResolver
 				dungeonBattleResult2.SetCleared(true);
 			}
 			RewardUser(PlayerInfoScript.GetInstance(), dungeonBattleResult2.newlyCleared);
-			Singleton<AnalyticsManager>.Instance.LogDungeonQuestWin(dungeonId, questIndex);
+			//Singleton<AnalyticsManager>.Instance.LogDungeonQuestWin(dungeonId, questIndex);
 		}
 		GlobalFlags.Instance.BattleResult = dungeonBattleResult2;
 	}

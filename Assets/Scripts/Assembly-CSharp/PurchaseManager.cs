@@ -49,8 +49,8 @@ public class PurchaseManager : Singleton<PurchaseManager>
 
 		public override string ToString()
 		{
-			GooglePurchase googlePurchase = (GooglePurchase)NativeTransaction;
-			return string.Format("<GooglePurchase> ID: {0}, type: {1}, transactionIdentifier: {2}", googlePurchase.productId, googlePurchase.type, googlePurchase.orderId);
+			//GooglePurchase googlePurchase = (GooglePurchase)NativeTransaction;
+			return string.Format("fixLater");//("<GooglePurchase> ID: {0}, type: {1}, transactionIdentifier: {2}", googlePurchase.productId, googlePurchase.type, googlePurchase.orderId);
 		}
 	}
 
@@ -205,7 +205,7 @@ public class PurchaseManager : Singleton<PurchaseManager>
 	{
 		UnityEngine.Object.DontDestroyOnLoad(this);
 		AmazonDevice = KFFCSUtils.IsAmazonDevice();
-		m_Listener = new GooglePurchaseListener();
+		//m_Listener = new GooglePurchaseListener();
 	}
 
 	private void OnEnable()
@@ -469,7 +469,7 @@ public class PurchaseManager : Singleton<PurchaseManager>
 			return false;
 		}
 		TFUtils.DebugLog("SUCCESS RedeemPurchase: " + productID);
-		Singleton<AnalyticsManager>.Instance.LogIAPByBattle(productID, dbProductInfoById.price);
+		//Singleton<AnalyticsManager>.Instance.LogIAPByBattle(productID, dbProductInfoById.price);
 		return true;
 	}
 

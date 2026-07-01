@@ -30,7 +30,7 @@ public class RestoreStaminaScript : MonoBehaviour
 			instance.Gems -= Cost;
 			instance.Stamina = Mathf.Max(instance.Stamina_Max, instance.Stamina);
 			instance.Save();
-			Singleton<AnalyticsManager>.Instance.LogRechargePurchase();
+			//Singleton<AnalyticsManager>.Instance.LogRechargePurchase();
 			increase.enabled = true;
 			increase.Play(true);
 		}

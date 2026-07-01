@@ -267,8 +267,8 @@ public class CalendarGiftController : MonoBehaviour
 			{
 				instance.Gems -= upsellInfo.TotalCost;
 				instance.Save();
-				Singleton<AnalyticsManager>.Instance.LogCalendarPrizePurchase(upsellInfo.TotalCost);
-				StartCoroutine(GiftAndShowAfterUpsell(previousCalendar, upsellInfo.CatchupDayIndex));
+                //Singleton<AnalyticsManager>.Instance.LogCalendarPrizePurchase(upsellInfo.TotalCost);  - more analytical shit removed -s
+                StartCoroutine(GiftAndShowAfterUpsell(previousCalendar, upsellInfo.CatchupDayIndex));
 			}
 		}
 		if (null != CalendarCatchupHide)
