@@ -465,7 +465,7 @@ public abstract class MapControllerBase : MonoBehaviour
 				rect = NGUIMath.ConvertToPixels(rect, (int)((float)mainTexture.width * sprite.atlas.pixelSize), (int)((float)mainTexture.height * sprite.atlas.pixelSize), true);
 			}
 		}
-		float num = ((!KFFLODManager.IsLowEndDevice()) ? 1f : 2f);
+		float num = 2f; // ((!KFFLODManager.IsLowEndDevice()) ? 1f : 2f);
 		sprite.transform.localScale = new Vector3(rect.width * num, rect.height * num, 1f);
 	}
 
@@ -997,7 +997,7 @@ public abstract class MapControllerBase : MonoBehaviour
 		{
 			foreach (string path in qd.UnlockPaths[i])
 			{
-				Singleton<AnalyticsManager>.Instance.LogPathUnlocked(qd, path);
+				//Singleton<AnalyticsManager>.Instance.LogPathUnlocked(qd, path);
 				yield return StartCoroutine(HiddenPathAnimateVisible(path));
 			}
 		}

@@ -161,7 +161,7 @@ public class FCDemoSequenceController : MonoBehaviour
 		if (null != pinfo)
 		{
 			pinfo.SetHasCompletedFCDemo();
-			Singleton<AnalyticsManager>.Instance.LogFCDemoComplete();
+			//Singleton<AnalyticsManager>.Instance.LogFCDemoComplete();
 		}
 		if (GameState.Instance.BattleResolver != null)
 		{

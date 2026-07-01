@@ -26,10 +26,9 @@ public class CWConfirmSellButton : MonoBehaviour
 			instance.DeckManager.RemoveCard(item2);
 		}
 		instance.Save();
-		foreach (CardItem item3 in chosenList)
-		{
-			Singleton<AnalyticsManager>.Instance.LogCardSold(item3.Form.ID);
-		}
+
+		//removed analytics shit
+
 		cardList.Clear();
 		CWDeckSellCards componentInChildren = tableObject.GetComponentInChildren<CWDeckSellCards>();
 		if (componentInChildren != null)

@@ -581,8 +581,8 @@ public class SessionManager : MonoBehaviour
 			PlayerInfoScript.Load();
 			QuestManager.Instance.InitializeQuestStates();
 			SideQuestManager.Instance.InitializeQuestStates();
-			Singleton<AnalyticsManager>.Instance.LogTotalXP();
-			Singleton<AnalyticsManager>.Instance.LogTotalCoins();
+			//Singleton<AnalyticsManager>.Instance.LogTotalXP();
+			//Singleton<AnalyticsManager>.Instance.LogTotalCoins();
 			State = States.MESSAGE_FETCH;
 			session.GetMessagesList();
 		}
@@ -640,8 +640,8 @@ public class SessionManager : MonoBehaviour
 		if (!paused && IsReady() && IsLoggedIn())
 		{
 			StartSyncStreamingAssets();
-			Singleton<AnalyticsManager>.Instance.LogTotalXP();
-			Singleton<AnalyticsManager>.Instance.LogTotalCoins();
+			//Singleton<AnalyticsManager>.Instance.LogTotalXP();
+			//Singleton<AnalyticsManager>.Instance.LogTotalCoins();
 		}
 	}
 

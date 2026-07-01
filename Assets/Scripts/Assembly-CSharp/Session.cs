@@ -303,7 +303,7 @@ public class Session : IDisposable
 					{
 						TFUtils.DebugLog("Server returned success (gamedata). Loading from network response", "session");
 						game.SaveLocally(tFWebFileResponse.Data);
-						Singleton<AnalyticsManager>.Instance.LogDebug("sever_override");
+						//Singleton<AnalyticsManager>.Instance.LogDebug("sever_override");
 					}
 					else
 					{

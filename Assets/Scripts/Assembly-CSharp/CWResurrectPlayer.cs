@@ -27,8 +27,8 @@ public class CWResurrectPlayer : MonoBehaviour
 		CWBattleSequenceController instance2 = CWBattleSequenceController.GetInstance();
 		instance2.camAlignFlag = false;
 		QuestEarningManager instance3 = QuestEarningManager.GetInstance();
-		Singleton<AnalyticsManager>.Instance.LogResurrectPurchase(instance3.earnedCards, instance3.earnedCoin);
-		if (jukeBox != null)
+        //Singleton<AnalyticsManager>.Instance.LogResurrectPurchase(instance3.earnedCards, instance3.earnedCoin); - more analytical shit removed -s
+        if (jukeBox != null)
 		{
 			jukeBox.Refresh();
 		}

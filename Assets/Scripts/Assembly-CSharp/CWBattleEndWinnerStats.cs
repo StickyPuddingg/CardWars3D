@@ -107,7 +107,7 @@ public class CWBattleEndWinnerStats : MonoBehaviour
 		leaderCard = GameState.Instance.GetLeader(PlayerType.User);
 		RefreshUI();
 		StartCoroutine(StepForward());
-		Singleton<AnalyticsManager>.Instance.LogEndResultsEvents();
+
 	}
 
 	private IEnumerator StepForward()
@@ -228,7 +228,7 @@ public class CWBattleEndWinnerStats : MonoBehaviour
 		string text = string.Empty;
 		if (ssNumStars >= 0)
 		{
-			Singleton<AnalyticsManager>.Instance.LogQuestStars(ssNumStars);
+
 			QuestConditionManager instance = QuestConditionManager.Instance;
 			string text2 = ((ssNumStars >= qd.Condition.Length) ? string.Empty : qd.Condition[ssNumStars]);
 			if (instance != null && text2 != string.Empty)

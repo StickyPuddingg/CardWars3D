@@ -70,8 +70,9 @@ public class LoadingManager
 			return false;
 		}
 		float num = realtimeSinceStartup - lastProcessTime;
-		float num2 = ((!KFFLODManager.IsLowEndDevice()) ? 0.03f : 0.1f);
-		bool flag = num >= 0.015f && realtimeSinceStartup - lastYieldTime > num2;
+		float num2 = 0.1f; //((!KFFLODManager.IsLowEndDevice()) ? 0.03f : 0.1f); Set to low end value (0.1f) to increase performance
+
+        bool flag = num >= 0.015f && realtimeSinceStartup - lastYieldTime > num2;
 		if (flag)
 		{
 			lastYieldTime = realtimeSinceStartup;

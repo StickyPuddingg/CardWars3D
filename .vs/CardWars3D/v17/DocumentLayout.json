@@ -3,16 +3,296 @@
   "WorkspaceRootPath": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\editor\\optimizationtools\\audio3dsorganizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\optimizationtools\\audio3dsorganizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\scripts\\assembly-csharp\\slotgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\slotgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\editor\\optimizationtools\\massatlasfixer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\optimizationtools\\massatlasfixer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\slotgamesingleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\slotgamesingleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\slotaudiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\slotaudiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\kffplayhavenreward.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\kffplayhavenreward.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\kffupsightvgcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\kffupsightvgcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\debuggui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\debuggui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp-firstpass\\upsight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp-firstpass\\upsight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp-firstpass\\kffrequestorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp-firstpass\\kffrequestorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp-firstpass\\upsightmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp-firstpass\\upsightmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\cwbattleendrewardwinner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\cwbattleendrewardwinner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp-firstpass\\upsightdemoui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp-firstpass\\upsightdemoui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp-firstpass\\upsightcontentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp-firstpass\\upsightcontentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp-firstpass\\kffplayhaventest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp-firstpass\\kffplayhaventest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\kffupsightmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\kffupsightmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\sidequestprogress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\sidequestprogress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\sidequestmanagerinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\sidequestmanagerinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\sessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\sessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\searchopponentafterpaying.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\searchopponentafterpaying.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\searchopponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\searchopponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\restorestaminascript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\restorestaminascript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\playerinfoscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\playerinfoscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\purchasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\purchasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\matchstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\matchstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\mapcontrollerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\mapcontrollerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\levelupuiscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\levelupuiscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\leadermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\leadermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\gachamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\gachamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\fclaunchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\fclaunchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\cwplayerlose.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\cwplayerlose.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\cwquestload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\cwquestload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\cwqueststaminaok.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\cwqueststaminaok.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\cwresurrectplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\cwresurrectplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\cwreturntomainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\cwreturntomainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\calendargiftcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\calendargiftcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\cardboxincreasedialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\cardboxincreasedialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\dailygiftcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\dailygiftcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\dungeonbattleresolver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\dungeonbattleresolver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\fcdemosequencecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\fcdemosequencecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\fcupsellcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\fcupsellcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\cwoutofgembranch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\cwoutofgembranch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\cwgachaopenchest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\cwgachaopenchest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\cwfusecraft.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\cwfusecraft.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\cwconfirmsellbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\cwconfirmsellbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\cwbattlesequencecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\cwbattlesequencecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\cwbattleendwinnerstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\cwbattleendwinnerstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\battlemanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\battlemanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\analyticsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\analyticsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-unityscript-firstpass\\kffnetwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-unityscript-firstpass\\kffnetwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\slotomniture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\slotomniture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\staminatimercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\staminatimercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\slotresourcemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\slotresourcemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\lowenddeviceswitch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\lowenddeviceswitch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\loadingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\loadingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\perfthrottlemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\perfthrottlemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\cwbattlesequencecam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\cwbattlesequencecam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp-firstpass\\uicamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp-firstpass\\uicamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\scripts\\assembly-csharp\\tfutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\tfutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp-firstpass\\uibuttoncolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp-firstpass\\uibuttoncolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\optionsscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\optionsscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp-firstpass\\kfflodmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp-firstpass\\kfflodmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\scripts\\assembly-csharp\\marketgems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\marketgems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\scripts\\assembly-csharp\\slotstartup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\slotstartup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\IAP.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Assembly-CSharp\\IAP.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\customstuff\\debug\\memorymonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\customstuff\\debug\\memorymonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\scripts\\assembly-csharp\\assetloaderui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\assetloaderui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\scripts\\assembly-csharp-firstpass\\uiatlas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp-firstpass\\uiatlas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\scripts\\assembly-csharp\\slotatlasmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\slotatlasmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\scripts\\assembly-csharp\\cwupdateplayerstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\cwupdateplayerstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\editor\\optimizationtools\\audio3dsorganizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\optimizationtools\\audio3dsorganizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\editor\\optimizationtools\\massatlasfixer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\optimizationtools\\massatlasfixer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\editor\\optimizationtools\\texture3dsoptimizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,20 +303,36 @@
       "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\tfwebclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\scripts\\assembly-csharp\\tfutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\tfutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\scripts\\assembly-csharp-firstpass\\activeanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp-firstpass\\activeanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\scripts\\assembly-csharp\\slotscenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\slotscenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Editor\\OptimizationTools\\SpriteAtlasResizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|solutionrelative:Assets\\Editor\\OptimizationTools\\SpriteAtlasResizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp-firstpass\\iapproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\assembly-csharp-firstpass\\iapproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp-firstpass\\iap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\assembly-csharp-firstpass\\iap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp-firstpass\\googleskuinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\assembly-csharp-firstpass\\googleskuinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp-firstpass\\googleplaydownloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\assembly-csharp-firstpass\\googleplaydownloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\iapbuttonscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\assembly-csharp\\iapbuttonscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\scripts\\assembly-csharp-firstpass\\iabuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\assembly-csharp-firstpass\\iabuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,24 +342,986 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Audio3DSOrganizer.cs",
-              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Editor\\OptimizationTools\\Audio3DSOrganizer.cs",
-              "RelativeDocumentMoniker": "Assets\\Editor\\OptimizationTools\\Audio3DSOrganizer.cs",
-              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Editor\\OptimizationTools\\Audio3DSOrganizer.cs",
-              "RelativeToolTip": "Assets\\Editor\\OptimizationTools\\Audio3DSOrganizer.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "SLOTGameSingleton.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTGameSingleton.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\SLOTGameSingleton.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTGameSingleton.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\SLOTGameSingleton.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-01T01:09:19.198Z",
+              "WhenOpened": "2026-07-01T19:41:35.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DebugGUI.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\DebugGUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\DebugGUI.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\DebugGUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\DebugGUI.cs",
+              "ViewState": "AgIAAAwBAAAAAAAAAADwvxoBAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:38:22.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Upsight.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\Upsight.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\Upsight.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\Upsight.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp-firstpass\\Upsight.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAwwG8AAACdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:29:04.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "KFFPlayhavenReward.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\KFFPlayhavenReward.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\KFFPlayhavenReward.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\KFFPlayhavenReward.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\KFFPlayhavenReward.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:26:36.618Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "KFFUpsightVGController.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\KFFUpsightVGController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\KFFUpsightVGController.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\KFFUpsightVGController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\KFFUpsightVGController.cs",
+              "ViewState": "AgIAANUAAAAAAAAAAAAAAOUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:28:27.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SLOTGame.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTGame.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\SLOTGame.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTGame.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\SLOTGame.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAADwv5gAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T17:01:37.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SLOTAudioManager.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTAudioManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\SLOTAudioManager.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTAudioManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\SLOTAudioManager.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwCAAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T18:42:12.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "KFFRequestorController.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\KFFRequestorController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\KFFRequestorController.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\KFFRequestorController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp-firstpass\\KFFRequestorController.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAADwv3sAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:23:12.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UpsightManager.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\UpsightManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\UpsightManager.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\UpsightManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp-firstpass\\UpsightManager.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAADwvzsAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:23:40.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MenuController.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\MenuController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\MenuController.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\MenuController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\MenuController.cs",
+              "ViewState": "AgIAAAICAAAAAAAAAAAAAAUCAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:18:06.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UpsightDemoUI.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\UpsightDemoUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\UpsightDemoUI.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\UpsightDemoUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp-firstpass\\UpsightDemoUI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:30:08.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UpsightContentRequest.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\UpsightContentRequest.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\UpsightContentRequest.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\UpsightContentRequest.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp-firstpass\\UpsightContentRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:29:28.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "KFFPlayhavenTest.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\KFFPlayhavenTest.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\KFFPlayhavenTest.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\KFFPlayhavenTest.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp-firstpass\\KFFPlayhavenTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:25:50.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "KFFUpsightManager.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\KFFUpsightManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\KFFUpsightManager.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\KFFUpsightManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\KFFUpsightManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:22:54.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CWBattleEndRewardWinner.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWBattleEndRewardWinner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\CWBattleEndRewardWinner.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWBattleEndRewardWinner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\CWBattleEndRewardWinner.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAowH8AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T18:59:30.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SideQuestProgress.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SideQuestProgress.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\SideQuestProgress.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SideQuestProgress.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\SideQuestProgress.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAowFAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:22:06.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Session.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\Session.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\Session.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\Session.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\Session.cs",
+              "ViewState": "AgIAABEBAAAAAAAAAAAowDEBAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:21:58.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SideQuestManagerInfo.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SideQuestManagerInfo.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\SideQuestManagerInfo.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SideQuestManagerInfo.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\SideQuestManagerInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:21:44.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SessionManager.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SessionManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\SessionManager.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SessionManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\SessionManager.cs",
+              "ViewState": "AgIAAGMCAAAAAAAAAAAkwIMCAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:21:26.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "SearchOpponent.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SearchOpponent.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\SearchOpponent.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SearchOpponent.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\SearchOpponent.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAowGkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:21:15.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "SearchOpponentAfterPaying.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SearchOpponentAfterPaying.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\SearchOpponentAfterPaying.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SearchOpponentAfterPaying.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\SearchOpponentAfterPaying.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:21:08.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "RestoreStaminaScript.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\RestoreStaminaScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\RestoreStaminaScript.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\RestoreStaminaScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\RestoreStaminaScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:20:53.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "PurchaseManager.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\PurchaseManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\PurchaseManager.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\PurchaseManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\PurchaseManager.cs",
+              "ViewState": "AgIAALcBAAAAAAAAAAAowNcBAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:20:33.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "PlayerInfoScript.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\PlayerInfoScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\PlayerInfoScript.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\PlayerInfoScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\PlayerInfoScript.cs",
+              "ViewState": "AgIAADQJAAAAAAAAAAAkwGgJAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:18:20.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "MatchStats.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\MatchStats.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\MatchStats.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\MatchStats.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\MatchStats.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAkwDkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:17:56.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "MapControllerBase.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\MapControllerBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\MapControllerBase.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\MapControllerBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\MapControllerBase.cs",
+              "ViewState": "AgIAAMcDAAAAAAAAAAAowOcDAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:17:50.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "LevelUpUIScript.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\LevelUpUIScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\LevelUpUIScript.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\LevelUpUIScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\LevelUpUIScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:17:41.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "LeaderManager.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\LeaderManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\LeaderManager.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\LeaderManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\LeaderManager.cs",
+              "ViewState": "AgIAAB0BAAAAAAAAAAAcwEUBAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:17:19.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "GameState.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\GameState.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\GameState.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\GameState.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\GameState.cs",
+              "ViewState": "AgIAAG8BAAAAAAAAAAAowJEBAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:17:03.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "GachaManager.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\GachaManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\GachaManager.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\GachaManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\GachaManager.cs",
+              "ViewState": "AgIAAMkBAAAAAAAAAAAkwOoBAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:16:18.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "DungeonBattleResolver.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\DungeonBattleResolver.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\DungeonBattleResolver.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\DungeonBattleResolver.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\DungeonBattleResolver.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAA7wEsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:12:02.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "DailyGiftController.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\DailyGiftController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\DailyGiftController.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\DailyGiftController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\DailyGiftController.cs",
+              "ViewState": "AgIAAKcBAAAAAAAAAAAkwMQBAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:11:50.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "CardBoxIncreaseDialog.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CardBoxIncreaseDialog.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\CardBoxIncreaseDialog.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CardBoxIncreaseDialog.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\CardBoxIncreaseDialog.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAwwJwAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:10:50.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "CalendarGiftController.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CalendarGiftController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\CalendarGiftController.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CalendarGiftController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\CalendarGiftController.cs",
+              "ViewState": "AgIAAPAAAAAAAAAAAAAkwA0BAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:10:42.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "CWReturnToMainMenu.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWReturnToMainMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\CWReturnToMainMenu.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWReturnToMainMenu.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\CWReturnToMainMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:10:23.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "CWResurrectPlayer.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWResurrectPlayer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\CWResurrectPlayer.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWResurrectPlayer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\CWResurrectPlayer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:09:15.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "CWQuestStaminaOK.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWQuestStaminaOK.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\CWQuestStaminaOK.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWQuestStaminaOK.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\CWQuestStaminaOK.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:09:03.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "CWQuestLoad.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWQuestLoad.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\CWQuestLoad.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWQuestLoad.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\CWQuestLoad.cs",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAkwL4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:08:49.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "CWPlayerLose.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWPlayerLose.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\CWPlayerLose.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWPlayerLose.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\CWPlayerLose.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAQwCkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:08:20.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "FCDemoSequenceController.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\FCDemoSequenceController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\FCDemoSequenceController.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\FCDemoSequenceController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\FCDemoSequenceController.cs",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAgwKMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:14:49.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "FCUpsellController.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\FCUpsellController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\FCUpsellController.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\FCUpsellController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\FCUpsellController.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAgwF8AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:15:02.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "FCLaunchController.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\FCLaunchController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\FCLaunchController.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\FCLaunchController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\FCLaunchController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAgwEEAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:15:38.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "CWOutOfGemBranch.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWOutOfGemBranch.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\CWOutOfGemBranch.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWOutOfGemBranch.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\CWOutOfGemBranch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:07:51.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "CWGachaOpenChest.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWGachaOpenChest.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\CWGachaOpenChest.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWGachaOpenChest.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\CWGachaOpenChest.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAQwEgAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:05:21.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "CWFuseCraft.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWFuseCraft.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\CWFuseCraft.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWFuseCraft.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\CWFuseCraft.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAkwEsAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:04:52.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "CWConfirmSellButton.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWConfirmSellButton.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\CWConfirmSellButton.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWConfirmSellButton.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\CWConfirmSellButton.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:03:50.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "CWBattleSequenceController.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWBattleSequenceController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\CWBattleSequenceController.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWBattleSequenceController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\CWBattleSequenceController.cs",
+              "ViewState": "AgIAAFcCAAAAAAAAAAAQwIACAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:00:23.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "CWBattleEndWinnerStats.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWBattleEndWinnerStats.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\CWBattleEndWinnerStats.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWBattleEndWinnerStats.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\CWBattleEndWinnerStats.cs",
+              "ViewState": "AgIAANoAAAAAAAAAAAAQwOYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T19:00:14.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "BattleManagerScript.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\BattleManagerScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\BattleManagerScript.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\BattleManagerScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\BattleManagerScript.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwCoAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T18:59:17.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "AnalyticsManager.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\AnalyticsManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\AnalyticsManager.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\AnalyticsManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\AnalyticsManager.cs",
+              "ViewState": "AgIAAPIAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T18:58:40.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "KFFNetwork.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-UnityScript-firstpass\\KFFNetwork.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-UnityScript-firstpass\\KFFNetwork.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-UnityScript-firstpass\\KFFNetwork.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-UnityScript-firstpass\\KFFNetwork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T18:58:03.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "SLOTOmniture.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTOmniture.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\SLOTOmniture.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTOmniture.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\SLOTOmniture.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAkwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T18:52:48.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "StaminaTimerController.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\StaminaTimerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\StaminaTimerController.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\StaminaTimerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\StaminaTimerController.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAkwHUAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T18:47:16.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "LowEndDeviceSwitch.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\LowEndDeviceSwitch.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\LowEndDeviceSwitch.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\LowEndDeviceSwitch.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\LowEndDeviceSwitch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T18:46:11.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "CWBattleSequenceCam.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWBattleSequenceCam.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\CWBattleSequenceCam.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWBattleSequenceCam.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\CWBattleSequenceCam.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAD4vx4AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T18:45:03.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "SLOTResourceManager.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTResourceManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\SLOTResourceManager.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTResourceManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\SLOTResourceManager.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAYwFQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T18:42:26.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "PerfThrottleManager.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\PerfThrottleManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\PerfThrottleManager.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\PerfThrottleManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\PerfThrottleManager.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAkwDIAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T18:16:36.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "UIButtonColor.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\UIButtonColor.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\UIButtonColor.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\UIButtonColor.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp-firstpass\\UIButtonColor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T18:18:33.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "LoadingManager.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\LoadingManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\LoadingManager.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\LoadingManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\LoadingManager.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAowEgAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T18:15:01.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "OptionsScript.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\OptionsScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\OptionsScript.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\OptionsScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\OptionsScript.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAkwHQAAACOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T18:15:52.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "KFFLODManager.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\KFFLODManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\KFFLODManager.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\KFFLODManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp-firstpass\\KFFLODManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T18:09:27.16Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "UICamera.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\UICamera.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\UICamera.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\UICamera.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp-firstpass\\UICamera.cs",
+              "ViewState": "AgIAALcAAAAAAAAAAAAowIoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T18:06:13.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 82,
+              "Title": "IABUIManager.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\IABUIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\IABUIManager.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\IABUIManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp-firstpass\\IABUIManager.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwCMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T17:38:09.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "IAPProduct.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\IAPProduct.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\IAPProduct.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\IAPProduct.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp-firstpass\\IAPProduct.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T17:37:53.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "IAP.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\IAP.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\IAP.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\IAP.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp-firstpass\\IAP.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAQwEsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T17:35:08.246Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 81,
+              "Title": "IAPButtonScript.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\IAPButtonScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\IAPButtonScript.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\IAPButtonScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\IAPButtonScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T17:38:46.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "TFUtils.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\TFUtils.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\TFUtils.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\TFUtils.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\TFUtils.cs",
+              "ViewState": "AgIAAOUCAAAAAAAAAAAgwAUDAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T00:42:13.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "MarketGems.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\MarketGems.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\MarketGems.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\MarketGems.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\MarketGems.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T17:46:37.462Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "GoogleSkuInfo.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\GoogleSkuInfo.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\GoogleSkuInfo.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\GoogleSkuInfo.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp-firstpass\\GoogleSkuInfo.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T17:34:40.909Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "SLOTStartup.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTStartup.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\SLOTStartup.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTStartup.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\SLOTStartup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T17:30:41.026Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "AssetLoaderUI.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\AssetLoaderUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\AssetLoaderUI.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\AssetLoaderUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\AssetLoaderUI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T17:22:47.984Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "IAP.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\IAP.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\IAP.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\IAP.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\IAP.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T17:39:40.695Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "MemoryMonitor.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\CustomStuff\\Debug\\MemoryMonitor.cs",
+              "RelativeDocumentMoniker": "Assets\\CustomStuff\\Debug\\MemoryMonitor.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\CustomStuff\\Debug\\MemoryMonitor.cs",
+              "RelativeToolTip": "Assets\\CustomStuff\\Debug\\MemoryMonitor.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAkwCUAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T17:10:23.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 80,
+              "Title": "GooglePlayDownloader.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\GooglePlayDownloader.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\GooglePlayDownloader.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\GooglePlayDownloader.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp-firstpass\\GooglePlayDownloader.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAswHwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T17:30:46.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "SLOTAtlasManager.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTAtlasManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\SLOTAtlasManager.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTAtlasManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\SLOTAtlasManager.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T16:57:58.28Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "CWUpdatePlayerStats.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWUpdatePlayerStats.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\CWUpdatePlayerStats.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\CWUpdatePlayerStats.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\CWUpdatePlayerStats.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAkwD0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T16:47:04.816Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
               "Title": "TFWebClient.cs",
               "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\TFWebClient.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\TFWebClient.cs",
@@ -75,19 +1333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TFUtils.cs",
-              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\TFUtils.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\TFUtils.cs",
-              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\TFUtils.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\TFUtils.cs",
-              "ViewState": "AgIAAJ0DAAAAAAAAAAAowNMDAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-01T00:42:13.988Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 75,
               "Title": "ActiveAnimation.cs",
               "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\ActiveAnimation.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\ActiveAnimation.cs",
@@ -99,7 +1345,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 68,
+              "Title": "UIAtlas.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\UIAtlas.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\UIAtlas.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\UIAtlas.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp-firstpass\\UIAtlas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-30T22:45:02.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "Audio3DSOrganizer.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Editor\\OptimizationTools\\Audio3DSOrganizer.cs",
+              "RelativeDocumentMoniker": "Assets\\Editor\\OptimizationTools\\Audio3DSOrganizer.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Editor\\OptimizationTools\\Audio3DSOrganizer.cs",
+              "RelativeToolTip": "Assets\\Editor\\OptimizationTools\\Audio3DSOrganizer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwAcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T01:09:19.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
               "Title": "MassAtlasFixer.cs",
               "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Editor\\OptimizationTools\\MassAtlasFixer.cs",
               "RelativeDocumentMoniker": "Assets\\Editor\\OptimizationTools\\MassAtlasFixer.cs",
@@ -107,24 +1377,11 @@
               "RelativeToolTip": "Assets\\Editor\\OptimizationTools\\MassAtlasFixer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T22:48:41.758Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-30T22:48:41.758Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UIAtlas.cs",
-              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\UIAtlas.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\UIAtlas.cs",
-              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\UIAtlas.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp-firstpass\\UIAtlas.cs",
-              "ViewState": "AgIAAEkBAAAAAAAAAAAwwIEBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T22:45:02.798Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 76,
               "Title": "SpriteAtlasResizer.cs",
               "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Editor\\OptimizationTools\\SpriteAtlasResizer.cs",
               "RelativeDocumentMoniker": "Assets\\Editor\\OptimizationTools\\SpriteAtlasResizer.cs",
@@ -136,7 +1393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 73,
               "Title": "Texture3DSOptimizer.cs",
               "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Editor\\OptimizationTools\\Texture3DSOptimizer.cs",
               "RelativeDocumentMoniker": "Assets\\Editor\\OptimizationTools\\Texture3DSOptimizer.cs",
@@ -145,18 +1402,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-30T20:14:23.089Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "SLOTSceneManager.cs",
-              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTSceneManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\SLOTSceneManager.cs",
-              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTSceneManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\SLOTSceneManager.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAMwEIAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T10:28:16.979Z"
             }
           ]
         }

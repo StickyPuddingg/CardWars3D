@@ -41,7 +41,8 @@ public class SLOTResourceManager : SLOTGameSingleton<SLOTResourceManager>
 
 	private static string GetResourceName(string name)
 	{
-		if (SLOTGame.IsLowEndDevice())
+		//we no longer have low res editions of the atlas saved 
+		/*if (SLOTGame.IsLowEndDevice())
 		{
 			int num = name.LastIndexOf("/");
 			if (num >= 0)
@@ -51,7 +52,7 @@ public class SLOTResourceManager : SLOTGameSingleton<SLOTResourceManager>
 				return text + "/low_" + text2;
 			}
 			return "low_" + name;
-		}
+		}*/
 		return name;
 	}
 

@@ -408,9 +408,9 @@ public class GachaManager : ILoadable
 			{
 				text3 = text3 + "last weight: " + gachaWeightTable.weights[gachaWeightTable.weights.Count - 1].weight;
 			}
-			CrashAnalytics.LogException(new Exception(text3));
-			Singleton<AnalyticsManager>.Instance.LogDebug(text2, gachaWeightTable.weights.Count);
-			CrashAnalytics.LogBreadcrumb("Null premium gacha replace");
+			//CrashAnalytics.LogException(new Exception(text3));
+			//Singleton<AnalyticsManager>.Instance.LogDebug(text2, gachaWeightTable.weights.Count);
+			//CrashAnalytics.LogBreadcrumb("Null premium gacha replace");
 		}
 		if (text == null)
 		{
@@ -447,9 +447,9 @@ public class GachaManager : ILoadable
 			{
 				text3 = text3 + "last weight: " + gachaWeightTable.weights[gachaWeightTable.weights.Count - 1].weight;
 			}
-			CrashAnalytics.LogException(new Exception(text3));
-			Singleton<AnalyticsManager>.Instance.LogDebug(text2, gachaWeightTable.weights.Count);
-			CrashAnalytics.LogBreadcrumb("Null premium party gacha replace");
+			//CrashAnalytics.LogException(new Exception(text3));
+			//Singleton<AnalyticsManager>.Instance.LogDebug(text2, gachaWeightTable.weights.Count);
+			//CrashAnalytics.LogBreadcrumb("Null premium party gacha replace");
 		}
 		if (text == null)
 		{
@@ -486,9 +486,9 @@ public class GachaManager : ILoadable
 			{
 				text3 = text3 + "last weight: " + gachaWeightTable.weights[gachaWeightTable.weights.Count - 1].weight;
 			}
-			CrashAnalytics.LogException(new Exception(text3));
-			Singleton<AnalyticsManager>.Instance.LogDebug(text2, gachaWeightTable.weights.Count);
-			CrashAnalytics.LogBreadcrumb("Null premium party gacha replace");
+			//CrashAnalytics.LogException(new Exception(text3));
+			//Singleton<AnalyticsManager>.Instance.LogDebug(text2, gachaWeightTable.weights.Count);
+			//CrashAnalytics.LogBreadcrumb("Null premium party gacha replace");
 		}
 		return text;
 	}
