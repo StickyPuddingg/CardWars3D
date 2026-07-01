@@ -3,8 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\scripts\\assembly-csharp\\slotscenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\editor\\optimizationtools\\audio3dsorganizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\optimizationtools\\audio3dsorganizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|c:\\users\\carlo\\onedrive\\desktop\\dev3ds\\practice\\cardwars3d\\assets\\editor\\optimizationtools\\massatlasfixer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\optimizationtools\\massatlasfixer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\scripts\\assembly-csharp-firstpass\\uiatlas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp-firstpass\\uiatlas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\editor\\optimizationtools\\texture3dsoptimizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\optimizationtools\\texture3dsoptimizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\scripts\\assembly-csharp\\tfwebclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\tfwebclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\scripts\\assembly-csharp\\tfutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\tfutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\scripts\\assembly-csharp-firstpass\\activeanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp-firstpass\\activeanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\assets\\scripts\\assembly-csharp\\slotscenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assembly-csharp\\slotscenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Editor\\OptimizationTools\\SpriteAtlasResizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F51EBF50-C982-2885-FDF9-676677F79CCE}|Assembly-CSharp-Editor.csproj|solutionrelative:Assets\\Editor\\OptimizationTools\\SpriteAtlasResizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,6 +51,104 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Audio3DSOrganizer.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Editor\\OptimizationTools\\Audio3DSOrganizer.cs",
+              "RelativeDocumentMoniker": "Assets\\Editor\\OptimizationTools\\Audio3DSOrganizer.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Editor\\OptimizationTools\\Audio3DSOrganizer.cs",
+              "RelativeToolTip": "Assets\\Editor\\OptimizationTools\\Audio3DSOrganizer.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T01:09:19.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TFWebClient.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\TFWebClient.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\TFWebClient.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\TFWebClient.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\TFWebClient.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAIwGEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T00:50:38.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TFUtils.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\TFUtils.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\TFUtils.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\TFUtils.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\TFUtils.cs",
+              "ViewState": "AgIAAJ0DAAAAAAAAAAAowNMDAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T00:42:13.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ActiveAnimation.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\ActiveAnimation.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\ActiveAnimation.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\ActiveAnimation.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp-firstpass\\ActiveAnimation.cs",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAkwKYAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T00:41:25.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MassAtlasFixer.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Editor\\OptimizationTools\\MassAtlasFixer.cs",
+              "RelativeDocumentMoniker": "Assets\\Editor\\OptimizationTools\\MassAtlasFixer.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Editor\\OptimizationTools\\MassAtlasFixer.cs",
+              "RelativeToolTip": "Assets\\Editor\\OptimizationTools\\MassAtlasFixer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-30T22:48:41.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UIAtlas.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\UIAtlas.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp-firstpass\\UIAtlas.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp-firstpass\\UIAtlas.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp-firstpass\\UIAtlas.cs",
+              "ViewState": "AgIAAEkBAAAAAAAAAAAwwIEBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-30T22:45:02.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SpriteAtlasResizer.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Editor\\OptimizationTools\\SpriteAtlasResizer.cs",
+              "RelativeDocumentMoniker": "Assets\\Editor\\OptimizationTools\\SpriteAtlasResizer.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Editor\\OptimizationTools\\SpriteAtlasResizer.cs",
+              "RelativeToolTip": "Assets\\Editor\\OptimizationTools\\SpriteAtlasResizer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-30T22:20:16.597Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Texture3DSOptimizer.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Editor\\OptimizationTools\\Texture3DSOptimizer.cs",
+              "RelativeDocumentMoniker": "Assets\\Editor\\OptimizationTools\\Texture3DSOptimizer.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Editor\\OptimizationTools\\Texture3DSOptimizer.cs",
+              "RelativeToolTip": "Assets\\Editor\\OptimizationTools\\Texture3DSOptimizer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-30T20:14:23.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "SLOTSceneManager.cs",
               "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Desktop\\dev3ds\\Practice\\CardWars3D\\Assets\\Scripts\\Assembly-CSharp\\SLOTSceneManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Assembly-CSharp\\SLOTSceneManager.cs",
@@ -26,8 +156,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Assembly-CSharp\\SLOTSceneManager.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAAMwEIAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T10:28:16.979Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-30T10:28:16.979Z"
             }
           ]
         }

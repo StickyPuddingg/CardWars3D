@@ -3,9 +3,12 @@
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_Name: CharacterIconAtlas
   m_Shader: {fileID: 4800000, guid: f1dc5b8a4d04e294e9785775c615ded0, type: 3}
-  m_ShaderKeywords:
+  m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -19,5 +22,5 @@ Material:
         m_Texture: {fileID: 2800000, guid: b08b590915926a849b4404829e799f57, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats: {}
-    m_Colors: {}
+    m_Floats: []
+    m_Colors: []

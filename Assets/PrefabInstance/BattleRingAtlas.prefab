@@ -2,6 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1001 &100100000
 Prefab:
+  m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
@@ -12,6 +13,9 @@ Prefab:
   m_IsPrefabParent: 1
 --- !u!1 &1036306280356572
 GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4009702206287851}
@@ -25,6 +29,9 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4009702206287851
 Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1036306280356572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -35,27 +42,30 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114083202408467488
 MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1036306280356572}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9302d66c6ec4a0b4cb9c85efd0477c38, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: dba5ee5043b80a141843b5546089b943, type: 2}
   sprites:
   - name: BattleRing_Outline
     outer:
       serializedVersion: 2
       x: 0
-      y: 0.7509766
+      y: 1.5019532
       width: 0.2441406
-      height: 0.2490234
+      height: 0.4980468
     inner:
       serializedVersion: 2
       x: 0
-      y: 0.7509766
+      y: 1.5019532
       width: 0.2441406
-      height: 0.2490234
+      height: 0.24902332
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -65,15 +75,15 @@ MonoBehaviour:
     outer:
       serializedVersion: 2
       x: 0.5620117
-      y: 0.6826172
+      y: 1.3652344
       width: 0.1201172
-      height: 0.1220703
+      height: 0.2441406
     inner:
       serializedVersion: 2
       x: 0.5620117
-      y: 0.6826172
-      width: 0.1201172
-      height: 0.1220703
+      y: 1.3652344
+      width: 0.12011719
+      height: 0.12207031
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -83,15 +93,15 @@ MonoBehaviour:
     outer:
       serializedVersion: 2
       x: 0.3779297
-      y: 0.5185547
+      y: 1.0371094
       width: 0.004882813
-      height: 0.03613281
+      height: 0.07226562
     inner:
       serializedVersion: 2
       x: 0.3779297
-      y: 0.5185547
-      width: 0.004882813
-      height: 0.03613281
+      y: 1.0371094
+      width: 0.0048828125
+      height: 0.036132812
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -101,15 +111,15 @@ MonoBehaviour:
     outer:
       serializedVersion: 2
       x: 0.3095703
-      y: 0.5351563
+      y: 1.0703126
       width: 0.06738281
-      height: 0.2148438
+      height: 0.4296876
     inner:
       serializedVersion: 2
       x: 0.3095703
-      y: 0.5351563
+      y: 1.0703126
       width: 0.06738281
-      height: 0.2148438
+      height: 0.21484375
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -119,15 +129,15 @@ MonoBehaviour:
     outer:
       serializedVersion: 2
       x: 0.2451172
-      y: 0.5322266
+      y: 1.0644532
       width: 0.06347656
-      height: 0.2177734
+      height: 0.4355468
     inner:
       serializedVersion: 2
       x: 0.2451172
-      y: 0.5322266
-      width: 0.06347656
-      height: 0.2177734
+      y: 1.0644532
+      width: 0.06347655
+      height: 0.21777332
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -137,15 +147,15 @@ MonoBehaviour:
     outer:
       serializedVersion: 2
       x: 0.4902344
-      y: 0.8056641
+      y: 1.6113282
       width: 0.1831055
-      height: 0.1943359
+      height: 0.3886718
     inner:
       serializedVersion: 2
       x: 0.4902344
-      y: 0.8056641
+      y: 1.6113282
       width: 0.1831055
-      height: 0.1943359
+      height: 0.19433582
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -155,15 +165,15 @@ MonoBehaviour:
     outer:
       serializedVersion: 2
       x: 0.6743164
-      y: 0.8422852
+      y: 1.6845704
       width: 0.2197266
-      height: 0.1577148
+      height: 0.3154296
     inner:
       serializedVersion: 2
       x: 0.6743164
-      y: 0.8422852
-      width: 0.2197266
-      height: 0.1577148
+      y: 1.6845704
+      width: 0.21972662
+      height: 0.15771472
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -173,15 +183,15 @@ MonoBehaviour:
     outer:
       serializedVersion: 2
       x: 0.3779297
-      y: 0.5556641
+      y: 1.1113282
       width: 0.1831055
-      height: 0.1943359
+      height: 0.3886718
     inner:
       serializedVersion: 2
       x: 0.3779297
-      y: 0.5556641
-      width: 0.1831055
-      height: 0.1943359
+      y: 1.1113282
+      width: 0.18310547
+      height: 0.19433582
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -191,15 +201,15 @@ MonoBehaviour:
     outer:
       serializedVersion: 2
       x: 0
-      y: 0.5009766
+      y: 1.0019532
       width: 0.2441406
-      height: 0.2490234
+      height: 0.4980468
     inner:
       serializedVersion: 2
       x: 0
-      y: 0.5009766
+      y: 1.0019532
       width: 0.2441406
-      height: 0.2490234
+      height: 0.24902332
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -209,15 +219,15 @@ MonoBehaviour:
     outer:
       serializedVersion: 2
       x: 0.2451172
-      y: 0.7509766
+      y: 1.5019532
       width: 0.2441406
-      height: 0.2490234
+      height: 0.4980468
     inner:
       serializedVersion: 2
       x: 0.2451172
-      y: 0.7509766
-      width: 0.2441406
-      height: 0.2490234
+      y: 1.5019532
+      width: 0.24414061
+      height: 0.24902332
     rotated: 0
     paddingLeft: 0
     paddingRight: 0

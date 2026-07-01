@@ -2430,5 +2430,5 @@ MonoBehaviour:
     paddingTop: 0.008130081
     paddingBottom: 0.03252032
   mCoordinates: 1
-  mPixelSize: 1
+  mPixelSize: 4
   mReplacement: {fileID: 0}

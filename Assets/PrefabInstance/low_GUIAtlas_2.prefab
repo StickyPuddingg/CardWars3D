@@ -1638,5 +1638,5 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   mCoordinates: 1
-  mPixelSize: 2
+  mPixelSize: 4
   mReplacement: {fileID: 0}

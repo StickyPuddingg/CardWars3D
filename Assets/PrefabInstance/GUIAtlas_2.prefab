@@ -2,6 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1001 &100100000
 Prefab:
+  m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
@@ -12,6 +13,9 @@ Prefab:
   m_IsPrefabParent: 1
 --- !u!1 &1099911298176470
 GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4731262779841965}
@@ -25,6 +29,9 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4731262779841965
 Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1099911298176470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -35,27 +42,30 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114701569404531339
 MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1099911298176470}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9302d66c6ec4a0b4cb9c85efd0477c38, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: bac394d684486c94b8812000e926e103, type: 2}
   sprites:
   - name: Button_Back
     outer:
       serializedVersion: 2
-      x: 1158
-      y: 696
-      width: 217
-      height: 213
+      x: 290
+      y: 174
+      width: 54
+      height: 53
     inner:
       serializedVersion: 2
-      x: 1158
-      y: 696
-      width: 217
-      height: 213
+      x: 290
+      y: 174
+      width: 54
+      height: 53
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -64,16 +74,16 @@ MonoBehaviour:
   - name: Button_Back_Gold
     outer:
       serializedVersion: 2
-      x: 1702
-      y: 921
-      width: 217
-      height: 213
+      x: 426
+      y: 230
+      width: 54
+      height: 53
     inner:
       serializedVersion: 2
-      x: 1702
-      y: 921
-      width: 217
-      height: 213
+      x: 426
+      y: 230
+      width: 54
+      height: 53
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -82,16 +92,16 @@ MonoBehaviour:
   - name: Button_Delete
     outer:
       serializedVersion: 2
-      x: 952
-      y: 70
-      width: 177
-      height: 202
+      x: 238
+      y: 17.5
+      width: 44.25
+      height: 50.5
     inner:
       serializedVersion: 2
-      x: 952
-      y: 70
-      width: 177
-      height: 202
+      x: 238
+      y: 17.5
+      width: 44.25
+      height: 50.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -100,16 +110,16 @@ MonoBehaviour:
   - name: Combat_Icon_ATK
     outer:
       serializedVersion: 2
-      x: 1958
-      y: 1616
-      width: 61
-      height: 113
+      x: 489.5
+      y: 404
+      width: 15.25
+      height: 28.25
     inner:
       serializedVersion: 2
-      x: 1958
-      y: 1616
-      width: 61
-      height: 113
+      x: 489.5
+      y: 404
+      width: 15.25
+      height: 28.25
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -118,16 +128,16 @@ MonoBehaviour:
   - name: Combat_Icon_DEF
     outer:
       serializedVersion: 2
-      x: 1158
-      y: 22
-      width: 72
-      height: 85
+      x: 289.5
+      y: 5.5
+      width: 18
+      height: 21.25
     inner:
       serializedVersion: 2
-      x: 1158
-      y: 22
-      width: 72
-      height: 85
+      x: 289.5
+      y: 5.5
+      width: 18
+      height: 21.25
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -136,16 +146,16 @@ MonoBehaviour:
   - name: Craft_Anvil
     outer:
       serializedVersion: 2
-      x: 1012
-      y: 1730
-      width: 363
-      height: 318
+      x: 253
+      y: 432.5
+      width: 90.75
+      height: 79.5
     inner:
       serializedVersion: 2
-      x: 1062
-      y: 1730
-      width: 23
-      height: 318
+      x: 265.5
+      y: 432.5
+      width: 5.75
+      height: 79.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -154,16 +164,16 @@ MonoBehaviour:
   - name: Craft_Badge
     outer:
       serializedVersion: 2
-      x: 1500
-      y: 621
-      width: 73
-      height: 74
+      x: 375
+      y: 155.25
+      width: 18.25
+      height: 18.5
     inner:
       serializedVersion: 2
-      x: 1500
-      y: 621
-      width: 73
-      height: 74
+      x: 375
+      y: 155.25
+      width: 18.25
+      height: 18.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -173,15 +183,15 @@ MonoBehaviour:
     outer:
       serializedVersion: 2
       x: 0
-      y: 26
-      width: 315
-      height: 148
+      y: 6.5
+      width: 78.75
+      height: 37
     inner:
       serializedVersion: 2
       x: 0
-      y: 26
-      width: 315
-      height: 148
+      y: 6.5
+      width: 78.75
+      height: 37
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -190,16 +200,16 @@ MonoBehaviour:
   - name: Craft_CheckMark
     outer:
       serializedVersion: 2
-      x: 1421
-      y: 448
-      width: 56
-      height: 61
+      x: 355.25
+      y: 112
+      width: 14
+      height: 15.25
     inner:
       serializedVersion: 2
-      x: 1421
-      y: 448
-      width: 56
-      height: 61
+      x: 355.25
+      y: 112
+      width: 14
+      height: 15.25
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -208,16 +218,16 @@ MonoBehaviour:
   - name: Craft_MaterialCardsFrame
     outer:
       serializedVersion: 2
-      x: 1309
-      y: 573
-      width: 111
-      height: 122
+      x: 327.25
+      y: 143.25
+      width: 27.75
+      height: 30.5
     inner:
       serializedVersion: 2
-      x: 1349
-      y: 613
-      width: 31
-      height: 42
+      x: 337.25
+      y: 153.25
+      width: 7.75
+      height: 10.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -226,16 +236,16 @@ MonoBehaviour:
   - name: Craft_MaterialsFrame
     outer:
       serializedVersion: 2
-      x: 1376
-      y: 701
-      width: 211
-      height: 208
+      x: 344
+      y: 175.25
+      width: 52.75
+      height: 52
     inner:
       serializedVersion: 2
-      x: 1456
-      y: 781
-      width: 51
-      height: 48
+      x: 364
+      y: 195.25
+      width: 12.75
+      height: 12
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -244,16 +254,16 @@ MonoBehaviour:
   - name: Craft_NewCardBadge
     outer:
       serializedVersion: 2
-      x: 844
-      y: 1618
-      width: 133
-      height: 130
+      x: 211
+      y: 404.5
+      width: 33.25
+      height: 32.5
     inner:
       serializedVersion: 2
-      x: 844
-      y: 1618
-      width: 133
-      height: 130
+      x: 211
+      y: 404.5
+      width: 33.25
+      height: 32.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -262,16 +272,16 @@ MonoBehaviour:
   - name: Craft_NoRecipe
     outer:
       serializedVersion: 2
-      x: 1947
-      y: 1754
-      width: 82
-      height: 143
+      x: 486.75
+      y: 438.5
+      width: 20.5
+      height: 35.75
     inner:
       serializedVersion: 2
-      x: 1947
-      y: 1754
-      width: 82
-      height: 143
+      x: 486.75
+      y: 438.5
+      width: 20.5
+      height: 35.75
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -280,16 +290,16 @@ MonoBehaviour:
   - name: Craft_ScrollBar
     outer:
       serializedVersion: 2
-      x: 534
-      y: 1620
-      width: 16
-      height: 7
+      x: 133.5
+      y: 405
+      width: 4
+      height: 1.75
     inner:
       serializedVersion: 2
-      x: 539
-      y: 1622
-      width: 6
-      height: 3
+      x: 134.75
+      y: 405.5
+      width: 1.5
+      height: 0.75
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -298,16 +308,16 @@ MonoBehaviour:
   - name: Craft_ScrollBarBg
     outer:
       serializedVersion: 2
-      x: 534
-      y: 1628
-      width: 28
-      height: 13
+      x: 133.5
+      y: 407
+      width: 7
+      height: 3.25
     inner:
       serializedVersion: 2
-      x: 544
-      y: 1633
-      width: 8
-      height: 3
+      x: 136
+      y: 408.25
+      width: 2
+      height: 0.75
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -316,16 +326,16 @@ MonoBehaviour:
   - name: Craft_Tongs
     outer:
       serializedVersion: 2
-      x: 513
-      y: 1642
-      width: 330
-      height: 106
+      x: 128.25
+      y: 410.5
+      width: 82.5
+      height: 26.5
     inner:
       serializedVersion: 2
-      x: 513
-      y: 1642
-      width: 330
-      height: 106
+      x: 128.25
+      y: 410.5
+      width: 82.5
+      height: 26.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -334,16 +344,16 @@ MonoBehaviour:
   - name: CW_Blank
     outer:
       serializedVersion: 2
-      x: 513
-      y: 1621
-      width: 20
-      height: 20
+      x: 128.25
+      y: 405.25
+      width: 5
+      height: 5
     inner:
       serializedVersion: 2
-      x: 515
-      y: 1623
-      width: 16
-      height: 16
+      x: 128.75
+      y: 405.75
+      width: 4
+      height: 4
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -352,16 +362,16 @@ MonoBehaviour:
   - name: CW_Grey
     outer:
       serializedVersion: 2
-      x: 1421
-      y: 510
-      width: 64
-      height: 64
+      x: 355.25
+      y: 127.5
+      width: 16
+      height: 16
     inner:
       serializedVersion: 2
-      x: 1431
-      y: 520
-      width: 44
-      height: 44
+      x: 357.75
+      y: 130
+      width: 11
+      height: 11
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -370,16 +380,16 @@ MonoBehaviour:
   - name: CW_White
     outer:
       serializedVersion: 2
-      x: 1913
-      y: 631
-      width: 64
-      height: 64
+      x: 478.25
+      y: 157.75
+      width: 16
+      height: 16
     inner:
       serializedVersion: 2
-      x: 1918
-      y: 636
-      width: 54
-      height: 54
+      x: 479.5
+      y: 159
+      width: 13.5
+      height: 13.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -388,16 +398,16 @@ MonoBehaviour:
   - name: Deck_ArrowLeft
     outer:
       serializedVersion: 2
-      x: 1309
-      y: 8
-      width: 78
-      height: 120
+      x: 327.25
+      y: 2
+      width: 19.5
+      height: 30
     inner:
       serializedVersion: 2
-      x: 1309
-      y: 8
-      width: 78
-      height: 120
+      x: 327.25
+      y: 2
+      width: 19.5
+      height: 30
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -406,16 +416,16 @@ MonoBehaviour:
   - name: Deck_ArrowRight
     outer:
       serializedVersion: 2
-      x: 1421
-      y: 575
-      width: 78
-      height: 120
+      x: 355.25
+      y: 143.75
+      width: 19.5
+      height: 30
     inner:
       serializedVersion: 2
-      x: 1421
-      y: 575
-      width: 78
-      height: 120
+      x: 355.25
+      y: 143.75
+      width: 19.5
+      height: 30
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -424,16 +434,16 @@ MonoBehaviour:
   - name: EmptyCardSlot
     outer:
       serializedVersion: 2
-      x: 1848
-      y: 631
-      width: 64
-      height: 64
+      x: 462
+      y: 157.75
+      width: 16
+      height: 16
     inner:
       serializedVersion: 2
-      x: 1868
-      y: 651
-      width: 24
-      height: 24
+      x: 467
+      y: 162.75
+      width: 6
+      height: 6
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -442,16 +452,16 @@ MonoBehaviour:
   - name: FloopInfo
     outer:
       serializedVersion: 2
-      x: 1452
-      y: 945
-      width: 249
-      height: 189
+      x: 363
+      y: 236.25
+      width: 62.25
+      height: 47.25
     inner:
       serializedVersion: 2
-      x: 1582
-      y: 945
-      width: 19
-      height: 189
+      x: 395.5
+      y: 236.25
+      width: 4.75
+      height: 47.25
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -461,15 +471,15 @@ MonoBehaviour:
     outer:
       serializedVersion: 2
       x: 0
-      y: 655
-      width: 338
-      height: 479
+      y: 163.75
+      width: 84.5
+      height: 119.75
     inner:
       serializedVersion: 2
       x: 0
-      y: 655
-      width: 338
-      height: 479
+      y: 163.75
+      width: 84.5
+      height: 119.75
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -478,16 +488,16 @@ MonoBehaviour:
   - name: Frame_Colorless
     outer:
       serializedVersion: 2
-      x: 339
-      y: 175
-      width: 338
-      height: 479
+      x: 84.75
+      y: 43.75
+      width: 84.5
+      height: 119.75
     inner:
       serializedVersion: 2
-      x: 339
-      y: 175
-      width: 338
-      height: 479
+      x: 84.75
+      y: 43.75
+      width: 84.5
+      height: 119.75
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -496,16 +506,16 @@ MonoBehaviour:
   - name: Frame_Combat
     outer:
       serializedVersion: 2
-      x: 1588
-      y: 700
-      width: 75
-      height: 50
+      x: 397
+      y: 175
+      width: 18.75
+      height: 12.5
     inner:
       serializedVersion: 2
-      x: 1588
-      y: 700
-      width: 75
-      height: 50
+      x: 397
+      y: 175
+      width: 18.75
+      height: 12.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -514,16 +524,16 @@ MonoBehaviour:
   - name: Frame_Cost
     outer:
       serializedVersion: 2
-      x: 1782
-      y: 630
-      width: 65
-      height: 65
+      x: 445.5
+      y: 157.5
+      width: 16.25
+      height: 16.25
     inner:
       serializedVersion: 2
-      x: 1782
-      y: 630
-      width: 65
-      height: 65
+      x: 445.5
+      y: 157.5
+      width: 16.25
+      height: 16.25
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -532,16 +542,16 @@ MonoBehaviour:
   - name: Frame_Gold
     outer:
       serializedVersion: 2
-      x: 339
-      y: 655
-      width: 338
-      height: 479
+      x: 84.75
+      y: 163.75
+      width: 84.5
+      height: 119.75
     inner:
       serializedVersion: 2
-      x: 339
-      y: 655
-      width: 338
-      height: 479
+      x: 84.75
+      y: 163.75
+      width: 84.5
+      height: 119.75
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -551,15 +561,15 @@ MonoBehaviour:
     outer:
       serializedVersion: 2
       x: 0
-      y: 175
-      width: 338
-      height: 479
+      y: 43.75
+      width: 84.5
+      height: 119.75
     inner:
       serializedVersion: 2
       x: 0
-      y: 175
-      width: 338
-      height: 479
+      y: 43.75
+      width: 84.5
+      height: 119.75
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -568,16 +578,16 @@ MonoBehaviour:
   - name: Frame_Indent
     outer:
       serializedVersion: 2
-      x: 952
-      y: 461
-      width: 197
-      height: 197
+      x: 238
+      y: 115.25
+      width: 49.25
+      height: 49.25
     inner:
       serializedVersion: 2
-      x: 1042
-      y: 551
-      width: 17
-      height: 17
+      x: 260.5
+      y: 137.75
+      width: 4.25
+      height: 4.25
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -587,15 +597,15 @@ MonoBehaviour:
     outer:
       serializedVersion: 2
       x: 0
-      y: 1135
-      width: 338
-      height: 479
+      y: 283.75
+      width: 84.5
+      height: 119.75
     inner:
       serializedVersion: 2
       x: 0
-      y: 1135
-      width: 338
-      height: 479
+      y: 283.75
+      width: 84.5
+      height: 119.75
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -604,16 +614,16 @@ MonoBehaviour:
   - name: Frame_White
     outer:
       serializedVersion: 2
-      x: 678
-      y: 1135
-      width: 338
-      height: 479
+      x: 169.5
+      y: 283.75
+      width: 84.5
+      height: 119.75
     inner:
       serializedVersion: 2
-      x: 678
-      y: 1135
-      width: 338
-      height: 479
+      x: 169.5
+      y: 283.75
+      width: 84.5
+      height: 119.75
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -622,16 +632,16 @@ MonoBehaviour:
   - name: GoldPlaque
     outer:
       serializedVersion: 2
-      x: 1017
-      y: 1461
-      width: 478
-      height: 153
+      x: 254.25
+      y: 365.25
+      width: 119.5
+      height: 38.25
     inner:
       serializedVersion: 2
-      x: 1292
-      y: 1461
-      width: 28
-      height: 153
+      x: 323
+      y: 365.25
+      width: 7
+      height: 38.25
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -640,16 +650,16 @@ MonoBehaviour:
   - name: GsBox
     outer:
       serializedVersion: 2
-      x: 1920
-      y: 975
-      width: 126
-      height: 159
+      x: 480
+      y: 243.75
+      width: 31.5
+      height: 39.75
     inner:
       serializedVersion: 2
-      x: 1920
-      y: 975
-      width: 126
-      height: 159
+      x: 480
+      y: 243.75
+      width: 31.5
+      height: 39.75
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -658,16 +668,16 @@ MonoBehaviour:
   - name: GsChest
     outer:
       serializedVersion: 2
-      x: 952
-      y: 273
-      width: 192
-      height: 187
+      x: 238
+      y: 68.25
+      width: 48
+      height: 46.75
     inner:
       serializedVersion: 2
-      x: 952
-      y: 273
-      width: 192
-      height: 187
+      x: 238
+      y: 68.25
+      width: 48
+      height: 46.75
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -676,16 +686,16 @@ MonoBehaviour:
   - name: GsFrame
     outer:
       serializedVersion: 2
-      x: 1376
-      y: 1735
-      width: 359
-      height: 313
+      x: 344
+      y: 433.75
+      width: 89.75
+      height: 78.25
     inner:
       serializedVersion: 2
-      x: 1546
-      y: 1885
-      width: 19
-      height: 13
+      x: 386.5
+      y: 471.25
+      width: 4.75
+      height: 3.25
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -694,16 +704,16 @@ MonoBehaviour:
   - name: GsGems
     outer:
       serializedVersion: 2
-      x: 1920
-      y: 914
-      width: 94
-      height: 60
+      x: 480
+      y: 228.5
+      width: 23.5
+      height: 15
     inner:
       serializedVersion: 2
-      x: 1920
-      y: 914
-      width: 94
-      height: 60
+      x: 480
+      y: 228.5
+      width: 23.5
+      height: 15
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -712,16 +722,16 @@ MonoBehaviour:
   - name: GsGems_3
     outer:
       serializedVersion: 2
-      x: 952
-      y: 9
-      width: 94
-      height: 60
+      x: 238
+      y: 2.25
+      width: 23.5
+      height: 15
     inner:
       serializedVersion: 2
-      x: 952
-      y: 9
-      width: 94
-      height: 60
+      x: 238
+      y: 2.25
+      width: 23.5
+      height: 15
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -730,16 +740,16 @@ MonoBehaviour:
   - name: GsGoblet
     outer:
       serializedVersion: 2
-      x: 1947
-      y: 1898
-      width: 83
-      height: 150
+      x: 486.75
+      y: 474.5
+      width: 20.75
+      height: 37.5
     inner:
       serializedVersion: 2
-      x: 1947
-      y: 1898
-      width: 83
-      height: 150
+      x: 486.75
+      y: 474.5
+      width: 20.75
+      height: 37.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -748,16 +758,16 @@ MonoBehaviour:
   - name: GsSkull
     outer:
       serializedVersion: 2
-      x: 1509
-      y: 1620
-      width: 117
-      height: 114
+      x: 377.25
+      y: 405
+      width: 29.25
+      height: 28.5
     inner:
       serializedVersion: 2
-      x: 1509
-      y: 1620
-      width: 117
-      height: 114
+      x: 377.25
+      y: 405
+      width: 29.25
+      height: 28.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -766,16 +776,16 @@ MonoBehaviour:
   - name: GsSlot
     outer:
       serializedVersion: 2
-      x: 1627
-      y: 1646
-      width: 81
-      height: 88
+      x: 406.75
+      y: 411.5
+      width: 20.25
+      height: 22
     inner:
       serializedVersion: 2
-      x: 1662
-      y: 1681
-      width: 11
-      height: 18
+      x: 415.5
+      y: 420.25
+      width: 2.75
+      height: 4.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -784,16 +794,16 @@ MonoBehaviour:
   - name: GsSpoon
     outer:
       serializedVersion: 2
-      x: 1158
-      y: 237
-      width: 150
-      height: 140
+      x: 289.5
+      y: 59.25
+      width: 37.5
+      height: 35
     inner:
       serializedVersion: 2
-      x: 1158
-      y: 237
-      width: 150
-      height: 140
+      x: 289.5
+      y: 59.25
+      width: 37.5
+      height: 35
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -802,16 +812,16 @@ MonoBehaviour:
   - name: GsTitle
     outer:
       serializedVersion: 2
-      x: 1190
-      y: 1637
-      width: 160
-      height: 92
+      x: 297.5
+      y: 409.25
+      width: 40
+      height: 23
     inner:
       serializedVersion: 2
-      x: 1260
-      y: 1637
-      width: 20
-      height: 92
+      x: 315
+      y: 409.25
+      width: 5
+      height: 23
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -820,16 +830,16 @@ MonoBehaviour:
   - name: IconBuildings
     outer:
       serializedVersion: 2
-      x: 1285
-      y: 1139
-      width: 86
-      height: 70
+      x: 321.25
+      y: 284.75
+      width: 21.5
+      height: 17.5
     inner:
       serializedVersion: 2
-      x: 1285
-      y: 1139
-      width: 86
-      height: 70
+      x: 321.25
+      y: 284.75
+      width: 21.5
+      height: 17.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -838,16 +848,16 @@ MonoBehaviour:
   - name: IconCreatures
     outer:
       serializedVersion: 2
-      x: 1372
-      y: 1139
-      width: 86
-      height: 70
+      x: 343
+      y: 284.75
+      width: 21.5
+      height: 17.5
     inner:
       serializedVersion: 2
-      x: 1372
-      y: 1139
-      width: 86
-      height: 70
+      x: 343
+      y: 284.75
+      width: 21.5
+      height: 17.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -856,16 +866,16 @@ MonoBehaviour:
   - name: IconLandscapes
     outer:
       serializedVersion: 2
-      x: 1191
-      y: 1142
-      width: 86
-      height: 70
+      x: 297.75
+      y: 285.5
+      width: 21.5
+      height: 17.5
     inner:
       serializedVersion: 2
-      x: 1191
-      y: 1142
-      width: 86
-      height: 70
+      x: 297.75
+      y: 285.5
+      width: 21.5
+      height: 17.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -874,16 +884,16 @@ MonoBehaviour:
   - name: IconLeaders
     outer:
       serializedVersion: 2
-      x: 1104
-      y: 1142
-      width: 86
-      height: 70
+      x: 276
+      y: 285.5
+      width: 21.5
+      height: 17.5
     inner:
       serializedVersion: 2
-      x: 1104
-      y: 1142
-      width: 86
-      height: 70
+      x: 276
+      y: 285.5
+      width: 21.5
+      height: 17.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -892,16 +902,16 @@ MonoBehaviour:
   - name: IconSpells
     outer:
       serializedVersion: 2
-      x: 1017
-      y: 1142
-      width: 86
-      height: 70
+      x: 254.25
+      y: 285.5
+      width: 21.5
+      height: 17.5
     inner:
       serializedVersion: 2
-      x: 1017
-      y: 1142
-      width: 86
-      height: 70
+      x: 254.25
+      y: 285.5
+      width: 21.5
+      height: 17.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -910,16 +920,16 @@ MonoBehaviour:
   - name: PopUpSprite_1
     outer:
       serializedVersion: 2
-      x: 1017
-      y: 1213
-      width: 267
-      height: 247
+      x: 254.25
+      y: 303.25
+      width: 66.75
+      height: 61.75
     inner:
       serializedVersion: 2
-      x: 1117
-      y: 1313
-      width: 67
-      height: 47
+      x: 279.25
+      y: 328.25
+      width: 16.75
+      height: 11.75
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -928,16 +938,16 @@ MonoBehaviour:
   - name: QuestInfo_BG
     outer:
       serializedVersion: 2
-      x: 513
-      y: 1749
-      width: 498
-      height: 299
+      x: 128.25
+      y: 437.25
+      width: 124.5
+      height: 74.75
     inner:
       serializedVersion: 2
-      x: 763
-      y: 1849
-      width: 78
-      height: 99
+      x: 190.75
+      y: 462.25
+      width: 19.5
+      height: 24.75
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -946,16 +956,16 @@ MonoBehaviour:
   - name: QuestShield
     outer:
       serializedVersion: 2
-      x: 1574
-      y: 623
-      width: 71
-      height: 72
+      x: 393.5
+      y: 155.75
+      width: 17.75
+      height: 18
     inner:
       serializedVersion: 2
-      x: 1574
-      y: 623
-      width: 71
-      height: 72
+      x: 393.5
+      y: 155.75
+      width: 17.75
+      height: 18
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -964,16 +974,16 @@ MonoBehaviour:
   - name: ScrollBar_BG2
     outer:
       serializedVersion: 2
-      x: 1978
-      y: 631
-      width: 64
-      height: 64
+      x: 494.5
+      y: 157.75
+      width: 16
+      height: 16
     inner:
       serializedVersion: 2
-      x: 2003
-      y: 656
-      width: 14
-      height: 14
+      x: 500.75
+      y: 164
+      width: 3.5
+      height: 3.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -982,16 +992,16 @@ MonoBehaviour:
   - name: ScrollBar4
     outer:
       serializedVersion: 2
-      x: 1047
-      y: 5
-      width: 71
-      height: 64
+      x: 262
+      y: 1
+      width: 18
+      height: 16
     inner:
       serializedVersion: 2
-      x: 1077
-      y: 35
-      width: 11
-      height: 4
+      x: 270
+      y: 9
+      width: 2
+      height: 0
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1000,16 +1010,16 @@ MonoBehaviour:
   - name: Stack_Circle
     outer:
       serializedVersion: 2
-      x: 1231
-      y: 33
-      width: 73
-      height: 74
+      x: 308
+      y: 8
+      width: 18
+      height: 18
     inner:
       serializedVersion: 2
-      x: 1231
-      y: 33
-      width: 73
-      height: 74
+      x: 308
+      y: 8
+      width: 18
+      height: 18
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1018,16 +1028,16 @@ MonoBehaviour:
   - name: SummonPanelChristmas
     outer:
       serializedVersion: 2
-      x: 1771
-      y: 1149
-      width: 274
-      height: 232
+      x: 443
+      y: 287
+      width: 68
+      height: 58
     inner:
       serializedVersion: 2
-      x: 1906
-      y: 1284
-      width: 9
-      height: 7
+      x: 477
+      y: 321
+      width: 2
+      height: 2
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1036,16 +1046,16 @@ MonoBehaviour:
   - name: SummonPanelColorless
     outer:
       serializedVersion: 2
-      x: 1202
-      y: 910
-      width: 249
-      height: 224
+      x: 300
+      y: 228
+      width: 62
+      height: 56
     inner:
       serializedVersion: 2
-      x: 1322
-      y: 1025
-      width: 9
-      height: 9
+      x: 330
+      y: 257
+      width: 2
+      height: 2
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1054,16 +1064,16 @@ MonoBehaviour:
   - name: SummonPanelCorn
     outer:
       serializedVersion: 2
-      x: 678
-      y: 228
-      width: 249
-      height: 224
+      x: 169.5
+      y: 57
+      width: 62.25
+      height: 56
     inner:
       serializedVersion: 2
-      x: 798
-      y: 343
-      width: 9
-      height: 9
+      x: 199.5
+      y: 85.75
+      width: 2.25
+      height: 2.25
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1072,16 +1082,16 @@ MonoBehaviour:
   - name: SummonPanelCotton
     outer:
       serializedVersion: 2
-      x: 678
-      y: 678
-      width: 249
-      height: 224
+      x: 169.5
+      y: 169.5
+      width: 62.25
+      height: 56
     inner:
       serializedVersion: 2
-      x: 798
-      y: 793
-      width: 9
-      height: 9
+      x: 199.5
+      y: 198.25
+      width: 2.25
+      height: 2.25
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1090,16 +1100,16 @@ MonoBehaviour:
   - name: SummonPanelGold
     outer:
       serializedVersion: 2
-      x: 1771
-      y: 1382
-      width: 274
-      height: 232
+      x: 442.75
+      y: 345.5
+      width: 68.5
+      height: 58
     inner:
       serializedVersion: 2
-      x: 1906
-      y: 1517
-      width: 9
-      height: 7
+      x: 476.5
+      y: 379.25
+      width: 2.25
+      height: 1.75
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1108,16 +1118,16 @@ MonoBehaviour:
   - name: SummonPanelHalloween
     outer:
       serializedVersion: 2
-      x: 1496
-      y: 1149
-      width: 274
-      height: 232
+      x: 374
+      y: 287.25
+      width: 68.5
+      height: 58
     inner:
       serializedVersion: 2
-      x: 1631
-      y: 1284
-      width: 9
-      height: 7
+      x: 407.75
+      y: 321
+      width: 2.25
+      height: 1.75
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1126,16 +1136,16 @@ MonoBehaviour:
   - name: SummonPanelObsidian
     outer:
       serializedVersion: 2
-      x: 678
-      y: 903
-      width: 273
-      height: 231
+      x: 169.5
+      y: 225.75
+      width: 68.25
+      height: 57.75
     inner:
       serializedVersion: 2
-      x: 813
-      y: 1038
-      width: 8
-      height: 6
+      x: 203.25
+      y: 259.5
+      width: 2
+      height: 1.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1144,16 +1154,16 @@ MonoBehaviour:
   - name: SummonPanelPlains
     outer:
       serializedVersion: 2
-      x: 678
-      y: 453
-      width: 249
-      height: 224
+      x: 170
+      y: 113
+      width: 62
+      height: 56
     inner:
       serializedVersion: 2
-      x: 798
-      y: 568
-      width: 9
-      height: 9
+      x: 200
+      y: 142
+      width: 2
+      height: 2
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1162,16 +1172,16 @@ MonoBehaviour:
   - name: SummonPanelSand
     outer:
       serializedVersion: 2
-      x: 952
-      y: 910
-      width: 249
-      height: 224
+      x: 238
+      y: 228
+      width: 62
+      height: 56
     inner:
       serializedVersion: 2
-      x: 1072
-      y: 1025
-      width: 9
-      height: 9
+      x: 268
+      y: 257
+      width: 2
+      height: 2
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1180,16 +1190,16 @@ MonoBehaviour:
   - name: SummonPanelSwamp
     outer:
       serializedVersion: 2
-      x: 678
-      y: 3
-      width: 249
-      height: 224
+      x: 169.5
+      y: 0.75
+      width: 62.25
+      height: 56
     inner:
       serializedVersion: 2
-      x: 798
-      y: 118
-      width: 9
-      height: 9
+      x: 199.5
+      y: 29.5
+      width: 2.25
+      height: 2.25
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1198,16 +1208,16 @@ MonoBehaviour:
   - name: Tab_PanelBG
     outer:
       serializedVersion: 2
-      x: 1376
-      y: 1627
-      width: 132
-      height: 107
+      x: 344
+      y: 406.75
+      width: 33
+      height: 26.75
     inner:
       serializedVersion: 2
-      x: 1426
-      y: 1677
-      width: 32
-      height: 7
+      x: 356.5
+      y: 419.25
+      width: 8
+      height: 1.75
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1216,16 +1226,16 @@ MonoBehaviour:
   - name: TextBoxBlue
     outer:
       serializedVersion: 2
-      x: 1646
-      y: 630
-      width: 67
-      height: 65
+      x: 411.5
+      y: 157.5
+      width: 16.75
+      height: 16.25
     inner:
       serializedVersion: 2
-      x: 1681
-      y: 665
-      width: -3
-      height: -5
+      x: 420.25
+      y: 166.25
+      width: -0.75
+      height: -1.25
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1234,16 +1244,16 @@ MonoBehaviour:
   - name: TextBoxRed
     outer:
       serializedVersion: 2
-      x: 1714
-      y: 630
-      width: 67
-      height: 65
+      x: 428.5
+      y: 157.5
+      width: 16.75
+      height: 16.25
     inner:
       serializedVersion: 2
-      x: 1749
-      y: 665
-      width: -3
-      height: -5
+      x: 437.25
+      y: 166.25
+      width: -0.75
+      height: -1.25
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1252,16 +1262,16 @@ MonoBehaviour:
   - name: Trophy
     outer:
       serializedVersion: 2
-      x: 952
-      y: 659
-      width: 205
-      height: 250
+      x: 238
+      y: 164.75
+      width: 51.25
+      height: 62.5
     inner:
       serializedVersion: 2
-      x: 952
-      y: 659
-      width: 205
-      height: 250
+      x: 238
+      y: 164.75
+      width: 51.25
+      height: 62.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1270,16 +1280,16 @@ MonoBehaviour:
   - name: Trophy2
     outer:
       serializedVersion: 2
-      x: 1285
-      y: 1210
-      width: 205
-      height: 250
+      x: 321.25
+      y: 302.5
+      width: 51.25
+      height: 62.5
     inner:
       serializedVersion: 2
-      x: 1285
-      y: 1210
-      width: 205
-      height: 250
+      x: 321.25
+      y: 302.5
+      width: 51.25
+      height: 62.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1288,16 +1298,16 @@ MonoBehaviour:
   - name: TrophyBar
     outer:
       serializedVersion: 2
-      x: 1012
-      y: 1617
-      width: 177
-      height: 112
+      x: 253
+      y: 404.25
+      width: 44.25
+      height: 28
     inner:
       serializedVersion: 2
-      x: 1012
-      y: 1617
-      width: 177
-      height: 112
+      x: 253
+      y: 404.25
+      width: 44.25
+      height: 28
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1306,16 +1316,16 @@ MonoBehaviour:
   - name: UI_Anvil
     outer:
       serializedVersion: 2
-      x: 1736
-      y: 1730
-      width: 210
-      height: 318
+      x: 434
+      y: 432.5
+      width: 52.5
+      height: 79.5
     inner:
       serializedVersion: 2
-      x: 1736
-      y: 1730
-      width: 210
-      height: 318
+      x: 434
+      y: 432.5
+      width: 52.5
+      height: 79.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1324,16 +1334,16 @@ MonoBehaviour:
   - name: UI_ColorlessIcon
     outer:
       serializedVersion: 2
-      x: 1309
-      y: 129
-      width: 110
-      height: 110
+      x: 327.25
+      y: 32.25
+      width: 27.5
+      height: 27.5
     inner:
       serializedVersion: 2
-      x: 1309
-      y: 129
-      width: 110
-      height: 110
+      x: 327.25
+      y: 32.25
+      width: 27.5
+      height: 27.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1342,16 +1352,16 @@ MonoBehaviour:
   - name: UI_CornIcon
     outer:
       serializedVersion: 2
-      x: 1309
-      y: 351
-      width: 110
-      height: 110
+      x: 327.25
+      y: 87.75
+      width: 27.5
+      height: 27.5
     inner:
       serializedVersion: 2
-      x: 1309
-      y: 351
-      width: 110
-      height: 110
+      x: 327.25
+      y: 87.75
+      width: 27.5
+      height: 27.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1360,16 +1370,16 @@ MonoBehaviour:
   - name: UI_CottonIcon
     outer:
       serializedVersion: 2
-      x: 1309
-      y: 240
-      width: 110
-      height: 110
+      x: 327
+      y: 60
+      width: 28
+      height: 28
     inner:
       serializedVersion: 2
-      x: 1309
-      y: 240
-      width: 110
-      height: 110
+      x: 327
+      y: 60
+      width: 28
+      height: 28
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1378,16 +1388,16 @@ MonoBehaviour:
   - name: UI_PlainsIcon
     outer:
       serializedVersion: 2
-      x: 1309
-      y: 462
-      width: 110
-      height: 110
+      x: 327
+      y: 116
+      width: 28
+      height: 28
     inner:
       serializedVersion: 2
-      x: 1309
-      y: 462
-      width: 110
-      height: 110
+      x: 327
+      y: 116
+      width: 28
+      height: 28
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1396,16 +1406,16 @@ MonoBehaviour:
   - name: UI_SandIcon
     outer:
       serializedVersion: 2
-      x: 1847
-      y: 1619
-      width: 110
-      height: 110
+      x: 462
+      y: 405
+      width: 28
+      height: 28
     inner:
       serializedVersion: 2
-      x: 1847
-      y: 1619
-      width: 110
-      height: 110
+      x: 462
+      y: 405
+      width: 28
+      height: 28
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1414,16 +1424,16 @@ MonoBehaviour:
   - name: UI_Star_Full
     outer:
       serializedVersion: 2
-      x: 1158
-      y: 108
-      width: 128
-      height: 128
+      x: 289.5
+      y: 27
+      width: 32
+      height: 32
     inner:
       serializedVersion: 2
-      x: 1158
-      y: 108
-      width: 128
-      height: 128
+      x: 289.5
+      y: 27
+      width: 32
+      height: 32
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1432,16 +1442,16 @@ MonoBehaviour:
   - name: UI_SwampIcon
     outer:
       serializedVersion: 2
-      x: 1736
-      y: 1619
-      width: 110
-      height: 110
+      x: 434
+      y: 404.75
+      width: 27.5
+      height: 27.5
     inner:
       serializedVersion: 2
-      x: 1736
-      y: 1619
-      width: 110
-      height: 110
+      x: 434
+      y: 404.75
+      width: 27.5
+      height: 27.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1450,16 +1460,16 @@ MonoBehaviour:
   - name: uiButtonBlue
     outer:
       serializedVersion: 2
-      x: 1158
-      y: 537
-      width: 150
-      height: 158
+      x: 289.5
+      y: 134.25
+      width: 37.5
+      height: 39.5
     inner:
       serializedVersion: 2
-      x: 1228
-      y: 597
-      width: 20
-      height: 8
+      x: 307
+      y: 149.25
+      width: 5
+      height: 2
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1468,16 +1478,16 @@ MonoBehaviour:
   - name: uiButtonDarkBlue
     outer:
       serializedVersion: 2
-      x: 1739
-      y: 751
-      width: 150
-      height: 158
+      x: 434.75
+      y: 187.75
+      width: 37.5
+      height: 39.5
     inner:
       serializedVersion: 2
-      x: 1809
-      y: 811
-      width: 20
-      height: 8
+      x: 452.25
+      y: 202.75
+      width: 5
+      height: 2
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1486,16 +1496,16 @@ MonoBehaviour:
   - name: uiButtonFrame
     outer:
       serializedVersion: 2
-      x: 1588
-      y: 751
-      width: 150
-      height: 158
+      x: 397
+      y: 187.75
+      width: 37.5
+      height: 39.5
     inner:
       serializedVersion: 2
-      x: 1658
-      y: 811
-      width: 20
-      height: 8
+      x: 414.5
+      y: 202.75
+      width: 5
+      height: 2
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1504,16 +1514,16 @@ MonoBehaviour:
   - name: uiButtonGold
     outer:
       serializedVersion: 2
-      x: 490
-      y: 16
-      width: 150
-      height: 158
+      x: 122.5
+      y: 4
+      width: 37.5
+      height: 39.5
     inner:
       serializedVersion: 2
-      x: 560
-      y: 22
-      width: 20
-      height: 62
+      x: 140
+      y: 5.5
+      width: 5
+      height: 15.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1522,16 +1532,16 @@ MonoBehaviour:
   - name: uiButtonGreen
     outer:
       serializedVersion: 2
-      x: 1158
-      y: 378
-      width: 150
-      height: 158
+      x: 289.5
+      y: 94.5
+      width: 37.5
+      height: 39.5
     inner:
       serializedVersion: 2
-      x: 1228
-      y: 438
-      width: 20
-      height: 8
+      x: 307
+      y: 109.5
+      width: 5
+      height: 2
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1540,16 +1550,16 @@ MonoBehaviour:
   - name: uiButtonGrey
     outer:
       serializedVersion: 2
-      x: 339
-      y: 16
-      width: 150
-      height: 158
+      x: 84.75
+      y: 4
+      width: 37.5
+      height: 39.5
     inner:
       serializedVersion: 2
-      x: 409
-      y: 76
-      width: 20
-      height: 8
+      x: 102.25
+      y: 19
+      width: 5
+      height: 2
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1558,16 +1568,16 @@ MonoBehaviour:
   - name: uiButtonRed
     outer:
       serializedVersion: 2
-      x: 1890
-      y: 751
-      width: 150
-      height: 158
+      x: 472.5
+      y: 187.75
+      width: 37.5
+      height: 39.5
     inner:
       serializedVersion: 2
-      x: 1960
-      y: 811
-      width: 20
-      height: 8
+      x: 490
+      y: 202.75
+      width: 5
+      height: 2
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1577,15 +1587,15 @@ MonoBehaviour:
     outer:
       serializedVersion: 2
       x: 0
-      y: 1615
-      width: 512
-      height: 433
+      y: 403.75
+      width: 128
+      height: 108.25
     inner:
       serializedVersion: 2
       x: 0
-      y: 1615
-      width: 512
-      height: 433
+      y: 403.75
+      width: 128
+      height: 108.25
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1594,16 +1604,16 @@ MonoBehaviour:
   - name: Frame_FC
     outer:
       serializedVersion: 2
-      x: 339
-      y: 1135
-      width: 338
-      height: 479
+      x: 84.75
+      y: 283.75
+      width: 84.5
+      height: 119.75
     inner:
       serializedVersion: 2
-      x: 339
-      y: 1135
-      width: 338
-      height: 479
+      x: 84.75
+      y: 283.75
+      width: 84.5
+      height: 119.75
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
@@ -1612,21 +1622,21 @@ MonoBehaviour:
   - name: SummonPanelFC
     outer:
       serializedVersion: 2
-      x: 1496
-      y: 1382
-      width: 274
-      height: 232
+      x: 374
+      y: 345.5
+      width: 68.5
+      height: 58
     inner:
       serializedVersion: 2
-      x: 1666
-      y: 1565
-      width: 24
-      height: 6
+      x: 416.5
+      y: 391.25
+      width: 6
+      height: 1.5
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
   mCoordinates: 0
-  mPixelSize: 1
+  mPixelSize: 4
   mReplacement: {fileID: 0}

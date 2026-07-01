@@ -46,6 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Editor\OptimizationTools\Audio3DSOrganizer.cs" />
+     <Compile Include="Assets\Editor\OptimizationTools\MassAtlasFixer.cs" />
+     <Compile Include="Assets\Editor\OptimizationTools\SpriteAtlasResizer.cs" />
+     <Compile Include="Assets\Editor\OptimizationTools\Texture3DSOptimizer.cs" />
      <Compile Include="Assets\Editor\RID-Tools\RIDToolsCore.cs" />
      <Compile Include="Assets\Editor\RID-Tools\UI\configMenu.cs" />
      <Compile Include="Assets\Editor\RID-Tools\tools\AutoBuildHook.cs" />
