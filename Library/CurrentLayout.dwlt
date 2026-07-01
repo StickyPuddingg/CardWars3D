@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 8}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -62,8 +62,8 @@ MonoBehaviour:
     y: 0
     width: 632
     height: 341
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -191,7 +191,7 @@ MonoBehaviour:
     y: 0
     width: 1707
     height: 877
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &9
 MonoBehaviour:
@@ -371,19 +371,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Editor/RID-Tools/ExtTools/boot9
+    - Assets/Texture2D/2048x2048
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Editor/RID-Tools/ExtTools/boot9
+  - Assets/Texture2D/2048x2048
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\carlo\OneDrive\Desktop\dev3ds\Practice\CardWars3D
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 111}
-    m_SelectedIDs: 3cb50100
-    m_LastClickedID: 111932
-    m_ExpandedIDs: 00000000d83b000042500000085600005e580000ca92000012df000068250100f02e010084480100f88901003e9c0100fed7010016df01008621020070500200ac6902007c6b020082740200ee7c020000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 384}
+    m_SelectedIDs: 02b10300
+    m_LastClickedID: 241922
+    m_ExpandedIDs: 74a90300c4ae030030b40300aeb4030006b5030000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -411,7 +411,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d83b000042500000085600005e580000ca92000012df0000f02e010084480100f88901003e9c0100fed7010016df01008621020070500200ac6902007c6b020082740200ee7c0200
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -492,7 +492,7 @@ MonoBehaviour:
     y: 92
     width: 484
     height: 806
-  m_ScrollPosition: {x: 0, y: 0}
+  m_ScrollPosition: {x: 0, y: 106.95508}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 346
@@ -527,9 +527,9 @@ MonoBehaviour:
     height: 320
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c8020100
+    m_SelectedIDs: 887f0300
     m_LastClickedID: 0
-    m_ExpandedIDs: e6fbffff00000000
+    m_ExpandedIDs: e6b6f9ff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -548,7 +548,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 6}
     m_SearchString: 
   m_ExpandedScenes:
-  - StartupScene
+  - 
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -584,9 +584,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.9779863, y: 6.367447, z: -37.075302}
+    m_Target: {x: 0, y: 0, z: 0}
     speed: 2
-    m_Value: {x: 2.9779863, y: 6.367447, z: -37.075302}
+    m_Value: {x: 0, y: 0, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -609,13 +609,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.021429703, y: -0.20547673, z: 0.004500138, w: -0.978417}
+    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
     speed: 2
-    m_Value: {x: -0.021429703, y: -0.20547672, z: 0.0045001376, w: -0.9784169}
+    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_Size:
-    m_Target: 30.237724
+    m_Target: 10
     speed: 2
-    m_Value: 30.237724
+    m_Value: 10
   m_Ortho:
     m_Target: 0
     speed: 2
