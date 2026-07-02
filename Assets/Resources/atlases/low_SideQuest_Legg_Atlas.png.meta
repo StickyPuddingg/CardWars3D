@@ -7,17 +7,14 @@ TextureImporter:
     21300000: SideQuest_Legg_done
     21300002: SideQuest_Legg_give
     21300004: SideQuest_Legg_item
-  externalObjects: {}
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
-    mipMapsPreserveCoverage: 0
-    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
@@ -33,13 +30,10 @@ TextureImporter:
   textureFormat: 47
   maxTextureSize: 512
   textureSettings:
-    serializedVersion: 2
     filterMode: 2
     aniso: 16
     mipBias: 0
-    wrapU: 1
-    wrapV: 0
-    wrapW: 0
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -61,14 +55,28 @@ TextureImporter:
   platformSettings:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Nintendo 3DS
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -99,7 +107,6 @@ TextureImporter:
         - {x: 98.75, y: -23.75}
         - {x: 34.75, y: -104.75}
         - {x: 33.75, y: -105.75}
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SideQuest_Legg_give
@@ -127,7 +134,6 @@ TextureImporter:
         - {x: 57.5, y: 81.25}
         - {x: 57.5, y: -49.75}
         - {x: 32.5, y: -86.75}
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: SideQuest_Legg_item
@@ -147,11 +153,9 @@ TextureImporter:
         - {x: -15.25, y: 59}
         - {x: 21.75, y: 59}
         - {x: 21.75, y: -59}
-      physicsShape: []
       tessellationDetail: 0
     outline: []
-    physicsShape: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

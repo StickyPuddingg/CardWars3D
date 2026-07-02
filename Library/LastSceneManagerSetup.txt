@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/Scenes/StartupScene.unity
+- path: Assets/CustomStuff/CustomScenes/LightmapExample/Scene.unity
   isLoaded: 1
   isActive: 1

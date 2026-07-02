@@ -212492,7 +212492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mDepth: -2
+  mDepth: -1
   mAtlas: {fileID: 114575805489713504, guid: f397b66df3225004ea74d8d904f3e30e, type: 2}
   mSpriteName: Frame_Cost
   mFillCenter: 1
@@ -234676,13 +234676,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f9953326bd025419c4cc37a455f1af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IAPScripts:
-  - {fileID: 9547}
-  - {fileID: 10269}
-  - {fileID: 9122}
-  - {fileID: 9457}
-  - {fileID: 9524}
-  - {fileID: 9292}
 --- !u!114 &8435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235196,7 +235189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mDepth: 1
+  mDepth: -1
   mAtlas: {fileID: 114575805489713504, guid: f397b66df3225004ea74d8d904f3e30e, type: 2}
   mSpriteName: Frame_Cost
   mFillCenter: 1
@@ -239639,7 +239632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mDepth: -2
+  mDepth: -1
   mAtlas: {fileID: 114575805489713504, guid: f397b66df3225004ea74d8d904f3e30e, type: 2}
   mSpriteName: Frame_Cost
   mFillCenter: 1
@@ -244603,7 +244596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mDepth: -2
+  mDepth: -1
   mAtlas: {fileID: 114575805489713504, guid: f397b66df3225004ea74d8d904f3e30e, type: 2}
   mSpriteName: Frame_Cost
   mFillCenter: 1
@@ -264188,13 +264181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f9953326bd025419c4cc37a455f1af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IAPScripts:
-  - {fileID: 9196}
-  - {fileID: 10764}
-  - {fileID: 9270}
-  - {fileID: 8855}
-  - {fileID: 10130}
-  - {fileID: 10135}
 --- !u!114 &9622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268084,13 +268070,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f9953326bd025419c4cc37a455f1af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IAPScripts:
-  - {fileID: 10193}
-  - {fileID: 11175}
-  - {fileID: 9203}
-  - {fileID: 10793}
-  - {fileID: 10396}
-  - {fileID: 9111}
 --- !u!114 &9777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273992,13 +273971,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f9953326bd025419c4cc37a455f1af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IAPScripts:
-  - {fileID: 11203}
-  - {fileID: 9855}
-  - {fileID: 8233}
-  - {fileID: 11234}
-  - {fileID: 7672}
-  - {fileID: 9083}
 --- !u!114 &10007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275946,7 +275918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mDepth: -2
+  mDepth: -1
   mAtlas: {fileID: 114575805489713504, guid: f397b66df3225004ea74d8d904f3e30e, type: 2}
   mSpriteName: Frame_Cost
   mFillCenter: 1
@@ -278376,7 +278348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mDepth: 40
+  mDepth: -1
   mAtlas: {fileID: 114575805489713504, guid: f397b66df3225004ea74d8d904f3e30e, type: 2}
   mSpriteName: Frame_Cost
   mFillCenter: 1
@@ -278668,7 +278640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mDepth: -2
+  mDepth: -1
   mAtlas: {fileID: 114575805489713504, guid: f397b66df3225004ea74d8d904f3e30e, type: 2}
   mSpriteName: Frame_Cost
   mFillCenter: 1
@@ -281387,7 +281359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mDepth: -2
+  mDepth: -1
   mAtlas: {fileID: 114575805489713504, guid: f397b66df3225004ea74d8d904f3e30e, type: 2}
   mSpriteName: Frame_Cost
   mFillCenter: 1
@@ -288969,7 +288941,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aeef1021ee4d4446aac19a71f9b1738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisplayTest: 0
 --- !u!114 &10602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304033,7 +304004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mDepth: -2
+  mDepth: -1
   mAtlas: {fileID: 114575805489713504, guid: f397b66df3225004ea74d8d904f3e30e, type: 2}
   mSpriteName: Frame_Cost
   mFillCenter: 1
@@ -308275,7 +308246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 510dc3eea75536749aa5fbf67b4bd412, type: 3}
+  - {fileID: 0}
   playOnStartIndex: 0
 --- !u!114 &11340
 MonoBehaviour:

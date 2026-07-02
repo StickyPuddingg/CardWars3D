@@ -90050,9 +90050,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b899c844921b7fe4abccccf42dd93ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PurchaseID: AT_IAP_GEMS_04b
-  PurchaseAndroidID: at_iap_gems_04
-  AllowPurchase: 0
 --- !u!114 &5191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96238,7 +96235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mDepth: -1
+  mDepth: 0
   mAtlas: {fileID: 114701569404531339, guid: 0487b636331d77b4f9ae81fa14fa7167, type: 2}
   mSpriteName: Frame_Cost
   mFillCenter: 1
@@ -97618,13 +97615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f9953326bd025419c4cc37a455f1af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IAPScripts:
-  - {fileID: 7107}
-  - {fileID: 5602}
-  - {fileID: 6914}
-  - {fileID: 8044}
-  - {fileID: 6083}
-  - {fileID: 7875}
 --- !u!114 &5516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99707,9 +99697,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b899c844921b7fe4abccccf42dd93ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PurchaseID: AT_IAP_GEMS_02b
-  PurchaseAndroidID: at_iap_gems_02
-  AllowPurchase: 0
 --- !u!114 &5603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110298,9 +110285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b899c844921b7fe4abccccf42dd93ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PurchaseID: AT_IAP_GEMS_05b
-  PurchaseAndroidID: at_iap_gems_05
-  AllowPurchase: 0
 --- !u!114 &6084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119391,9 +119375,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b899c844921b7fe4abccccf42dd93ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PurchaseID: AT_IAP_GEMS_06b
-  PurchaseAndroidID: at_iap_gems_06
-  AllowPurchase: 0
 --- !u!114 &6463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120492,8 +120473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c8cd6fe60521b848a6cb9b44f6f6266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Context: replay_battle
-  Activation: 0
 --- !u!114 &6515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130310,9 +130289,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b899c844921b7fe4abccccf42dd93ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PurchaseID: AT_IAP_GEMS_03b
-  PurchaseAndroidID: at_iap_gems_03
-  AllowPurchase: 0
 --- !u!114 &6915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135058,9 +135034,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b899c844921b7fe4abccccf42dd93ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PurchaseID: AT_IAP_GEMS_01b
-  PurchaseAndroidID: at_iap_gems_01
-  AllowPurchase: 0
 --- !u!114 &7108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138392,13 +138365,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f9953326bd025419c4cc37a455f1af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IAPScripts:
-  - {fileID: 7336}
-  - {fileID: 7726}
-  - {fileID: 8075}
-  - {fileID: 5190}
-  - {fileID: 7864}
-  - {fileID: 6462}
 --- !u!114 &7259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140346,9 +140312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b899c844921b7fe4abccccf42dd93ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PurchaseID: AT_IAP_GEMS_01b
-  PurchaseAndroidID: at_iap_gems_01
-  AllowPurchase: 0
 --- !u!114 &7337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149626,9 +149589,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b899c844921b7fe4abccccf42dd93ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PurchaseID: AT_IAP_GEMS_02b
-  PurchaseAndroidID: at_iap_gems_02
-  AllowPurchase: 0
 --- !u!114 &7727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152777,9 +152737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b899c844921b7fe4abccccf42dd93ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PurchaseID: AT_IAP_GEMS_05b
-  PurchaseAndroidID: at_iap_gems_05
-  AllowPurchase: 0
 --- !u!114 &7865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152989,9 +152946,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b899c844921b7fe4abccccf42dd93ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PurchaseID: AT_IAP_GEMS_06b
-  PurchaseAndroidID: at_iap_gems_06
-  AllowPurchase: 0
 --- !u!114 &7876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157126,9 +157080,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b899c844921b7fe4abccccf42dd93ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PurchaseID: AT_IAP_GEMS_04b
-  PurchaseAndroidID: at_iap_gems_04
-  AllowPurchase: 0
 --- !u!114 &8045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157830,9 +157781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b899c844921b7fe4abccccf42dd93ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PurchaseID: AT_IAP_GEMS_03b
-  PurchaseAndroidID: at_iap_gems_03
-  AllowPurchase: 0
 --- !u!114 &8076
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Editor\OptimizationTools\Audio3DSOrganizer.cs" />
      <Compile Include="Assets\Editor\OptimizationTools\MassAtlasFixer.cs" />
+     <Compile Include="Assets\Editor\OptimizationTools\RemoveLowVariants.cs" />
      <Compile Include="Assets\Editor\OptimizationTools\SpriteAtlasResizer.cs" />
      <Compile Include="Assets\Editor\OptimizationTools\Texture3DSOptimizer.cs" />
      <Compile Include="Assets\Editor\RID-Tools\RIDToolsCore.cs" />
@@ -116,6 +117,7 @@
      <None Include="Assets\Resources\shaders\Unlit - Dynamic Font (SoftClip).shader" />
      <None Include="Assets\Editor\RID-Tools\ExtTools\boot9\place your boo9.bin here.txt" />
      <None Include="Assets\Editor\RID-Tools\ExtTools\comercialreleases.xml" />
+     <None Include="Assets\CustomStuff\CustomScenes\LightmapExample\Simple.shader" />
      <None Include="Assets\Resources\shaders\Unlit - Transparent Colored (Packed).shader" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
