@@ -1,0 +1,346 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1657454058162915}
+  m_IsPrefabParent: 1
+--- !u!1 &1657454058162915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4063917294592946}
+  - component: {fileID: 114951927500856494}
+  m_Layer: 0
+  m_Name: BannersAtlas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4063917294592946
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1657454058162915}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114951927500856494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1657454058162915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9302d66c6ec4a0b4cb9c85efd0477c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 95507dbf6f08f4b4c87614bf307445b0, type: 2}
+  sprites:
+  - name: LoseBanner_Straight
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 416
+      width: 193
+      height: 45
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 416
+      width: 193
+      height: 45
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Spinner_Fish
+    outer:
+      serializedVersion: 2
+      x: 129.75
+      y: 321
+      width: 32.25
+      height: 94.25
+    inner:
+      serializedVersion: 2
+      x: 129.75
+      y: 321
+      width: 32.25
+      height: 94.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0.0019379845
+    paddingTop: 0
+    paddingBottom: 0
+  - name: RedGem2
+    outer:
+      serializedVersion: 2
+      x: 197.25
+      y: 483.25
+      width: 36.75
+      height: 28.75
+    inner:
+      serializedVersion: 2
+      x: 197.25
+      y: 483.25
+      width: 36.75
+      height: 28.75
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0.0017006802
+    paddingTop: 0
+    paddingBottom: 0.002173913
+  - name: Spinner_Pizza
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 138.75
+      width: 32.75
+      height: 90.5
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 138.75
+      width: 32.75
+      height: 90.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Spinner_Ketchup_Shadow
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 318.25
+      width: 33
+      height: 97
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 318.25
+      width: 33
+      height: 97
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Spinner_Shard_Shadow
+    outer:
+      serializedVersion: 2
+      x: 170.25
+      y: 232.5
+      width: 27.25
+      height: 85.5
+    inner:
+      serializedVersion: 2
+      x: 170.25
+      y: 232.5
+      width: 27.25
+      height: 85.5
+    rotated: 0
+    paddingLeft: 0.018348623
+    paddingRight: 0.02522935
+    paddingTop: 0.0124269
+    paddingBottom: 0.023391813
+  - name: Spinner_Fish_Shadow
+    outer:
+      serializedVersion: 2
+      x: 162.25
+      y: 321
+      width: 32.25
+      height: 94.25
+    inner:
+      serializedVersion: 2
+      x: 162.25
+      y: 321
+      width: 32.25
+      height: 94.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0.0058139525
+    paddingTop: 0.00066313
+    paddingBottom: 0
+  - name: Spinner_Sword
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 229.5
+      width: 33.75
+      height: 88.5
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 229.5
+      width: 33.75
+      height: 88.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0.0042372877
+    paddingBottom: 0.0014124295
+  - name: Win_Banner2
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 460.75
+      width: 197
+      height: 51.25
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 460.75
+      width: 197
+      height: 51.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0.0036585375
+    paddingBottom: 0.0036585375
+  - name: Spinner_Hotdog
+    outer:
+      serializedVersion: 2
+      x: 65.5
+      y: 319
+      width: 32
+      height: 96.25
+    inner:
+      serializedVersion: 2
+      x: 65.5
+      y: 319
+      width: 32
+      height: 96.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0.00064935075
+    paddingBottom: 0.0032467525
+  - name: WinBanner_Text
+    outer:
+      serializedVersion: 2
+      x: 34
+      y: 294.75
+      width: 108.5
+      height: 23.25
+    inner:
+      serializedVersion: 2
+      x: 34
+      y: 294.75
+      width: 108.5
+      height: 23.25
+    rotated: 0
+    paddingLeft: 0.0011520737
+    paddingRight: 0.0011520737
+    paddingTop: 0.0376344
+    paddingBottom: 0.034946226
+  - name: Spinner_Shard
+    outer:
+      serializedVersion: 2
+      x: 142.75
+      y: 232.5
+      width: 27.25
+      height: 85.5
+    inner:
+      serializedVersion: 2
+      x: 142.75
+      y: 232.5
+      width: 27.25
+      height: 85.5
+    rotated: 0
+    paddingLeft: 0.018348623
+    paddingRight: 0.02522935
+    paddingTop: 0.0124269
+    paddingBottom: 0.023391813
+  - name: Spinner_Hotdog_Shadow
+    outer:
+      serializedVersion: 2
+      x: 33.25
+      y: 319
+      width: 32
+      height: 96.25
+    inner:
+      serializedVersion: 2
+      x: 33.25
+      y: 319
+      width: 32
+      height: 96.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0.00064935075
+    paddingBottom: 0.0032467525
+  - name: Spinner_Ketchup
+    outer:
+      serializedVersion: 2
+      x: 97.75
+      y: 318.25
+      width: 31.75
+      height: 97
+    inner:
+      serializedVersion: 2
+      x: 97.75
+      y: 318.25
+      width: 31.75
+      height: 97
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Spinner_Sword_Shadow
+    outer:
+      serializedVersion: 2
+      x: 194.75
+      y: 326.75
+      width: 33.75
+      height: 88.5
+    inner:
+      serializedVersion: 2
+      x: 194.75
+      y: 326.75
+      width: 33.75
+      height: 88.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0.0042372877
+    paddingBottom: 0.0014124295
+  - name: Spinner_Pizza_Shadow
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 48
+      width: 32.5
+      height: 90.5
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 48
+      width: 32.5
+      height: 90.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0.00069060776
+  mCoordinates: 0
+  mPixelSize: 1
+  mReplacement: {fileID: 0}

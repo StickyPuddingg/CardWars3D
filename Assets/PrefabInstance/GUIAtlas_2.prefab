@@ -1,0 +1,1642 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1099911298176470}
+  m_IsPrefabParent: 1
+--- !u!1 &1099911298176470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4731262779841965}
+  - component: {fileID: 114701569404531339}
+  m_Layer: 8
+  m_Name: GUIAtlas_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4731262779841965
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1099911298176470}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114701569404531339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1099911298176470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9302d66c6ec4a0b4cb9c85efd0477c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: bac394d684486c94b8812000e926e103, type: 2}
+  sprites:
+  - name: Button_Back
+    outer:
+      serializedVersion: 2
+      x: 290
+      y: 174
+      width: 54
+      height: 53
+    inner:
+      serializedVersion: 2
+      x: 290
+      y: 174
+      width: 54
+      height: 53
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Button_Back_Gold
+    outer:
+      serializedVersion: 2
+      x: 426
+      y: 230
+      width: 54
+      height: 53
+    inner:
+      serializedVersion: 2
+      x: 426
+      y: 230
+      width: 54
+      height: 53
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Button_Delete
+    outer:
+      serializedVersion: 2
+      x: 238
+      y: 17.5
+      width: 44.25
+      height: 50.5
+    inner:
+      serializedVersion: 2
+      x: 238
+      y: 17.5
+      width: 44.25
+      height: 50.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Combat_Icon_ATK
+    outer:
+      serializedVersion: 2
+      x: 489.5
+      y: 404
+      width: 15.25
+      height: 28.25
+    inner:
+      serializedVersion: 2
+      x: 489.5
+      y: 404
+      width: 15.25
+      height: 28.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Combat_Icon_DEF
+    outer:
+      serializedVersion: 2
+      x: 289.5
+      y: 5.5
+      width: 18
+      height: 21.25
+    inner:
+      serializedVersion: 2
+      x: 289.5
+      y: 5.5
+      width: 18
+      height: 21.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Craft_Anvil
+    outer:
+      serializedVersion: 2
+      x: 253
+      y: 432.5
+      width: 90.75
+      height: 79.5
+    inner:
+      serializedVersion: 2
+      x: 265.5
+      y: 432.5
+      width: 5.75
+      height: 79.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Craft_Badge
+    outer:
+      serializedVersion: 2
+      x: 375
+      y: 155.25
+      width: 18.25
+      height: 18.5
+    inner:
+      serializedVersion: 2
+      x: 375
+      y: 155.25
+      width: 18.25
+      height: 18.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Craft_Button
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 6.5
+      width: 78.75
+      height: 37
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 6.5
+      width: 78.75
+      height: 37
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Craft_CheckMark
+    outer:
+      serializedVersion: 2
+      x: 355.25
+      y: 112
+      width: 14
+      height: 15.25
+    inner:
+      serializedVersion: 2
+      x: 355.25
+      y: 112
+      width: 14
+      height: 15.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Craft_MaterialCardsFrame
+    outer:
+      serializedVersion: 2
+      x: 327.25
+      y: 143.25
+      width: 27.75
+      height: 30.5
+    inner:
+      serializedVersion: 2
+      x: 337.25
+      y: 153.25
+      width: 7.75
+      height: 10.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Craft_MaterialsFrame
+    outer:
+      serializedVersion: 2
+      x: 344
+      y: 175.25
+      width: 52.75
+      height: 52
+    inner:
+      serializedVersion: 2
+      x: 364
+      y: 195.25
+      width: 12.75
+      height: 12
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Craft_NewCardBadge
+    outer:
+      serializedVersion: 2
+      x: 211
+      y: 404.5
+      width: 33.25
+      height: 32.5
+    inner:
+      serializedVersion: 2
+      x: 211
+      y: 404.5
+      width: 33.25
+      height: 32.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Craft_NoRecipe
+    outer:
+      serializedVersion: 2
+      x: 486.75
+      y: 438.5
+      width: 20.5
+      height: 35.75
+    inner:
+      serializedVersion: 2
+      x: 486.75
+      y: 438.5
+      width: 20.5
+      height: 35.75
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Craft_ScrollBar
+    outer:
+      serializedVersion: 2
+      x: 133.5
+      y: 405
+      width: 4
+      height: 1.75
+    inner:
+      serializedVersion: 2
+      x: 134.75
+      y: 405.5
+      width: 1.5
+      height: 0.75
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Craft_ScrollBarBg
+    outer:
+      serializedVersion: 2
+      x: 133.5
+      y: 407
+      width: 7
+      height: 3.25
+    inner:
+      serializedVersion: 2
+      x: 136
+      y: 408.25
+      width: 2
+      height: 0.75
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Craft_Tongs
+    outer:
+      serializedVersion: 2
+      x: 128.25
+      y: 410.5
+      width: 82.5
+      height: 26.5
+    inner:
+      serializedVersion: 2
+      x: 128.25
+      y: 410.5
+      width: 82.5
+      height: 26.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: CW_Blank
+    outer:
+      serializedVersion: 2
+      x: 128.25
+      y: 405.25
+      width: 5
+      height: 5
+    inner:
+      serializedVersion: 2
+      x: 128.75
+      y: 405.75
+      width: 4
+      height: 4
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: CW_Grey
+    outer:
+      serializedVersion: 2
+      x: 355.25
+      y: 127.5
+      width: 16
+      height: 16
+    inner:
+      serializedVersion: 2
+      x: 357.75
+      y: 130
+      width: 11
+      height: 11
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: CW_White
+    outer:
+      serializedVersion: 2
+      x: 478.25
+      y: 157.75
+      width: 16
+      height: 16
+    inner:
+      serializedVersion: 2
+      x: 479.5
+      y: 159
+      width: 13.5
+      height: 13.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Deck_ArrowLeft
+    outer:
+      serializedVersion: 2
+      x: 327.25
+      y: 2
+      width: 19.5
+      height: 30
+    inner:
+      serializedVersion: 2
+      x: 327.25
+      y: 2
+      width: 19.5
+      height: 30
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Deck_ArrowRight
+    outer:
+      serializedVersion: 2
+      x: 355.25
+      y: 143.75
+      width: 19.5
+      height: 30
+    inner:
+      serializedVersion: 2
+      x: 355.25
+      y: 143.75
+      width: 19.5
+      height: 30
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: EmptyCardSlot
+    outer:
+      serializedVersion: 2
+      x: 462
+      y: 157.75
+      width: 16
+      height: 16
+    inner:
+      serializedVersion: 2
+      x: 467
+      y: 162.75
+      width: 6
+      height: 6
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: FloopInfo
+    outer:
+      serializedVersion: 2
+      x: 363
+      y: 236.25
+      width: 62.25
+      height: 47.25
+    inner:
+      serializedVersion: 2
+      x: 395.5
+      y: 236.25
+      width: 4.75
+      height: 47.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Frame_Christmas
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 163.75
+      width: 84.5
+      height: 119.75
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 163.75
+      width: 84.5
+      height: 119.75
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Frame_Colorless
+    outer:
+      serializedVersion: 2
+      x: 84.75
+      y: 43.75
+      width: 84.5
+      height: 119.75
+    inner:
+      serializedVersion: 2
+      x: 84.75
+      y: 43.75
+      width: 84.5
+      height: 119.75
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Frame_Combat
+    outer:
+      serializedVersion: 2
+      x: 397
+      y: 175
+      width: 18.75
+      height: 12.5
+    inner:
+      serializedVersion: 2
+      x: 397
+      y: 175
+      width: 18.75
+      height: 12.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Frame_Cost
+    outer:
+      serializedVersion: 2
+      x: 445.5
+      y: 157.5
+      width: 16.25
+      height: 16.25
+    inner:
+      serializedVersion: 2
+      x: 445.5
+      y: 157.5
+      width: 16.25
+      height: 16.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Frame_Gold
+    outer:
+      serializedVersion: 2
+      x: 84.75
+      y: 163.75
+      width: 84.5
+      height: 119.75
+    inner:
+      serializedVersion: 2
+      x: 84.75
+      y: 163.75
+      width: 84.5
+      height: 119.75
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Frame_Halloween
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 43.75
+      width: 84.5
+      height: 119.75
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 43.75
+      width: 84.5
+      height: 119.75
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Frame_Indent
+    outer:
+      serializedVersion: 2
+      x: 238
+      y: 115.25
+      width: 49.25
+      height: 49.25
+    inner:
+      serializedVersion: 2
+      x: 260.5
+      y: 137.75
+      width: 4.25
+      height: 4.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Frame_Obsidian
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 283.75
+      width: 84.5
+      height: 119.75
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 283.75
+      width: 84.5
+      height: 119.75
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Frame_White
+    outer:
+      serializedVersion: 2
+      x: 169.5
+      y: 283.75
+      width: 84.5
+      height: 119.75
+    inner:
+      serializedVersion: 2
+      x: 169.5
+      y: 283.75
+      width: 84.5
+      height: 119.75
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: GoldPlaque
+    outer:
+      serializedVersion: 2
+      x: 254.25
+      y: 365.25
+      width: 119.5
+      height: 38.25
+    inner:
+      serializedVersion: 2
+      x: 323
+      y: 365.25
+      width: 7
+      height: 38.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: GsBox
+    outer:
+      serializedVersion: 2
+      x: 480
+      y: 243.75
+      width: 31.5
+      height: 39.75
+    inner:
+      serializedVersion: 2
+      x: 480
+      y: 243.75
+      width: 31.5
+      height: 39.75
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: GsChest
+    outer:
+      serializedVersion: 2
+      x: 238
+      y: 68.25
+      width: 48
+      height: 46.75
+    inner:
+      serializedVersion: 2
+      x: 238
+      y: 68.25
+      width: 48
+      height: 46.75
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: GsFrame
+    outer:
+      serializedVersion: 2
+      x: 344
+      y: 433.75
+      width: 89.75
+      height: 78.25
+    inner:
+      serializedVersion: 2
+      x: 386.5
+      y: 471.25
+      width: 4.75
+      height: 3.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: GsGems
+    outer:
+      serializedVersion: 2
+      x: 480
+      y: 228.5
+      width: 23.5
+      height: 15
+    inner:
+      serializedVersion: 2
+      x: 480
+      y: 228.5
+      width: 23.5
+      height: 15
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: GsGems_3
+    outer:
+      serializedVersion: 2
+      x: 238
+      y: 2.25
+      width: 23.5
+      height: 15
+    inner:
+      serializedVersion: 2
+      x: 238
+      y: 2.25
+      width: 23.5
+      height: 15
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: GsGoblet
+    outer:
+      serializedVersion: 2
+      x: 486.75
+      y: 474.5
+      width: 20.75
+      height: 37.5
+    inner:
+      serializedVersion: 2
+      x: 486.75
+      y: 474.5
+      width: 20.75
+      height: 37.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: GsSkull
+    outer:
+      serializedVersion: 2
+      x: 377.25
+      y: 405
+      width: 29.25
+      height: 28.5
+    inner:
+      serializedVersion: 2
+      x: 377.25
+      y: 405
+      width: 29.25
+      height: 28.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: GsSlot
+    outer:
+      serializedVersion: 2
+      x: 406.75
+      y: 411.5
+      width: 20.25
+      height: 22
+    inner:
+      serializedVersion: 2
+      x: 415.5
+      y: 420.25
+      width: 2.75
+      height: 4.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: GsSpoon
+    outer:
+      serializedVersion: 2
+      x: 289.5
+      y: 59.25
+      width: 37.5
+      height: 35
+    inner:
+      serializedVersion: 2
+      x: 289.5
+      y: 59.25
+      width: 37.5
+      height: 35
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: GsTitle
+    outer:
+      serializedVersion: 2
+      x: 297.5
+      y: 409.25
+      width: 40
+      height: 23
+    inner:
+      serializedVersion: 2
+      x: 315
+      y: 409.25
+      width: 5
+      height: 23
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: IconBuildings
+    outer:
+      serializedVersion: 2
+      x: 321.25
+      y: 284.75
+      width: 21.5
+      height: 17.5
+    inner:
+      serializedVersion: 2
+      x: 321.25
+      y: 284.75
+      width: 21.5
+      height: 17.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: IconCreatures
+    outer:
+      serializedVersion: 2
+      x: 343
+      y: 284.75
+      width: 21.5
+      height: 17.5
+    inner:
+      serializedVersion: 2
+      x: 343
+      y: 284.75
+      width: 21.5
+      height: 17.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: IconLandscapes
+    outer:
+      serializedVersion: 2
+      x: 297.75
+      y: 285.5
+      width: 21.5
+      height: 17.5
+    inner:
+      serializedVersion: 2
+      x: 297.75
+      y: 285.5
+      width: 21.5
+      height: 17.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: IconLeaders
+    outer:
+      serializedVersion: 2
+      x: 276
+      y: 285.5
+      width: 21.5
+      height: 17.5
+    inner:
+      serializedVersion: 2
+      x: 276
+      y: 285.5
+      width: 21.5
+      height: 17.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: IconSpells
+    outer:
+      serializedVersion: 2
+      x: 254.25
+      y: 285.5
+      width: 21.5
+      height: 17.5
+    inner:
+      serializedVersion: 2
+      x: 254.25
+      y: 285.5
+      width: 21.5
+      height: 17.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: PopUpSprite_1
+    outer:
+      serializedVersion: 2
+      x: 254.25
+      y: 303.25
+      width: 66.75
+      height: 61.75
+    inner:
+      serializedVersion: 2
+      x: 279.25
+      y: 328.25
+      width: 16.75
+      height: 11.75
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: QuestInfo_BG
+    outer:
+      serializedVersion: 2
+      x: 128.25
+      y: 437.25
+      width: 124.5
+      height: 74.75
+    inner:
+      serializedVersion: 2
+      x: 190.75
+      y: 462.25
+      width: 19.5
+      height: 24.75
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: QuestShield
+    outer:
+      serializedVersion: 2
+      x: 393.5
+      y: 155.75
+      width: 17.75
+      height: 18
+    inner:
+      serializedVersion: 2
+      x: 393.5
+      y: 155.75
+      width: 17.75
+      height: 18
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: ScrollBar_BG2
+    outer:
+      serializedVersion: 2
+      x: 494.5
+      y: 157.75
+      width: 16
+      height: 16
+    inner:
+      serializedVersion: 2
+      x: 500.75
+      y: 164
+      width: 3.5
+      height: 3.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: ScrollBar4
+    outer:
+      serializedVersion: 2
+      x: 262
+      y: 1
+      width: 18
+      height: 16
+    inner:
+      serializedVersion: 2
+      x: 270
+      y: 9
+      width: 2
+      height: 0
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Stack_Circle
+    outer:
+      serializedVersion: 2
+      x: 308
+      y: 8
+      width: 18
+      height: 18
+    inner:
+      serializedVersion: 2
+      x: 308
+      y: 8
+      width: 18
+      height: 18
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: SummonPanelChristmas
+    outer:
+      serializedVersion: 2
+      x: 443
+      y: 287
+      width: 68
+      height: 58
+    inner:
+      serializedVersion: 2
+      x: 477
+      y: 321
+      width: 2
+      height: 2
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: SummonPanelColorless
+    outer:
+      serializedVersion: 2
+      x: 300
+      y: 228
+      width: 62
+      height: 56
+    inner:
+      serializedVersion: 2
+      x: 330
+      y: 257
+      width: 2
+      height: 2
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: SummonPanelCorn
+    outer:
+      serializedVersion: 2
+      x: 169.5
+      y: 57
+      width: 62.25
+      height: 56
+    inner:
+      serializedVersion: 2
+      x: 199.5
+      y: 85.75
+      width: 2.25
+      height: 2.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: SummonPanelCotton
+    outer:
+      serializedVersion: 2
+      x: 169.5
+      y: 169.5
+      width: 62.25
+      height: 56
+    inner:
+      serializedVersion: 2
+      x: 199.5
+      y: 198.25
+      width: 2.25
+      height: 2.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: SummonPanelGold
+    outer:
+      serializedVersion: 2
+      x: 442.75
+      y: 345.5
+      width: 68.5
+      height: 58
+    inner:
+      serializedVersion: 2
+      x: 476.5
+      y: 379.25
+      width: 2.25
+      height: 1.75
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: SummonPanelHalloween
+    outer:
+      serializedVersion: 2
+      x: 374
+      y: 287.25
+      width: 68.5
+      height: 58
+    inner:
+      serializedVersion: 2
+      x: 407.75
+      y: 321
+      width: 2.25
+      height: 1.75
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: SummonPanelObsidian
+    outer:
+      serializedVersion: 2
+      x: 169.5
+      y: 225.75
+      width: 68.25
+      height: 57.75
+    inner:
+      serializedVersion: 2
+      x: 203.25
+      y: 259.5
+      width: 2
+      height: 1.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: SummonPanelPlains
+    outer:
+      serializedVersion: 2
+      x: 170
+      y: 113
+      width: 62
+      height: 56
+    inner:
+      serializedVersion: 2
+      x: 200
+      y: 142
+      width: 2
+      height: 2
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: SummonPanelSand
+    outer:
+      serializedVersion: 2
+      x: 238
+      y: 228
+      width: 62
+      height: 56
+    inner:
+      serializedVersion: 2
+      x: 268
+      y: 257
+      width: 2
+      height: 2
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: SummonPanelSwamp
+    outer:
+      serializedVersion: 2
+      x: 169.5
+      y: 0.75
+      width: 62.25
+      height: 56
+    inner:
+      serializedVersion: 2
+      x: 199.5
+      y: 29.5
+      width: 2.25
+      height: 2.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Tab_PanelBG
+    outer:
+      serializedVersion: 2
+      x: 344
+      y: 406.75
+      width: 33
+      height: 26.75
+    inner:
+      serializedVersion: 2
+      x: 356.5
+      y: 419.25
+      width: 8
+      height: 1.75
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: TextBoxBlue
+    outer:
+      serializedVersion: 2
+      x: 411.5
+      y: 157.5
+      width: 16.75
+      height: 16.25
+    inner:
+      serializedVersion: 2
+      x: 420.25
+      y: 166.25
+      width: -0.75
+      height: -1.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: TextBoxRed
+    outer:
+      serializedVersion: 2
+      x: 428.5
+      y: 157.5
+      width: 16.75
+      height: 16.25
+    inner:
+      serializedVersion: 2
+      x: 437.25
+      y: 166.25
+      width: -0.75
+      height: -1.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Trophy
+    outer:
+      serializedVersion: 2
+      x: 238
+      y: 164.75
+      width: 51.25
+      height: 62.5
+    inner:
+      serializedVersion: 2
+      x: 238
+      y: 164.75
+      width: 51.25
+      height: 62.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Trophy2
+    outer:
+      serializedVersion: 2
+      x: 321.25
+      y: 302.5
+      width: 51.25
+      height: 62.5
+    inner:
+      serializedVersion: 2
+      x: 321.25
+      y: 302.5
+      width: 51.25
+      height: 62.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: TrophyBar
+    outer:
+      serializedVersion: 2
+      x: 253
+      y: 404.25
+      width: 44.25
+      height: 28
+    inner:
+      serializedVersion: 2
+      x: 253
+      y: 404.25
+      width: 44.25
+      height: 28
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: UI_Anvil
+    outer:
+      serializedVersion: 2
+      x: 434
+      y: 432.5
+      width: 52.5
+      height: 79.5
+    inner:
+      serializedVersion: 2
+      x: 434
+      y: 432.5
+      width: 52.5
+      height: 79.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: UI_ColorlessIcon
+    outer:
+      serializedVersion: 2
+      x: 327.25
+      y: 32.25
+      width: 27.5
+      height: 27.5
+    inner:
+      serializedVersion: 2
+      x: 327.25
+      y: 32.25
+      width: 27.5
+      height: 27.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: UI_CornIcon
+    outer:
+      serializedVersion: 2
+      x: 327.25
+      y: 87.75
+      width: 27.5
+      height: 27.5
+    inner:
+      serializedVersion: 2
+      x: 327.25
+      y: 87.75
+      width: 27.5
+      height: 27.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: UI_CottonIcon
+    outer:
+      serializedVersion: 2
+      x: 327
+      y: 60
+      width: 28
+      height: 28
+    inner:
+      serializedVersion: 2
+      x: 327
+      y: 60
+      width: 28
+      height: 28
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: UI_PlainsIcon
+    outer:
+      serializedVersion: 2
+      x: 327
+      y: 116
+      width: 28
+      height: 28
+    inner:
+      serializedVersion: 2
+      x: 327
+      y: 116
+      width: 28
+      height: 28
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: UI_SandIcon
+    outer:
+      serializedVersion: 2
+      x: 462
+      y: 405
+      width: 28
+      height: 28
+    inner:
+      serializedVersion: 2
+      x: 462
+      y: 405
+      width: 28
+      height: 28
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: UI_Star_Full
+    outer:
+      serializedVersion: 2
+      x: 289.5
+      y: 27
+      width: 32
+      height: 32
+    inner:
+      serializedVersion: 2
+      x: 289.5
+      y: 27
+      width: 32
+      height: 32
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: UI_SwampIcon
+    outer:
+      serializedVersion: 2
+      x: 434
+      y: 404.75
+      width: 27.5
+      height: 27.5
+    inner:
+      serializedVersion: 2
+      x: 434
+      y: 404.75
+      width: 27.5
+      height: 27.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: uiButtonBlue
+    outer:
+      serializedVersion: 2
+      x: 289.5
+      y: 134.25
+      width: 37.5
+      height: 39.5
+    inner:
+      serializedVersion: 2
+      x: 307
+      y: 149.25
+      width: 5
+      height: 2
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: uiButtonDarkBlue
+    outer:
+      serializedVersion: 2
+      x: 434.75
+      y: 187.75
+      width: 37.5
+      height: 39.5
+    inner:
+      serializedVersion: 2
+      x: 452.25
+      y: 202.75
+      width: 5
+      height: 2
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: uiButtonFrame
+    outer:
+      serializedVersion: 2
+      x: 397
+      y: 187.75
+      width: 37.5
+      height: 39.5
+    inner:
+      serializedVersion: 2
+      x: 414.5
+      y: 202.75
+      width: 5
+      height: 2
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: uiButtonGold
+    outer:
+      serializedVersion: 2
+      x: 122.5
+      y: 4
+      width: 37.5
+      height: 39.5
+    inner:
+      serializedVersion: 2
+      x: 140
+      y: 5.5
+      width: 5
+      height: 15.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: uiButtonGreen
+    outer:
+      serializedVersion: 2
+      x: 289.5
+      y: 94.5
+      width: 37.5
+      height: 39.5
+    inner:
+      serializedVersion: 2
+      x: 307
+      y: 109.5
+      width: 5
+      height: 2
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: uiButtonGrey
+    outer:
+      serializedVersion: 2
+      x: 84.75
+      y: 4
+      width: 37.5
+      height: 39.5
+    inner:
+      serializedVersion: 2
+      x: 102.25
+      y: 19
+      width: 5
+      height: 2
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: uiButtonRed
+    outer:
+      serializedVersion: 2
+      x: 472.5
+      y: 187.75
+      width: 37.5
+      height: 39.5
+    inner:
+      serializedVersion: 2
+      x: 490
+      y: 202.75
+      width: 5
+      height: 2
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Undefended
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 403.75
+      width: 128
+      height: 108.25
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 403.75
+      width: 128
+      height: 108.25
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Frame_FC
+    outer:
+      serializedVersion: 2
+      x: 84.75
+      y: 283.75
+      width: 84.5
+      height: 119.75
+    inner:
+      serializedVersion: 2
+      x: 84.75
+      y: 283.75
+      width: 84.5
+      height: 119.75
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: SummonPanelFC
+    outer:
+      serializedVersion: 2
+      x: 374
+      y: 345.5
+      width: 68.5
+      height: 58
+    inner:
+      serializedVersion: 2
+      x: 416.5
+      y: 391.25
+      width: 6
+      height: 1.5
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  mCoordinates: 0
+  mPixelSize: 4
+  mReplacement: {fileID: 0}

@@ -1,0 +1,19 @@
+# Unity generated
+Library/
+Temp/
+Obj/
+obj/
+Build/
+Builds/
+Logs/
+UserSettings/
+MemoryCaptures/
+*.tmp
+
+# Test/scratch build artifacts
+testando.*
+testando_extmem.*
+
+# Rider/VS
+.vs/
+*.csproj.user
