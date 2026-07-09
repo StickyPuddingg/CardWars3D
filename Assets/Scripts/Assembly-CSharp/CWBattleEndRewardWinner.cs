@@ -48,6 +48,7 @@ public class CWBattleEndRewardWinner : AsyncData<string>
 				QuestEarningManager.GetInstance().earnedCards.Add(weightedCard);
 				QuestEarningManager.GetInstance().earnedCardsName.Add(weightedCard.Form.ID);
 				QuestEarningManager.GetInstance().hasCardFlag.Add(PlayerInfoScript.GetInstance().DeckManager.HasCard(weightedCard.Form.ID));
+				Singleton<AnalyticsManager>.Instance.LogTreasureChestCatCardAwarded(GameState.Instance.ActiveQuest.iQuestID, weightedCard.Form.ID);
 			}
 			else
 			{
@@ -118,7 +119,8 @@ public class CWBattleEndRewardWinner : AsyncData<string>
 				QuestData activeQuest = GameState.Instance.ActiveQuest;
 				QuestData lastClearedQuest = instance2.GetLastClearedQuest();
 				instance.Cleared = true;
-
+				Singleton<AnalyticsManager>.Instance.LogQuestWin();
+				instance2.mQuestMatchStats[activeQuest.QuestType].Wins++;
 				int questProgress = instance2.GetQuestProgress(activeQuest);
 				if (questProgress < 3)
 				{

@@ -44,6 +44,11 @@ public class DailyGiftDataManager : ILoadable
 	public Dictionary<string, object>[] LoadDailyGiftsData()
 	{
 		string filename = Path.Combine("Blueprints", "db_DailyGift.json");
+		Dictionary<string, object>[] binArray = BlueprintBinaryReader_dbl.TryRead(filename);
+		if (binArray != null)
+		{
+			return binArray;
+		}
 		string jsonFileContent = TFUtils.GetJsonFileContent(filename);
 		return JsonReader.Deserialize<Dictionary<string, object>[]>(jsonFileContent);
 	}

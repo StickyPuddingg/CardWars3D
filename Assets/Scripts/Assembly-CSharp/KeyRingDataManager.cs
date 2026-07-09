@@ -43,6 +43,11 @@ public class KeyRingDataManager : ILoadable
 	public Dictionary<string, object>[] LoadKeyRingData()
 	{
 		string filename = Path.Combine("Blueprints", "db_KeyRing.json");
+		Dictionary<string, object>[] binArray = BlueprintBinaryReader_dbl.TryRead(filename);
+		if (binArray != null)
+		{
+			return binArray;
+		}
 		string jsonFileContent = TFUtils.GetJsonFileContent(filename);
 		return JsonReader.Deserialize<Dictionary<string, object>[]>(jsonFileContent);
 	}

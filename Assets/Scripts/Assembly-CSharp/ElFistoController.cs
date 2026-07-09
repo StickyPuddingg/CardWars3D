@@ -125,13 +125,34 @@ public class ElFistoController : MonoBehaviour
 		}
 	}
 
-	private int GetTotalMatchesPlayed()
-	{
-		PlayerInfoScript instance = PlayerInfoScript.GetInstance();
-		return instance.mQuestMatchStats["fc"].Attempts + instance.mQuestMatchStats["main"].Attempts;
-	}
+    private int GetTotalMatchesPlayed()
+    {
+        PlayerInfoScript instance = PlayerInfoScript.GetInstance();
 
-	public bool HasCompletedElFisto()
+        // Safety check if the player info or the stats dictionary itself is null
+        if (instance == null || instance.mQuestMatchStats == null)
+        {
+            return 0;
+        }
+
+        int totalAttempts = 0;
+
+        // Safely read "fc" stats if the key exists
+        if (instance.mQuestMatchStats.ContainsKey("fc") && instance.mQuestMatchStats["fc"] != null)
+        {
+            totalAttempts += instance.mQuestMatchStats["fc"].Attempts;
+        }
+
+        // Safely read "main" stats if the key exists
+        if (instance.mQuestMatchStats.ContainsKey("main") && instance.mQuestMatchStats["main"] != null)
+        {
+            totalAttempts += instance.mQuestMatchStats["main"].Attempts;
+        }
+
+        return totalAttempts;
+    }
+
+    public bool HasCompletedElFisto()
 	{
 		return GetCurrentRound() > ElFistoDataManager.Instance.GetNumRounds();
 	}

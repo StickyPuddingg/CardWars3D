@@ -2,26 +2,26 @@ using UnityEngine;
 
 public class BMOHidingScript : MonoBehaviour
 {
-	private string OpponentCharacter;
+    [SerializeField][Range(0f, 100f)] private float successChance = 35f; // Chance that BMO is allowed to exist
 
-	private QuestData qd;
+    private void Start()
+    {
+        if (ShouldForceFail())
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            base.transform.position = new Vector3(75f, -36.5f, 200f);
+        }
+    }
 
-	private void Start()
-	{
-		PlayerInfoScript instance = PlayerInfoScript.GetInstance();
-		qd = instance.GetCurrentQuest();
-		OpponentCharacter = qd.Opponent.ToString();
-	}
+    private bool ShouldForceFail()
+    {
 
-	private void Update()
-	{
-		if (OpponentCharacter == "BMO")
-		{
-			base.transform.position = new Vector3(75f, -100f, 225f);
-		}
-		else
-		{
-			base.transform.position = new Vector3(75f, -36.5f, 225f);
-		}
-	}
+        float roll = Random.Range(0f, 100f);
+
+
+        return roll > successChance;
+    }
 }

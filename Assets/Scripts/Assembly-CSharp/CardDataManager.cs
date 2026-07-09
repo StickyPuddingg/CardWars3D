@@ -5,227 +5,283 @@ using UnityEngine;
 
 public class CardDataManager : ILoadable
 {
-	private const string CreaturesFileName = "db_Creatures.json";
+    private const string CreaturesFileName = "db_Creatures.json";
+    private const string BuildingsFileName = "db_Buildings.json";
+    private const string SpellsFileName = "db_Spells.json";
+    private const string DweebsFileName = "db_Dweeb.json";
+    private const string DefaultRewardCardID = "Creature_Pig";
 
-	private const string BuildingsFileName = "db_Buildings.json";
+    private static CardDataManager instance;
+    
+    // C# 4.0 Compatible Property Getter
+    public static CardDataManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new CardDataManager();
+            }
+            return instance;
+        }
+    }
 
-	private const string SpellsFileName = "db_Spells.json";
+    private bool loaded;
+    public bool Loaded 
+    { 
+        get { return loaded; } 
+        private set { loaded = value; } 
+    }
 
-	private const string DweebsFileName = "db_Dweeb.json";
+    private readonly Dictionary<string, CardForm> _allCards = new Dictionary<string, CardForm>();
+    private readonly Dictionary<string, CardForm>[] _cardsByType = new Dictionary<string, CardForm>[4]
+    {
+        new Dictionary<string, CardForm>(), // 0: Creature
+        new Dictionary<string, CardForm>(), // 1: Building
+        new Dictionary<string, CardForm>(), // 2: Spell
+        new Dictionary<string, CardForm>()  // 3: Dweeb
+    };
 
-	private const string DefaultRewardCardID = "Creature_Pig";
+    // Delegate definition since Action<T1, T2> is used for the loading callback
+    private delegate void CustomDataAssignmentHandler<T>(Dictionary<string, object> dict, T card);
 
-	private static CardDataManager instance;
+    public IEnumerator Load()
+    {
+        // 1. Load Creatures
+        yield return LoadCardType<CreatureCard>(CreaturesFileName, 0, delegate(Dictionary<string, object> dict, CreatureCard card)
+        {
+            card.ObjectName = TFUtils.LoadString(dict, "ObjectName");
+            card.BaseATK = TFUtils.LoadInt(dict, "ATK");
+            card.BaseDEF = TFUtils.LoadInt(dict, "DEF");
+            card.ShortHand = dict.ContainsKey("ShortHandName") 
+                ? TFUtils.LoadLocalizedString(dict, "ShortHandName") 
+                : card.Name;
+        });
 
-	private Dictionary<string, CardForm> Cards = new Dictionary<string, CardForm>();
+        // 2. Load Buildings
+        yield return LoadCardType<BuildingCard>(BuildingsFileName, 1, delegate(Dictionary<string, object> dict, BuildingCard card)
+        {
+            card.ObjectName = TFUtils.LoadString(dict, "ObjectName");
+        });
 
-	private Dictionary<string, CardForm>[] CardsByType = new Dictionary<string, CardForm>[4]
-	{
-		new Dictionary<string, CardForm>(),
-		new Dictionary<string, CardForm>(),
-		new Dictionary<string, CardForm>(),
-		new Dictionary<string, CardForm>()
-	};
+        // 3. Load Spells
+        yield return LoadCardType<SpellCard>(SpellsFileName, 2, delegate(Dictionary<string, object> dict, SpellCard card)
+        {
+            card.ParticleName = TFUtils.LoadString(dict, "Particles");
+        });
 
-	public bool Loaded;
+        // 4. Load Dweebs
+        yield return LoadDweebCards(DweebsFileName);
 
-	public static CardDataManager Instance
-	{
-		get
-		{
-			if (instance == null)
-			{
-				instance = new CardDataManager();
-			}
-			return instance;
-		}
-	}
+        Loaded = true;
+    }
 
-	private void FillCardData(Dictionary<string, object> dict, CardForm form)
-	{
-		form.ID = TFUtils.LoadString(dict, "ID");
-		form.Name = TFUtils.LoadLocalizedString(dict, "Name");
-		form.RawDescription = TFUtils.LoadLocalizedString(dict, "Desc");
-		form.BaseVal1 = TFUtils.LoadInt(dict, "val1", 0);
-		form.BaseVal2 = TFUtils.LoadInt(dict, "val2", 0);
-		form.BaseSalePrice = TFUtils.LoadInt(dict, "BaseSalePrice", 0);
-		form.IconAtlas = TFUtils.LoadString(dict, "IconAtlas");
-		form.FrameAtlas = TFUtils.LoadString(dict, "FrameAtlas");
-		form.SpriteName = TFUtils.LoadString(dict, "SpriteName");
-		form.FrameSpriteName = TFUtils.LoadString(dict, "FrameSpriteName");
-		form.ScriptName = TFUtils.LoadString(dict, "ScriptName");
-		form.ScriptVizName = TFUtils.LoadString(dict, "VizOverride", string.Empty).Trim();
-		if (form.ScriptVizName.Length <= 0)
-		{
-			form.ScriptVizName = form.ScriptName;
-		}
-		try
-		{
-			form.AbilityType = (AbilityType)(int)Enum.Parse(typeof(AbilityType), TFUtils.LoadString(dict, "AbilityType"), true);
-		}
-		catch
-		{
-			form.AbilityType = AbilityType.None;
-		}
-		form.Faction = (Faction)(int)Enum.Parse(typeof(Faction), TFUtils.LoadString(dict, "Faction"), true);
-		try
-		{
-			form.Quality = (Quality)(int)Enum.Parse(typeof(Quality), TFUtils.LoadString(dict, "Quality"), true);
-		}
-		catch
-		{
-			form.Quality = Quality.Standard;
-		}
-		form.Rarity = TFUtils.LoadInt(dict, "Rarity");
-		form.CanFuse = TFUtils.LoadBool(dict, "CanFuse", true);
-		form.Cost = TFUtils.LoadInt(dict, "Cost");
-		form.FloopCost = TFUtils.LoadInt(dict, "FloopCost", 0);
-		form.CostDescription = KFFLocalization.Get("!!CARD_FLOOPCOST").Replace("<cost>", form.FloopCost.ToString());
-	}
+    private IEnumerator LoadCardType<T>(string fileName, int typeIndex, CustomDataAssignmentHandler<T> customDataAssignment) where T : CardForm, new()
+    {
+        Dictionary<string, object>[] rawDataArray = SQUtils.ReadJSONData(fileName);
+        if (rawDataArray == null) yield break;
 
-	public IEnumerator Load()
-	{
-		Dictionary<string, object>[] data4 = SQUtils.ReadJSONData("db_Creatures.json");
-		Dictionary<string, object>[] array = data4;
-		foreach (Dictionary<string, object> dict in array)
-		{
-			CreatureCard CurrentCard = new CreatureCard();
-			FillCardData(dict, CurrentCard);
-			CurrentCard.ObjectName = TFUtils.LoadString(dict, "ObjectName");
-			CurrentCard.BaseATK = TFUtils.LoadInt(dict, "ATK");
-			CurrentCard.BaseDEF = TFUtils.LoadInt(dict, "DEF");
-			try
-			{
-				CurrentCard.ShortHand = TFUtils.LoadLocalizedString(dict, "ShortHandName");
-			}
-			catch (KeyNotFoundException)
-			{
-				CurrentCard.ShortHand = CurrentCard.Name;
-			}
-			Cards.Add(CurrentCard.ID, CurrentCard);
-			CardsByType[0].Add(CurrentCard.ID, CurrentCard);
-			if (LoadingManager.ShouldYield())
-			{
-				yield return null;
-			}
-		}
-		data4 = SQUtils.ReadJSONData("db_Buildings.json");
-		Dictionary<string, object>[] array2 = data4;
-		foreach (Dictionary<string, object> dict2 in array2)
-		{
-			BuildingCard CurrentCard2 = new BuildingCard();
-			FillCardData(dict2, CurrentCard2);
-			CurrentCard2.ObjectName = TFUtils.LoadString(dict2, "ObjectName");
-			Cards.Add(CurrentCard2.ID, CurrentCard2);
-			CardsByType[1].Add(CurrentCard2.ID, CurrentCard2);
-			if (LoadingManager.ShouldYield())
-			{
-				yield return null;
-			}
-		}
-		data4 = SQUtils.ReadJSONData("db_Spells.json");
-		Dictionary<string, object>[] array3 = data4;
-		foreach (Dictionary<string, object> dict3 in array3)
-		{
-			SpellCard CurrentCard3 = new SpellCard();
-			FillCardData(dict3, CurrentCard3);
-			CurrentCard3.ParticleName = TFUtils.LoadString(dict3, "Particles");
-			Cards.Add(CurrentCard3.ID, CurrentCard3);
-			CardsByType[2].Add(CurrentCard3.ID, CurrentCard3);
-			if (LoadingManager.ShouldYield())
-			{
-				yield return null;
-			}
-		}
-		data4 = SQUtils.ReadJSONData("db_Dweeb.json");
-		Dictionary<string, object>[] array4 = data4;
-		foreach (Dictionary<string, object> dict4 in array4)
-		{
-			DweebCard CurrentCard4 = new DweebCard
-			{
-				ID = TFUtils.LoadString(dict4, "ID"),
-				Name = TFUtils.LoadLocalizedString(dict4, "Name"),
-				RawDescription = TFUtils.LoadLocalizedString(dict4, "Desc"),
-				SpriteName = TFUtils.LoadString(dict4, "SpriteName")
-			};
-			CardsByType[3].Add(CurrentCard4.ID, CurrentCard4);
-			if (LoadingManager.ShouldYield())
-			{
-				yield return null;
-			}
-		}
-		Loaded = true;
-	}
+        foreach (Dictionary<string, object> dict in rawDataArray)
+        {
+            T currentCard = new T();
+            FillCardData(dict, currentCard);
+            
+            if (customDataAssignment != null)
+            {
+                customDataAssignment(dict, currentCard);
+            }
 
-	private void VerifyCards()
-	{
-		foreach (KeyValuePair<string, CardForm> card in Cards)
-		{
-			switch (card.Value.Type)
-			{
-			case CardType.Creature:
-			{
-				GameObject gameObject = SLOTGameSingleton<SLOTResourceManager>.GetInstance().LoadResource("Summons/" + card.Value.ObjectName) as GameObject;
-				if (!(gameObject == null))
-				{
-				}
-				break;
-			}
-			case CardType.Building:
-			{
-				GameObject gameObject = SLOTGameSingleton<SLOTResourceManager>.GetInstance().LoadResource("Building/" + card.Value.ObjectName) as GameObject;
-				if (!(gameObject == null))
-				{
-				}
-				break;
-			}
-			}
-		}
-	}
+            if (string.IsNullOrEmpty(currentCard.ID))
+            {
+                TFUtils.DebugLog("CardDataManager: skipping card in " + fileName + " due to missing ID.");
+                continue;
+            }
 
-	public void Destroy()
-	{
-		instance = null;
-	}
+            if (_allCards.ContainsKey(currentCard.ID) || _cardsByType[typeIndex].ContainsKey(currentCard.ID))
+            {
+                TFUtils.DebugLog("CardDataManager: duplicate card skipped: " + currentCard.ID);
+                continue;
+            }
 
-	public CardForm GetCard(CardType type, string id)
-	{
-		return CardsByType[(int)type][id];
-	}
+            _allCards.Add(currentCard.ID, currentCard);
+            _cardsByType[typeIndex].Add(currentCard.ID, currentCard);
 
-	public CardForm GetCard(string id, bool backwards_compatibility = true)
-	{
-		CardForm value;
-		if (Cards.TryGetValue(id, out value))
-		{
-			return value;
-		}
-		if (backwards_compatibility)
-		{
-			foreach (KeyValuePair<string, CardForm> card in Cards)
-			{
-				CardForm value2 = card.Value;
-				if (value2.Name == id)
-				{
-					return value2;
-				}
-			}
-			if (Cards.TryGetValue("Creature_Pig", out value))
-			{
-				return value;
-			}
-		}
-		return null;
-	}
+            if (LoadingManager.ShouldYield())
+            {
+                yield return null;
+            }
+        }
+    }
 
-	public List<CardForm> GetCards(CardType type)
-	{
-		Dictionary<string, CardForm> dictionary = CardsByType[(int)type];
-		return new List<CardForm>(dictionary.Values);
-	}
+    private IEnumerator LoadDweebCards(string fileName)
+    {
+        Dictionary<string, object>[] rawDataArray = SQUtils.ReadJSONData(fileName);
+        if (rawDataArray == null) yield break;
 
-	public List<CardForm> GetCards()
-	{
-		return new List<CardForm>(Cards.Values);
-	}
+        foreach (Dictionary<string, object> dict in rawDataArray)
+        {
+            DweebCard dweeb = new DweebCard();
+            dweeb.ID = TFUtils.LoadString(dict, "ID");
+            dweeb.Name = TFUtils.LoadLocalizedString(dict, "Name");
+            dweeb.RawDescription = TFUtils.LoadLocalizedString(dict, "Desc");
+            dweeb.SpriteName = TFUtils.LoadString(dict, "SpriteName");
+
+            if (string.IsNullOrEmpty(dweeb.ID))
+            {
+                TFUtils.DebugLog("CardDataManager: skipping dweeb card with missing ID.");
+                continue;
+            }
+
+            if (_cardsByType[3].ContainsKey(dweeb.ID))
+            {
+                TFUtils.DebugLog("CardDataManager: duplicate dweeb card skipped: " + dweeb.ID);
+                continue;
+            }
+
+            _cardsByType[3].Add(dweeb.ID, dweeb);
+
+            if (LoadingManager.ShouldYield())
+            {
+                yield return null;
+            }
+        }
+    }
+
+    private void FillCardData(Dictionary<string, object> dict, CardForm form)
+    {
+        form.ID = TFUtils.LoadString(dict, "ID");
+        form.Name = TFUtils.LoadLocalizedString(dict, "Name");
+        form.RawDescription = TFUtils.LoadLocalizedString(dict, "Desc");
+        form.BaseVal1 = TFUtils.LoadInt(dict, "val1", 0);
+        form.BaseVal2 = TFUtils.LoadInt(dict, "val2", 0);
+        form.BaseSalePrice = TFUtils.LoadInt(dict, "BaseSalePrice", 0);
+        form.IconAtlas = TFUtils.LoadString(dict, "IconAtlas");
+        form.FrameAtlas = TFUtils.LoadString(dict, "FrameAtlas");
+        form.SpriteName = TFUtils.LoadString(dict, "SpriteName");
+        form.FrameSpriteName = TFUtils.LoadString(dict, "FrameSpriteName");
+        form.ScriptName = TFUtils.LoadString(dict, "ScriptName");
+
+        form.ScriptVizName = TFUtils.LoadString(dict, "VizOverride", string.Empty).Trim();
+        if (string.IsNullOrEmpty(form.ScriptVizName))
+        {
+            form.ScriptVizName = form.ScriptName;
+        }
+
+        // Old-school Enum parsing compatible with legacy Unity/Mono profiles
+        try
+        {
+            string abilityStr = TFUtils.LoadString(dict, "AbilityType");
+            form.AbilityType = (AbilityType)Enum.Parse(typeof(AbilityType), abilityStr, true);
+        }
+        catch
+        {
+            form.AbilityType = AbilityType.None;
+        }
+
+        try
+        {
+            string factionStr = TFUtils.LoadString(dict, "Faction");
+            form.Faction = (Faction)Enum.Parse(typeof(Faction), factionStr, true);
+        }
+        catch
+        {
+            form.Faction = default(Faction);
+        }
+
+        try
+        {
+            string qualityStr = TFUtils.LoadString(dict, "Quality");
+            form.Quality = (Quality)Enum.Parse(typeof(Quality), qualityStr, true);
+        }
+        catch
+        {
+            form.Quality = Quality.Standard;
+        }
+
+        form.Rarity = TFUtils.LoadInt(dict, "Rarity");
+        form.CanFuse = TFUtils.LoadBool(dict, "CanFuse", true);
+        form.Cost = TFUtils.LoadInt(dict, "Cost");
+        form.FloopCost = TFUtils.LoadInt(dict, "FloopCost", 0);
+        form.CostDescription = KFFLocalization.Get("!!CARD_FLOOPCOST").Replace("<cost>", form.FloopCost.ToString());
+    }
+
+    public CardForm GetCard(CardType type, string id)
+    {
+        int index = (int)type;
+        if (index >= 0 && index < _cardsByType.Length)
+        {
+            CardForm card;
+            if (_cardsByType[index].TryGetValue(id, out card))
+            {
+                return card;
+            }
+        }
+        return null;
+    }
+
+    public CardForm GetCard(string id, bool backwards_compatibility = true)
+    {
+        CardForm card;
+        if (_allCards.TryGetValue(id, out card))
+        {
+            return card;
+        }
+
+        if (backwards_compatibility)
+        {
+            foreach (KeyValuePair<string, CardForm> kvp in _allCards)
+            {
+                if (kvp.Value.Name == id)
+                {
+                    return kvp.Value;
+                }
+            }
+
+            CardForm defaultCard;
+            if (_allCards.TryGetValue(DefaultRewardCardID, out defaultCard))
+            {
+                return defaultCard;
+            }
+        }
+        return null;
+    }
+
+    public List<CardForm> GetCards(CardType type)
+    {
+        int index = (int)type;
+        if (index >= 0 && index < _cardsByType.Length)
+        {
+            return new List<CardForm>(_cardsByType[index].Values);
+        }
+        return new List<CardForm>();
+    }
+
+    public List<CardForm> GetCards()
+    {
+        return new List<CardForm>(_allCards.Values);
+    }
+
+    public void Destroy()
+    {
+        instance = null;
+    }
+
+    private void VerifyCards()
+    {
+        var resourceManager = SLOTGameSingleton<SLOTResourceManager>.GetInstance();
+        if (resourceManager == null) return;
+
+        foreach (CardForm card in _allCards.Values)
+        {
+            switch (card.Type)
+            {
+                case CardType.Creature:
+                    resourceManager.LoadResource("Summons/" + card.ObjectName);
+                    break;
+                case CardType.Building:
+                    resourceManager.LoadResource("Building/" + card.ObjectName);
+                    break;
+            }
+        }
+    }
 }

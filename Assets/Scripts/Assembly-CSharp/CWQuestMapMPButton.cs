@@ -36,47 +36,21 @@ public class CWQuestMapMPButton : AsyncData<MultiplayerData>
 
 	private bool daggerAnimationPlaying;
 
-	private void OnClick()
-	{
-		if ((!(mainMenuCamera != null) || (mainMenuCamera.gameObject.activeInHierarchy && mainMenuCamera.enabled)) && (!(AnimationScripts != null) || !AnimationScripts.IsPlayingStartAnimRevert()) && Asyncdata.processed && SessionManager.GetInstance().IsReady())
-		{
-			if ((bool)LoadingActivityShow)
-			{
-				LoadingActivityShow.Play(true);
-			}
-			ReauthenticationHelper component = GetComponent<ReauthenticationHelper>();
-			if (!(component != null) || !component.Reauthenticate(delegate(ReauthenticationHelper.Result result)
-			{
-				switch (result)
-				{
-				case ReauthenticationHelper.Result.SUCCESS:
-					StartMultiplayerActivation();
-					break;
-				case ReauthenticationHelper.Result.SUCCESS_FORCED_RESTART:
-					if ((bool)LoadingActivityHide)
-					{
-						LoadingActivityHide.Play(true);
-					}
-					break;
-				default:
-					if ((bool)LoadingActivityHide)
-					{
-						LoadingActivityHide.Play(true);
-					}
-					if ((bool)ConnectionFailedShow)
-					{
-						ConnectionFailedShow.Play(true);
-					}
-					break;
-				}
-			}))
-			{
-				StartMultiplayerActivation();
-			}
-		}
-	}
+    private void OnClick()
+    {
+        if ((!(mainMenuCamera != null) || (mainMenuCamera.gameObject.activeInHierarchy && mainMenuCamera.enabled)) && (!(AnimationScripts != null) || !AnimationScripts.IsPlayingStartAnimRevert()) && Asyncdata.processed && SessionManager.GetInstance().IsReady())
+        {
+            if ((bool)LoadingActivityShow)
+            {
+                LoadingActivityShow.Play(true);
+            }
 
-	private void StartMultiplayerActivation()
+            // Directly activate multiplayer, skipping the ReauthenticationHelper completely
+            StartMultiplayerActivation();
+        }
+    }
+
+    private void StartMultiplayerActivation()
 	{
 		global::Multiplayer.Multiplayer.GetMultiplayerStatus(SessionManager.GetInstance().theSession, MultiplayerDataCallback);
 	}

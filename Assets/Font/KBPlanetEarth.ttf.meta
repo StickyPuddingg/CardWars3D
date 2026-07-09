@@ -2,9 +2,21 @@ fileFormatVersion: 2
 guid: d575a9c094c3f164bbb05eae096ac470
 timeCreated: 1698411931
 licenseType: Free
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 12800000
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: KBPlanetEarth
+  fontNames:
+  - KBPlanetEarth
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 2
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -48,12 +48,10 @@ public class PerfThrottleManager : MonoBehaviour
 
 	public static void HandlePerfThrottleEvent(PerfEvents perfEvent, bool enableThings)
 	{
-		//this is typically the offswitch 3ds is a low end device and this will probably help -S
-		/*if (!KFFLODManager.IsLowEndDevice())
+		if (!KFFLODManager.IsLowEndDevice())
 		{
 			return;
-		}*/
-
+		}
 		PerfThrottleParams[] array = null;
 		EventData value;
 		if (!enableThings)

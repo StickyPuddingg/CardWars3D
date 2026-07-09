@@ -7,10 +7,6 @@ public class CWResultOK : MonoBehaviour
 
 	private void Start()
 	{
-	}
-
-	private void OnClick()
-	{
 		if (GoToBuildDeck)
 		{
 			GlobalFlags.Instance.ReturnToBuildDeck = true;
@@ -19,16 +15,15 @@ public class CWResultOK : MonoBehaviour
 		{
 			GlobalFlags.Instance.ReturnToMainMenu = true;
 		}
+
 		PlayerInfoScript.GetInstance().Save();
 		StartCoroutine(GoToMainMenu());
 	}
 
-	private void Update()
-	{
-	}
-
 	private IEnumerator GoToMainMenu()
 	{
+		Debug.Log("SCREEEEEEEAM");
+
 		UICamera.useInputEnabler = true;
 		float savedTimeScale = Time.timeScale;
 		Time.timeScale = 0f;

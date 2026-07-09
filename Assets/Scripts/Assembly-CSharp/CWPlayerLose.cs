@@ -39,6 +39,6 @@ public class CWPlayerLose : AsyncData<string>
 		{
 			TweenController.SendMessage("OnClick");
 		}
-        //Singleton<AnalyticsManager>.Instance.LogQuestLoss(); - more analytical shit removed -s
-    }
+		Singleton<AnalyticsManager>.Instance.LogQuestLoss();
+	}
 }

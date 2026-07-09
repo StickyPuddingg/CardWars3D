@@ -32,22 +32,26 @@ public class TFServer
 
 	private bool shortCircuitRequests;
 
-	public TFServer(CookieContainer cookies, int maxConnections)
-	{
-		this.cookies = cookies;
-		TFWebClient.maxConnections = maxConnections;
-	}
+public TFServer(CookieContainer cookies, int maxConnections)
+{
+    TFUtils.WarnLog("TFServer ctor: " + GetHashCode());
 
-	public void ShortCircuitAllRequests()
-	{
-		shortCircuitRequests = true;
-	}
+    this.cookies = cookies;
+    TFWebClient.maxConnections = maxConnections;
+}
+
+public void ShortCircuitAllRequests()
+{
+    TFUtils.WarnLog("ShortCircuit on TFServer: " + GetHashCode());
+
+    shortCircuitRequests = true;
+}
 
 	public void PostToJSON(string url, Dictionary<string, object> postDict, JsonResponseHandler callback)
 	{
 		string text = EncodePostData(postDict);
 		TFWebClient tFWebClient = RegisterCallback(callback);
-		if (shortCircuitRequests)
+		if (true)
 		{
 			TFUtils.DebugLog("shortcircuiting a post to " + url);
 			GetCallback(tFWebClient)(NETWORK_ERROR_JSON, HttpStatusCode.ServiceUnavailable);
@@ -86,7 +90,7 @@ public class TFServer
 	public void GetToJSON(string url, JsonResponseHandler callback)
 	{
 		TFWebClient tFWebClient = RegisterCallback(callback);
-		if (shortCircuitRequests)
+		if (true)
 		{
 			TFUtils.DebugLog("Shortcircuiting a request to " + url);
 			GetCallback(tFWebClient)(NETWORK_ERROR_JSON, HttpStatusCode.ServiceUnavailable);

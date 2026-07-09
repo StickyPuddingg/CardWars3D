@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using System.Collections;
 
 public class DailyGiftController : MonoBehaviour
 {
@@ -73,18 +74,43 @@ public class DailyGiftController : MonoBehaviour
 
 	private bool MetricsGemsSpent;
 
-	private void Start()
-	{
-		numFreeGifts = InitNumFreeGifts();
-		Reset();
-		WheelAudioSource = GetComponent<AudioSource>();
-		AudioPitch = WheelAudioSource.pitch;
-		ActivateButtonString = KFFLocalization.Get(ButtonText.text);
-	}
+    private bool isInitialized = false;
 
-	private void Update()
+    private IEnumerator Start()
+    {
+        // 1. Load GachaManager if it hasn't been loaded yet
+        if (!GachaManager.Instance.IsLoaded)
+        {
+            Debug.LogWarning("DailyGiftController: GachaManager data missing. Loading it directly...");
+            yield return StartCoroutine(GachaManager.Instance.Load());
+
+            // Set the IsLoaded property
+            typeof(GachaManager).GetProperty("IsLoaded").SetValue(GachaManager.Instance, true, null);
+        }
+
+        // 2. Load DailyGiftDataManager directly so the wheel data exists!
+        Debug.LogWarning("DailyGiftController: Loading DailyGiftDataManager directly for sandbox testing...");
+        yield return StartCoroutine(DailyGiftDataManager.Instance.Load());
+
+        // 3. Now run the normal setup safely
+        numFreeGifts = InitNumFreeGifts();
+        Reset();
+        WheelAudioSource = GetComponent<AudioSource>();
+        AudioPitch = WheelAudioSource.pitch;
+        ActivateButtonString = KFFLocalization.Get(ButtonText.text);
+
+        isInitialized = true;
+    }
+
+    private void Update()
 	{
-		if (null != ActivateButton)
+
+        if (!isInitialized)
+        {
+            return;
+        }
+
+        if (null != ActivateButton)
 		{
 			ActivateButton.GetComponent<Collider>().enabled = State == WheelState.Ready || State == WheelState.Inactive;
 		}
@@ -450,9 +476,9 @@ public class DailyGiftController : MonoBehaviour
 		if (MetricsGemsSpent)
 		{
 			MetricsGemsSpent = false;
-            //Singleton<AnalyticsManager>.Instance.LogExtraDailySpinPurchase(DailyGiftDataManager.Instance.RetyGemCost); - more analytical shit removed -s
-        }
-    }
+			Singleton<AnalyticsManager>.Instance.LogExtraDailySpinPurchase(DailyGiftDataManager.Instance.RetyGemCost);
+		}
+	}
 
 	private void OnConfirm()
 	{

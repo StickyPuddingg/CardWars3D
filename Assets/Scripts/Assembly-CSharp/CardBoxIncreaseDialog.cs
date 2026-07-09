@@ -132,8 +132,8 @@ public class CardBoxIncreaseDialog : MonoBehaviour
 			instance.Gems -= CurrentTier.GemPrice;
 			instance.MaxInventory += CurrentTier.Gain;
 			instance.Save();
-            //Singleton<AnalyticsManager>.Instance.LogBoxSpacePurchase();  - more analytical shit removed -s
-            DisplayMessage(true, GameCurrency.Gems);
+			Singleton<AnalyticsManager>.Instance.LogBoxSpacePurchase();
+			DisplayMessage(true, GameCurrency.Gems);
 		}
 		else
 		{
@@ -154,8 +154,8 @@ public class CardBoxIncreaseDialog : MonoBehaviour
 			instance.Coins -= CurrentTier.CoinPrice;
 			instance.MaxInventory += CurrentTier.Gain;
 			instance.Save();
-            //Singleton<AnalyticsManager>.Instance.LogBoxSpacePurchase(); - more analytical shit removed -s
-            DisplayMessage(true, GameCurrency.Coins);
+			Singleton<AnalyticsManager>.Instance.LogBoxSpacePurchase();
+			DisplayMessage(true, GameCurrency.Coins);
 		}
 		else
 		{

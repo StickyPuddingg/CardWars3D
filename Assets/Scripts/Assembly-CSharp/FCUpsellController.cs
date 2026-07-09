@@ -48,7 +48,7 @@ public class FCUpsellController : MonoBehaviour
 		{
 			FCUpsellTweenShow.Play(true);
 		}
-		//Singleton<AnalyticsManager>.Instance.LogFCSellOpen();
+		Singleton<AnalyticsManager>.Instance.LogFCSellOpen();
 	}
 
 	public void HidePanel()
@@ -66,7 +66,7 @@ public class FCUpsellController : MonoBehaviour
 		{
 			FCButton.SendMessage("LaunchFCDemo");
 		}
-		//Singleton<AnalyticsManager>.Instance.LogFCDemoReplay();
+		Singleton<AnalyticsManager>.Instance.LogFCDemoReplay();
 	}
 
 	private void UpdatePrice()
@@ -93,7 +93,7 @@ public class FCUpsellController : MonoBehaviour
 		if (AllowPurchase)
 		{
 			TFUtils.DebugLog("Clicked on FC Purchase button, starting purchase of " + PurchaseID, GetType().ToString());
-			//Singleton<AnalyticsManager>.Instance.LogFCSellClick();
+			Singleton<AnalyticsManager>.Instance.LogFCSellClick();
 			Singleton<PurchaseManager>.Instance.PurchaseProduct(PurchaseID, PurchaseCallback);
 		}
 	}

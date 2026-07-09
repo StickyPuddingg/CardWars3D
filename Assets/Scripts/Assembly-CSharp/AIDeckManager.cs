@@ -30,6 +30,11 @@ public class AIDeckManager : ILoadable
 	public Dictionary<string, object>[] LoadDeckData()
 	{
 		string text = Path.Combine("Blueprints", "db_Decks.json");
+		Dictionary<string, object>[] binArray = BlueprintBinaryReader_dbl.TryRead(text);
+		if (binArray != null)
+		{
+			return binArray;
+		}
 		TFUtils.DebugLog("CardDataScript DeckData path: " + text);
 		string jsonFileContent = TFUtils.GetJsonFileContent(text);
 		return JsonReader.Deserialize<Dictionary<string, object>[]>(jsonFileContent);

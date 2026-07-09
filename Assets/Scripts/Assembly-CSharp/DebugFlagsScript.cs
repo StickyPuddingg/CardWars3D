@@ -107,12 +107,22 @@ public class DebugFlagsScript : MonoBehaviour
 		}
 	}
 
-	public static DebugFlagsScript GetInstance()
-	{
-		return g_debugFlagsScript;
-	}
+    public static DebugFlagsScript GetInstance()
+    {
+        if (g_debugFlagsScript == null)
+        {
+            g_debugFlagsScript = Object.FindObjectOfType<DebugFlagsScript>();
 
-	public GameObject SpawnFPSObject(GameObject prefab, GameObject parent)
+            if (g_debugFlagsScript == null)
+            {
+                Debug.LogError("DebugFlagsScript instance not found!");
+            }
+        }
+
+        return g_debugFlagsScript;
+    }
+
+    public GameObject SpawnFPSObject(GameObject prefab, GameObject parent)
 	{
 		GameObject gameObject = null;
 		if (prefab != null && parent != null)

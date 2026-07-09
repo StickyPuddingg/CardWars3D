@@ -523,12 +523,46 @@ public class UILabel : UIWidget
 		base.OnDisable();
 	}
 
-	protected override void OnStart()
+    // Temporary debugging flags
+    private bool mDebugChecked = false;
+
+    public override void Update()
+    {
+
+        Debug.LogError(string.Format("TEST"));
+        // Call the base UIWidget Update first
+        base.Update();
+
+        // Run our debug check exactly once when the script becomes active and updates
+        if (Application.isPlaying && !mDebugChecked)
+        {
+            mDebugChecked = true;
+
+            string localizedText = KFFLocalization.Get(mText);
+
+            Debug.LogError(string.Format("[UILabel Direct Check] GameObject: {0} | ActiveInHierarchy: {1} | Font Assigned: {2} | Localized Text: '{3}'",
+                gameObject.name,
+                gameObject.activeInHierarchy,
+                (font != null),
+                localizedText));
+        }
+    }
+
+    protected override void OnStart()
 	{
-		if (Application.isPlaying)
+		Debug.LogError(string.Format("TEST"));
+
+
+        if (Application.isPlaying)
 		{
-			text = KFFLocalization.Get(text);
-		}
+            string originalText = mText;
+            text = KFFLocalization.Get(text);
+            // C# 4.0 Compatible Debug Log
+            Debug.LogError(string.Format("[UILabel Debug] GameObject: {0} | Original: '{1}' | Localized: '{2}'",
+                gameObject.name,
+                originalText,
+                mText));
+        }
 		if (mLineWidth > 0f)
 		{
 			mMaxLineWidth = Mathf.RoundToInt(mLineWidth);
@@ -544,6 +578,7 @@ public class UILabel : UIWidget
 		{
 			mFont.Request(mText);
 		}
+
 	}
 
 	public override void MarkAsChanged()

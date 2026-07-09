@@ -46,6 +46,11 @@ public class VOManager : ILoadable
 	public Dictionary<string, object>[] LoadVOData()
 	{
 		string text = Path.Combine("Blueprints", "db_CharacterVO.json");
+		Dictionary<string, object>[] binArray = BlueprintBinaryReader_dbl.TryRead(text);
+		if (binArray != null)
+		{
+			return binArray;
+		}
 		TFUtils.DebugLog("VOManager VOData path: " + text);
 		string jsonFileContent = TFUtils.GetJsonFileContent(text);
 		return JsonReader.Deserialize<Dictionary<string, object>[]>(jsonFileContent);
@@ -73,7 +78,14 @@ public class VOManager : ILoadable
 			};
 			Control.IsActive[(int)PlayerType.User] = TFUtils.LoadBool(dict, "Player", true);
 			Control.IsActive[(int)PlayerType.Opponent] = TFUtils.LoadBool(dict, "Opponent", false);
-			VOControls.Add(Control.VOE, Control);
+			if (VOControls.ContainsKey(Control.VOE))
+			{
+				TFUtils.DebugLog("VOManager: duplicate VOEvent skipped: " + Control.VOE);
+			}
+			else
+			{
+				VOControls.Add(Control.VOE, Control);
+			}
 			if (LoadingManager.ShouldYield())
 			{
 				yield return null;

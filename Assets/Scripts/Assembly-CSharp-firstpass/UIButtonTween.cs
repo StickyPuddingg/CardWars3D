@@ -20,7 +20,9 @@ public class UIButtonTween : MonoBehaviour
 
 	public DisableCondition disableWhenFinished;
 
-	public bool includeChildren;
+	public DisableCondition deleteWhenFinished;
+
+    public bool includeChildren;
 
 	public GameObject eventReceiver;
 
@@ -34,16 +36,15 @@ public class UIButtonTween : MonoBehaviour
 
 	private bool mHighlighted;
 
+	private bool mLastPlayWasForward = true;
+
 	private void Start()
 	{
 		mStarted = true;
-		if (tweenTarget == null)
-		{
-			tweenTarget = base.gameObject;
-		}
-	}
 
-	private void OnEnable()
+    }
+
+    private void OnEnable()
 	{
 		if (mStarted && mHighlighted)
 		{
@@ -105,7 +106,7 @@ public class UIButtonTween : MonoBehaviour
 
 	private void Update()
 	{
-		if (disableWhenFinished == DisableCondition.DoNotDisable || mTweens == null)
+		if (disableWhenFinished == DisableCondition.DoNotDisable && deleteWhenFinished == DisableCondition.DoNotDisable || mTweens == null)
 		{
 			return;
 		}
@@ -134,8 +135,39 @@ public class UIButtonTween : MonoBehaviour
 			{
 				NGUITools.SetActive(tweenTarget, false);
 			}
+			if (ShouldDeleteTarget())
+			{
+				// -s Destroy the tween target once the configured finish direction is reached.
+				GameObject targetToDelete = ((!(tweenTarget == null)) ? tweenTarget : base.gameObject);
+				if (targetToDelete != null)
+				{
+					Destroy(targetToDelete);
+				}
+				// -s If the tween component still exists, destroy its owning GameObject too.
+				if (this != null && gameObject != null)
+				{
+					Destroy(gameObject);
+				}
+			}
 			mTweens = null;
 		}
+	}
+
+	private bool ShouldDeleteTarget()
+	{
+		if (deleteWhenFinished == DisableCondition.DoNotDisable)
+		{
+			return false;
+		}
+		if (deleteWhenFinished == DisableCondition.DisableAfterForward)
+		{
+			return mLastPlayWasForward;
+		}
+		if (deleteWhenFinished == DisableCondition.DisableAfterReverse)
+		{
+			return !mLastPlayWasForward;
+		}
+		return false;
 	}
 
 	public void Play(bool forward)
@@ -159,8 +191,10 @@ public class UIButtonTween : MonoBehaviour
 			return;
 		}
 		bool flag = false;
+		mLastPlayWasForward = forward;
 		if (playDirection == Direction.Reverse)
 		{
+			mLastPlayWasForward = !forward;
 			forward = !forward;
 		}
 		int i = 0;

@@ -16,11 +16,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  -
   - Water
   - UI
-  - 
-  - 
+  -
+  -
   - GUI Prerender
   - GUI
   - Card1
@@ -42,9 +42,9 @@ TagManager:
   - GUI_DeckManager_Particle
   - GUI Logo
   - GUI_Hidden
-  - 
+  -
   - __GUI__
-  - 
+  -
   m_SortingLayers:
   - name: Default
     uniqueID: 0

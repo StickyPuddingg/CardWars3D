@@ -188,8 +188,8 @@ public class CWQuestLoad : MonoBehaviour
 			{
 				sqhud.SetActive(false);
 			}
-            //Singleton<AnalyticsManager>.Instance.LogStaminaConsumed(questContext, EntryFee, pinfo.Stamina, pinfo.Stamina_Max, int.Parse(qd.QuestID)); - more analytical shit removed -s
-            UIButtonTween tween = GetComponent<UIButtonTween>();
+			Singleton<AnalyticsManager>.Instance.LogStaminaConsumed(questContext, EntryFee, pinfo.Stamina, pinfo.Stamina_Max, int.Parse(qd.QuestID));
+			UIButtonTween tween = GetComponent<UIButtonTween>();
 			if (tween != null)
 			{
 				tween.enabled = true;

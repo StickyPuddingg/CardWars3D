@@ -103,7 +103,7 @@ public class SearchOpponent : AsyncData<MatchData>
 			{
 				instance.Coins -= SearchFeesCoins;
 				instance.Save();
-				//Singleton<AnalyticsManager>.Instance.LogDeckFindWarOpponentPurchase(0, SearchFeesCoins);
+				Singleton<AnalyticsManager>.Instance.LogDeckFindWarOpponentPurchase(0, SearchFeesCoins);
 			}
 		}
 		else

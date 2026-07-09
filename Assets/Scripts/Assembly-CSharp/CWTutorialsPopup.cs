@@ -471,8 +471,7 @@ public class CWTutorialsPopup : MonoBehaviour
 
 	private GameObject CreatePointer(TutorialInfo.PointerInfo pinfo)
 	{
-		//UnityEngine.Object original = SLOTGameSingleton<SLOTResourceManager>.GetInstance().LoadResource("menuitems/Tutorial_Arrow");
-		GameObject original = Instantiate(Resources.Load("menuitems/Tutorial_Arrow", typeof(GameObject))) as GameObject; 
+		UnityEngine.Object original = SLOTGameSingleton<SLOTResourceManager>.GetInstance().LoadResource("menuitems/Tutorial_Arrow");
 		GameObject gameObject = null;
 		if (!pinfo.Hide || pinfo.ScaleTarget)
 		{

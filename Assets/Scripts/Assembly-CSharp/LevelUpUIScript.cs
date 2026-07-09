@@ -43,7 +43,7 @@ public class LevelUpUIScript : AsyncData<ResponseFlag>
 		{
 			SocialManager.Instance.ReportAchievement(SocialManager.AchievementIDs.AT_HERO_50);
 		}
-		//Singleton<AnalyticsManager>.Instance.LogLevelUpLeader(leaderCard.Form.ID, leaderCard.Rank);
+		Singleton<AnalyticsManager>.Instance.LogLevelUpLeader(leaderCard.Form.ID, leaderCard.Rank);
 		PlayerInfoScript instance = PlayerInfoScript.GetInstance();
 		if (Asyncdata.processed && instance.MPPlayerName != null && instance.MPPlayerName != string.Empty)
 		{

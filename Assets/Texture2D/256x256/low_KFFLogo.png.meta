@@ -27,7 +27,7 @@ TextureImporter:
   textureFormat: 7
   maxTextureSize: 512
   textureSettings:
-    filterMode: 1
+    filterMode: 2
     aniso: 1
     mipBias: 0
     wrapMode: -1
@@ -67,9 +67,9 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Nintendo 3DS
-    maxTextureSize: 256
+    maxTextureSize: 128
     textureFormat: 60
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0

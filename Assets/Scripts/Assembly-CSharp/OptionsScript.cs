@@ -95,7 +95,7 @@ public class OptionsScript : MonoBehaviour
 		}
 		if (toggleLowResolution != null)
 		{
-			//toggleLowResolution.SetToggle(!KFFLODManager.GetLowEndOverride());    Commented becuase this button will not be used DELETE LATER - S
+			toggleLowResolution.SetToggle(!KFFLODManager.GetLowEndOverride());
 		}
 		updating = false;
 	}
@@ -114,8 +114,8 @@ public class OptionsScript : MonoBehaviour
 
 	public void ToggleResolution()
 	{
-        //KFFLODManager.SetLowEndOverride(!KFFLODManager.GetLowEndOverride()); Commented becuase this button will not be used DELETE LATER - S
-        PlayerInfoScript.GetInstance().ReloadGame();
+		KFFLODManager.SetLowEndOverride(!KFFLODManager.GetLowEndOverride());
+		PlayerInfoScript.GetInstance().ReloadGame();
 	}
 
 	public void ResetAge()

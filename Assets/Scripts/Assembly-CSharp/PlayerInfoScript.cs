@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using JsonFx.Json;
 using UnityEngine;
+using UnityEngine.N3DS;
 using UnityEngine.SceneManagement;
 
 public class PlayerInfoScript : MonoBehaviour
@@ -231,7 +232,8 @@ public class PlayerInfoScript : MonoBehaviour
 	{
 		get
 		{
-			string deviceLocale = Language.getDeviceLocale();
+			// -s
+			string deviceLocale = Config.GetLanguage().ToString();
 			int @int = PlayerPrefs.GetInt("PlayerAge");
 			if (deviceLocale == "gb")
 			{
@@ -490,7 +492,6 @@ public class PlayerInfoScript : MonoBehaviour
 			g_playerInfoScript = this;
 		}
 		UnityEngine.Object.DontDestroyOnLoad(base.transform.gameObject);
-		Application.targetFrameRate = 300;
 	}
 
 	private void Start()
@@ -540,7 +541,7 @@ public class PlayerInfoScript : MonoBehaviour
 
 	private void Initialize()
 	{
-		//CrashAnalytics.LogBreadcrumb("playerreset " + PlayerName);
+		CrashAnalytics.LogBreadcrumb("playerreset " + PlayerName);
 		DeckManager.InitializeNewPlayer();
 		LeaderManager.Instance.FillLeadersWithDummyData();
 		string text;
@@ -559,11 +560,11 @@ public class PlayerInfoScript : MonoBehaviour
 		catch (Exception ex2)
 		{
 			TFUtils.ErrorLog(ex2.ToString());
-			//CrashAnalytics.LogException(ex2);
+			CrashAnalytics.LogException(ex2);
 			text = GetDefaultGameStateJson();
 		}
 		Deserialize(text);
-		//CrashAnalytics.LogBreadcrumb("playerloaded " + g_playerInfoScript.PlayerName);
+		CrashAnalytics.LogBreadcrumb("playerloaded " + g_playerInfoScript.PlayerName);
 	}
 
 	public string GetValue(string fieldName)
@@ -624,14 +625,14 @@ public class PlayerInfoScript : MonoBehaviour
 	public void AcceptTOS()
 	{
 		TOSVersionAgreedTo = TOSCurrentVersion;
-		//Singleton<AnalyticsManager>.Instance.LogDebug("Accept_ToS", TOSCurrentVersion);
+		Singleton<AnalyticsManager>.Instance.LogDebug("Accept_ToS", TOSCurrentVersion);
 		Save();
 	}
 
 	public void AcceptPP()
 	{
 		PPVersionAgreedTo = PPCurrentVersion;
-		//Singleton<AnalyticsManager>.Instance.LogDebug("Accept_PP", PPCurrentVersion);
+		Singleton<AnalyticsManager>.Instance.LogDebug("Accept_PP", PPCurrentVersion);
 		Save();
 	}
 
@@ -750,18 +751,12 @@ public class PlayerInfoScript : MonoBehaviour
 
 	public bool IsKeyGatchaUnlocked()
 	{
-		string gatchaKey_Unlock_Tutorial = ParametersManager.Instance.GatchaKey_Unlock_Tutorial;
-		if (!DebugFlagsScript.GetInstance().stopTutorial && !string.IsNullOrEmpty(gatchaKey_Unlock_Tutorial) && !TutorialManager.Instance.isTutorialCompleted(gatchaKey_Unlock_Tutorial))
-		{
-			return false;
-		}
 		return true;
 	}
 
 	public bool IsCalendarUnlocked()
 	{
-		string calendar_Unlock_Tutorial = ParametersManager.Instance.Calendar_Unlock_Tutorial;
-		return DebugFlagsScript.GetInstance().stopTutorial || string.IsNullOrEmpty(calendar_Unlock_Tutorial) || TutorialManager.Instance.isTutorialCompleted(calendar_Unlock_Tutorial);
+		return false;
 	}
 
 	public bool HasUnclaimedCalendarGift()
@@ -1465,19 +1460,19 @@ public class PlayerInfoScript : MonoBehaviour
 
 	public static void SavePlayerName(string _playerName)
 	{
-		string path = Path.Combine(Application.persistentDataPath, "lastUserName");
+		string path = Path.Combine(UnityEngine.Application.persistentDataPath, "lastUserName");
 		File.WriteAllText(path, _playerName);
 	}
 
 	public static void SaveTimeStamp(string timestamp)
 	{
-		string path = Path.Combine(Application.persistentDataPath, "lastTimeStamp");
+		string path = Path.Combine(UnityEngine.Application.persistentDataPath, "lastTimeStamp");
 		File.WriteAllText(path, timestamp);
 	}
 
 	public void LoadTimeStamp()
 	{
-		string path = Path.Combine(Application.persistentDataPath, "lastTimeStamp");
+		string path = Path.Combine(UnityEngine.Application.persistentDataPath, "lastTimeStamp");
 		if (File.Exists(path))
 		{
 			LastSaveTimeStamp = File.ReadAllText(path);
@@ -1487,7 +1482,7 @@ public class PlayerInfoScript : MonoBehaviour
 	public static string LoadPlayerName()
 	{
 		string result = null;
-		string path = Path.Combine(Application.persistentDataPath, "lastUserName");
+		string path = Path.Combine(UnityEngine.Application.persistentDataPath, "lastUserName");
 		if (File.Exists(path))
 		{
 			result = File.ReadAllText(path);
@@ -1497,41 +1492,64 @@ public class PlayerInfoScript : MonoBehaviour
 
 	public static void ResetPlayerName()
 	{
-		string path = Path.Combine(Application.persistentDataPath, "lastUserName");
+		string path = Path.Combine(UnityEngine.Application.persistentDataPath, "lastUserName");
 		if (File.Exists(path))
 		{
 			File.Delete(path);
 		}
 	}
 
-	public void Login()
+	private static string Build3DSPlayerName()
 	{
-		if (LoginAttempted)
+		// -s Use the requested 3DS config user-name API directly.
+		try
 		{
-			return;
+			string userName;
+			bool isNameProfane;
+			Config.GetUserName(out userName, out isNameProfane);
+			return userName;
 		}
-		LoginAttempted = true;
-		LoadTimeStamp();
-		string text = null;
-		PlayerName = LoadPlayerName();
-		text = PlayerPrefs.GetString("SocialLogin", null);
-		if (string.IsNullOrEmpty(PlayerName) && string.IsNullOrEmpty(text))
+		catch (Exception)
 		{
-			PlayerName = Guid.NewGuid().ToString();
-			SavePlayerName(PlayerName);
+			// -s Fall back to a generated value when the config call is unavailable.
+			return null;
 		}
-		else if (string.IsNullOrEmpty(PlayerName))
-		{
-			PlayerName = text;
-			SavePlayerName(PlayerName);
-		}
-		SessionManager instance = SessionManager.GetInstance();
-		instance.OnReadyCallback = null;
-		TFUtils.WarnLog("Login: SocialID= " + text + ", PlayerName= " + PlayerName);
-		instance.Login(false, text, PlayerName);
 	}
 
-	private void OnLoginSucceed()
+    public void Login()
+    {
+        if (LoginAttempted)
+        {
+            return;
+        }
+        LoginAttempted = true;
+        LoadTimeStamp();
+        string text = null;
+
+        // -s Replace the old name-based console API usage with 3DS system config data.
+        string consoleName = Build3DSPlayerName();
+
+        // -s Keep the existing login flow intact and only use the 3DS identity when it is available.
+        PlayerName = consoleName;
+
+        text = PlayerPrefs.GetString("SocialLogin", null);
+        if (string.IsNullOrEmpty(PlayerName) && string.IsNullOrEmpty(text))
+        {
+            PlayerName = Guid.NewGuid().ToString();
+            SavePlayerName(PlayerName);
+        }
+        else if (string.IsNullOrEmpty(PlayerName))
+        {
+            PlayerName = text;
+            SavePlayerName(PlayerName);
+        }
+        SessionManager instance = SessionManager.GetInstance();
+        instance.OnReadyCallback = null;
+        TFUtils.WarnLog("Login: SocialID= " + text + ", PlayerName= " + PlayerName);
+        instance.Login(PlayerName);
+    }
+
+    private void OnLoginSucceed()
 	{
 		string @string = PlayerPrefs.GetString("SocialLogin", null);
 		if (!string.IsNullOrEmpty(@string))
@@ -1539,18 +1557,6 @@ public class PlayerInfoScript : MonoBehaviour
 			PlayerName = @string;
 			SavePlayerName(PlayerName);
 		}
-	}
-
-	public bool Reauthenticate()
-	{
-		SessionManager instance = SessionManager.GetInstance();
-		if (!instance.IsReady() || !instance.IsLoggedIn() || instance.IsAuthenticated())
-		{
-			return false;
-		}
-		instance.OnReadyCallback = null;
-		instance.Login(false, null, PlayerName);
-		return true;
 	}
 
 	public static string MakeJS(string key, object val)
@@ -1594,696 +1600,696 @@ public class PlayerInfoScript : MonoBehaviour
 		return text;
 	}
 
-	public string Serialize()
-	{
-		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.Append('{');
-		stringBuilder.Append(MakeJS("PlayerInfoVersion", version) + ",");
-		stringBuilder.Append(MakeJS("PlayerName", PlayerName) + ",");
-		stringBuilder.Append(MakeJS("PlayerAge", PlayerAge) + ",");
-		stringBuilder.Append(MakeJS("CurrentGameID", CurrentGameID) + ",");
-		stringBuilder.Append(MakeJS("CampaignProgress", CampaignProgress) + ",");
-		stringBuilder.Append(MakeJS("Avatar", Avatar) + ",");
-		stringBuilder.Append(MakeJS("UsePresetDeck", UsePresetDeck) + ",");
-		stringBuilder.Append(MakeJS("Tutorial", Tutorial) + ",");
-		stringBuilder.Append(MakeJS("DeckID", DeckID) + ",");
-		stringBuilder.Append(MakeJS("Coins", decryptValue(mCoins)) + ",");
-		stringBuilder.Append(MakeJS("Gems", decryptValue(mGemStr)) + ",");
-		stringBuilder.Append(MakeJS("CoinsAccumulated", decryptValue(mCoinsAccumulated)) + ",");
-		stringBuilder.Append(MakeJS("GemsAccumulated", decryptValue(mGemsAccumulated)) + ",");
-		stringBuilder.Append(MakeJS("NumMPGamesPlayed", NumMPGamesPlayed) + ",");
-		stringBuilder.Append(MakeJS("Stamina", Stamina) + ",");
-		stringBuilder.Append(MakeJS("Stamina_Max", Stamina_Max) + ",");
-		stringBuilder.Append(MakeJS("LastTimestamp", LastTimestamp) + ",");
-		stringBuilder.Append(MakeJS("MaxInventory", decryptValue(mMaxInventory)) + ",");
-		stringBuilder.Append(MakeJS("SelectedDeck", SelectedDeck) + ",");
-		stringBuilder.Append(MakeJS("SelectedMPDeck", SelectedMPDeck) + ",");
-		stringBuilder.Append(MakeJS("MPDeckLeaderID", MPDeckLeaderID) + ",");
-		stringBuilder.Append(MakeJS("NotificationEnabled", NotificationEnabled) + ",");
-		stringBuilder.Append(MakeJS("AutoBattleSetting", AutoBattleSetting) + ",");
-		stringBuilder.Append(MakeJS("Magic", DetectCheater.CreateChecksum(DetectCheater.MD5Input())) + ",");
-		stringBuilder.Append(MakeJS("KeyRewarded", mGatchaKeyRewarded) + ",");
-		stringBuilder.Append(MakeJS("TOSVersionAgreedTo", TOSVersionAgreedTo) + ",");
-		stringBuilder.Append(MakeJS("PPVersionAgreedTo", PPVersionAgreedTo) + ",");
-		if (Party != null)
-		{
-			stringBuilder.Append(MakeJS("Party", Party) + ",");
-		}
-		if (PartyExpiration > 0)
-		{
-			stringBuilder.Append(MakeJS("PartyExpiration", PartyExpiration) + ",");
-		}
-		stringBuilder.Append(MakeJS("NumberofTrophies", mNumberofTrophies) + ",");
-		if (mMPPlayerName != null)
-		{
-			stringBuilder.Append(MakeJS("MPPlayerName", mMPPlayerName) + ",");
-		}
-		if (MultiplayerRank != null)
-		{
-			stringBuilder.Append(MakeJS("MultiplayerRank", MultiplayerRank) + ",");
-		}
-		if (DailyGiftTimestamp != DateTime.MinValue)
-		{
-			stringBuilder.Append(MakeJS("DailyGiftTimestamp", DailyGiftTimestamp.ToString()) + ",");
-			stringBuilder.Append(MakeJS("LastGiftTimestamp", LastGiftTimestamp.ToString()) + ",");
-			stringBuilder.Append(MakeJS("NumUsedFreeGifts", NumUsedFreeGifts) + ",");
-		}
-		if (FirstCalendarTimestamp != DateTime.MinValue)
-		{
-			stringBuilder.Append(MakeJS("FirstCalendarTimestamp", FirstCalendarTimestamp.ToString()) + ",");
-			stringBuilder.Append(MakeJS("LastCalendarTimestamp", LastCalendarTimestamp.ToString()) + ",");
-			stringBuilder.Append(MakeJS("CalendarDaysClaimed", CalendarDaysClaimed) + ",");
-		}
-		stringBuilder.Append("\"Leaders\":" + LeaderManager.Instance.Serialize() + ",");
-		stringBuilder.Append("\"GachaKeys\":" + GachaKeys.Serialize() + ",");
-		stringBuilder.Append("\"Tags\":" + SerializeTags() + ",");
-		stringBuilder.Append("\"DungeonProgress\":" + SerializeDungeonProgress() + ",");
-		stringBuilder.Append("\"OccuranceCounter\":" + SerializeOccuranceCounter() + ",");
-		stringBuilder.Append("\"Fusion\":" + FusionManager.Instance.Serialize() + ",");
-		stringBuilder.Append("\"Inventory\":" + DeckManager.Serialize() + ",");
-		stringBuilder.Append(MakeJS("CurrentQuest", GetCurrentQuestID("main")) + ",");
-		stringBuilder.Append(MakeJS("LastClearedQuest", GetLastClearedQuestID("main")) + ",");
-		stringBuilder.Append(MakeJS("CurrentFCQuestID", GetCurrentQuestID("fc")) + ",");
-		stringBuilder.Append(MakeJS("LastClearedFCQuestID", GetLastClearedQuestID("fc")) + ",");
-		stringBuilder.Append("\"QuestProgress_MainIDs\":" + SerializeQuestStars("main", "key") + ",");
-		stringBuilder.Append("\"QuestProgress_MainStars\":" + SerializeQuestStars("main", "value") + ",");
-		stringBuilder.Append("\"QuestProgress_FCIDs\":" + SerializeQuestStars("fc", "key") + ",");
-		stringBuilder.Append("\"QuestProgress_FCStars\":" + SerializeQuestStars("fc", "value") + ",");
-		stringBuilder.Append("\"QuestProgress_TCatIDs\":" + SerializeQuestStars("tcat", "key") + ",");
-		stringBuilder.Append("\"QuestProgress_TCatStars\":" + SerializeQuestStars("tcat", "value") + ",");
-		stringBuilder.Append("\"QuestProgress_ElFistoIDs\":" + SerializeQuestStars("elfisto", "key") + ",");
-		stringBuilder.Append("\"QuestProgress_ElFistoStars\":" + SerializeQuestStars("elfisto", "value") + ",");
-		stringBuilder.Append("\"UnlockedRegions\":" + SerializeUnlockedRegions() + ",");
-		if (mQuestMapDeckIdx.ContainsKey("main"))
-		{
-			stringBuilder.Append(MakeJS("DeckMain", mQuestMapDeckIdx["main"]) + ",");
-		}
-		if (mQuestMapDeckIdx.ContainsKey("fc"))
-		{
-			stringBuilder.Append(MakeJS("DeckFC", mQuestMapDeckIdx["fc"]) + ",");
-		}
-		if (mQuestMatchStats.ContainsKey("main"))
-		{
-			stringBuilder.Append(MakeJS("CWAttempts", mQuestMatchStats["main"].Attempts) + ",");
-			stringBuilder.Append(MakeJS("CWWins", mQuestMatchStats["main"].Wins) + ",");
-			stringBuilder.Append(MakeJS("CWLosses", mQuestMatchStats["main"].Losses) + ",");
-		}
-		if (mQuestMatchStats.ContainsKey("fc"))
-		{
-			stringBuilder.Append(MakeJS("FCAttempts", mQuestMatchStats["fc"].Attempts) + ",");
-			stringBuilder.Append(MakeJS("FCWins", mQuestMatchStats["fc"].Wins) + ",");
-			stringBuilder.Append(MakeJS("FCLosses", mQuestMatchStats["fc"].Losses) + ",");
-		}
-		if (mQuestMatchStats.ContainsKey("tcat"))
-		{
-			stringBuilder.Append(MakeJS("TCATAttempts", mQuestMatchStats["tcat"].Attempts) + ",");
-			stringBuilder.Append(MakeJS("TCATWins", mQuestMatchStats["tcat"].Wins) + ",");
-			stringBuilder.Append(MakeJS("TCATLosses", mQuestMatchStats["tcat"].Losses) + ",");
-		}
-		if (mQuestMatchStats.ContainsKey("elfisto"))
-		{
-			stringBuilder.Append(MakeJS("EFAttempts", mQuestMatchStats["elfisto"].Attempts) + ",");
-			stringBuilder.Append(MakeJS("EFWins", mQuestMatchStats["elfisto"].Wins) + ",");
-			stringBuilder.Append(MakeJS("EFLosses", mQuestMatchStats["elfisto"].Losses) + ",");
-		}
-		StringBuilder stringBuilder2 = new StringBuilder();
-		StringBuilder stringBuilder3 = new StringBuilder();
-		StringBuilder stringBuilder4 = new StringBuilder();
-		StringBuilder stringBuilder5 = new StringBuilder();
-		StringBuilder stringBuilder6 = new StringBuilder();
-		StringBuilder stringBuilder7 = new StringBuilder();
-		StringBuilder stringBuilder8 = new StringBuilder();
-		StringBuilder stringBuilder9 = new StringBuilder();
-		foreach (KeyValuePair<string, BonusQuestStats> bonusQuest in BonusQuests)
-		{
-			stringBuilder2.Append(",");
-			stringBuilder2.Append("\"" + bonusQuest.Key.ToString() + "\"");
-			stringBuilder3.Append(",");
-			stringBuilder3.Append(Convert.ToInt32(bonusQuest.Value.firstAppearance));
-			stringBuilder4.Append(",");
-			stringBuilder4.Append(bonusQuest.Value.ActiveQuestID);
-			stringBuilder5.Append(",");
-			stringBuilder5.Append(bonusQuest.Value.ReplacedQuestID);
-			stringBuilder6.Append(",");
-			stringBuilder6.Append(bonusQuest.Value.CachedMatchStats.Attempts);
-			stringBuilder7.Append(",");
-			stringBuilder7.Append(bonusQuest.Value.CachedMatchStats.Wins);
-			stringBuilder8.Append(",");
-			stringBuilder8.Append(bonusQuest.Value.CachedMatchStats.Losses);
-			stringBuilder9.Append(",");
-			stringBuilder9.Append("\"" + bonusQuest.Value.LastPlayedTime.ToString() + "\"");
-		}
-		stringBuilder.Append("\"BonusQuest_QuestTypes\":");
-		stringBuilder.Append('[');
-		string text = stringBuilder2.ToString();
-		if (!string.IsNullOrEmpty(text) && text.Length >= 1)
-		{
-			stringBuilder.Append(text.Substring(1));
-		}
-		stringBuilder.Append(']' + ",");
-		stringBuilder.Append("\"BonusQuest_FirstAppearance\":");
-		stringBuilder.Append('[');
-		text = stringBuilder3.ToString();
-		if (!string.IsNullOrEmpty(text) && text.Length >= 1)
-		{
-			stringBuilder.Append(text.Substring(1));
-		}
-		stringBuilder.Append(']' + ",");
-		stringBuilder.Append("\"BonusQuest_ActiveQuestIDs\":");
-		stringBuilder.Append('[');
-		text = stringBuilder4.ToString();
-		if (!string.IsNullOrEmpty(text) && text.Length >= 1)
-		{
-			stringBuilder.Append(text.Substring(1));
-		}
-		stringBuilder.Append(']' + ",");
-		stringBuilder.Append("\"BonusQuest_ReplacedQuestIDs\":");
-		stringBuilder.Append('[');
-		text = stringBuilder5.ToString();
-		if (!string.IsNullOrEmpty(text) && text.Length >= 1)
-		{
-			stringBuilder.Append(text.Substring(1));
-		}
-		stringBuilder.Append(']' + ",");
-		stringBuilder.Append("\"BonusQuest_StatsAttempts\":");
-		stringBuilder.Append('[');
-		text = stringBuilder6.ToString();
-		if (!string.IsNullOrEmpty(text) && text.Length >= 1)
-		{
-			stringBuilder.Append(text.Substring(1));
-		}
-		stringBuilder.Append(']' + ",");
-		stringBuilder.Append("\"BonusQuest_StatsWins\":");
-		stringBuilder.Append('[');
-		text = stringBuilder7.ToString();
-		if (!string.IsNullOrEmpty(text) && text.Length >= 1)
-		{
-			stringBuilder.Append(text.Substring(1));
-		}
-		stringBuilder.Append(']' + ",");
-		stringBuilder.Append("\"BonusQuest_StatsLosses\":");
-		stringBuilder.Append('[');
-		text = stringBuilder8.ToString();
-		if (!string.IsNullOrEmpty(text) && text.Length >= 1)
-		{
-			stringBuilder.Append(text.Substring(1));
-		}
-		stringBuilder.Append(']' + ",");
-		stringBuilder.Append("\"BonusQuest_LastPlayed\":");
-		stringBuilder.Append('[');
-		text = stringBuilder9.ToString();
-		if (!string.IsNullOrEmpty(text) && text.Length >= 1)
-		{
-			stringBuilder.Append(text.Substring(1));
-		}
-		stringBuilder.Append(']' + ",");
-		stringBuilder.Append(MakeJS("SideQuestManagerInfo", mSideQuestManagerInfo) + ",");
-		stringBuilder.Append("\"Tutorials\":" + SerializeTutorials());
-		stringBuilder.Append('}');
-		return stringBuilder.ToString();
-	}
+    public string Serialize()
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.Append('{');
+        stringBuilder.Append(MakeJS("PlayerInfoVersion", version) + ",");
+        stringBuilder.Append(MakeJS("PlayerName", PlayerName) + ",");
+        stringBuilder.Append(MakeJS("PlayerAge", PlayerAge) + ",");
+        stringBuilder.Append(MakeJS("CurrentGameID", CurrentGameID) + ",");
+        stringBuilder.Append(MakeJS("CampaignProgress", CampaignProgress) + ",");
+        stringBuilder.Append(MakeJS("Avatar", Avatar) + ",");
+        stringBuilder.Append(MakeJS("UsePresetDeck", UsePresetDeck) + ",");
+        stringBuilder.Append(MakeJS("Tutorial", Tutorial) + ",");
+        stringBuilder.Append(MakeJS("DeckID", DeckID) + ",");
+        stringBuilder.Append(MakeJS("Coins", decryptValue(mCoins)) + ",");
+        stringBuilder.Append(MakeJS("Gems", decryptValue(mGemStr)) + ",");
+        stringBuilder.Append(MakeJS("CoinsAccumulated", decryptValue(mCoinsAccumulated)) + ",");
+        stringBuilder.Append(MakeJS("GemsAccumulated", decryptValue(mGemsAccumulated)) + ",");
+        stringBuilder.Append(MakeJS("NumMPGamesPlayed", NumMPGamesPlayed) + ",");
+        stringBuilder.Append(MakeJS("Stamina", Stamina) + ",");
+        stringBuilder.Append(MakeJS("Stamina_Max", Stamina_Max) + ",");
+        stringBuilder.Append(MakeJS("LastTimestamp", LastTimestamp) + ",");
+        stringBuilder.Append(MakeJS("MaxInventory", decryptValue(mMaxInventory)) + ",");
+        stringBuilder.Append(MakeJS("SelectedDeck", SelectedDeck) + ",");
+        stringBuilder.Append(MakeJS("SelectedMPDeck", SelectedMPDeck) + ",");
+        stringBuilder.Append(MakeJS("MPDeckLeaderID", MPDeckLeaderID) + ",");
+        stringBuilder.Append(MakeJS("NotificationEnabled", NotificationEnabled) + ",");
+        stringBuilder.Append(MakeJS("AutoBattleSetting", AutoBattleSetting) + ",");
+        stringBuilder.Append(MakeJS("Magic", DetectCheater.CreateChecksum(DetectCheater.MD5Input())) + ",");
+        stringBuilder.Append(MakeJS("KeyRewarded", mGatchaKeyRewarded) + ",");
+        stringBuilder.Append(MakeJS("TOSVersionAgreedTo", TOSVersionAgreedTo) + ",");
+        stringBuilder.Append(MakeJS("PPVersionAgreedTo", PPVersionAgreedTo) + ",");
+        if (Party != null)
+        {
+            stringBuilder.Append(MakeJS("Party", Party) + ",");
+        }
+        if (PartyExpiration > 0)
+        {
+            stringBuilder.Append(MakeJS("PartyExpiration", PartyExpiration) + ",");
+        }
+        stringBuilder.Append(MakeJS("NumberofTrophies", mNumberofTrophies) + ",");
+        if (mMPPlayerName != null)
+        {
+            stringBuilder.Append(MakeJS("MPPlayerName", mMPPlayerName) + ",");
+        }
+        if (MultiplayerRank != null)
+        {
+            stringBuilder.Append(MakeJS("MultiplayerRank", MultiplayerRank) + ",");
+        }
+        if (DailyGiftTimestamp != DateTime.MinValue)
+        {
+            stringBuilder.Append(MakeJS("DailyGiftTimestamp", DailyGiftTimestamp.ToString()) + ",");
+            stringBuilder.Append(MakeJS("LastGiftTimestamp", LastGiftTimestamp.ToString()) + ",");
+            stringBuilder.Append(MakeJS("NumUsedFreeGifts", NumUsedFreeGifts) + ",");
+        }
+        if (FirstCalendarTimestamp != DateTime.MinValue)
+        {
+            stringBuilder.Append(MakeJS("FirstCalendarTimestamp", FirstCalendarTimestamp.ToString()) + ",");
+            stringBuilder.Append(MakeJS("LastCalendarTimestamp", LastCalendarTimestamp.ToString()) + ",");
+            stringBuilder.Append(MakeJS("CalendarDaysClaimed", CalendarDaysClaimed) + ",");
+        }
+        stringBuilder.Append("\"Leaders\":" + LeaderManager.Instance.Serialize() + ",");
+        stringBuilder.Append("\"GachaKeys\":" + GachaKeys.Serialize() + ",");
+        stringBuilder.Append("\"Tags\":" + SerializeTags() + ",");
+        stringBuilder.Append("\"DungeonProgress\":" + SerializeDungeonProgress() + ",");
+        stringBuilder.Append("\"OccuranceCounter\":" + SerializeOccuranceCounter() + ",");
+        stringBuilder.Append("\"Fusion\":" + FusionManager.Instance.Serialize() + ",");
+        stringBuilder.Append("\"Inventory\":" + DeckManager.Serialize() + ",");
+        stringBuilder.Append(MakeJS("CurrentQuest", GetCurrentQuestID("main")) + ",");
+        stringBuilder.Append(MakeJS("LastClearedQuest", GetLastClearedQuestID("main")) + ",");
+        stringBuilder.Append(MakeJS("CurrentFCQuestID", GetCurrentQuestID("fc")) + ",");
+        stringBuilder.Append(MakeJS("LastClearedFCQuestID", GetLastClearedQuestID("fc")) + ",");
+        stringBuilder.Append("\"QuestProgress_MainIDs\":" + SerializeQuestStars("main", "key") + ",");
+        stringBuilder.Append("\"QuestProgress_MainStars\":" + SerializeQuestStars("main", "value") + ",");
+        stringBuilder.Append("\"QuestProgress_FCIDs\":" + SerializeQuestStars("fc", "key") + ",");
+        stringBuilder.Append("\"QuestProgress_FCStars\":" + SerializeQuestStars("fc", "value") + ",");
+        stringBuilder.Append("\"QuestProgress_TCatIDs\":" + SerializeQuestStars("tcat", "key") + ",");
+        stringBuilder.Append("\"QuestProgress_TCatStars\":" + SerializeQuestStars("tcat", "value") + ",");
+        stringBuilder.Append("\"QuestProgress_ElFistoIDs\":" + SerializeQuestStars("elfisto", "key") + ",");
+        stringBuilder.Append("\"QuestProgress_ElFistoStars\":" + SerializeQuestStars("elfisto", "value") + ",");
+        stringBuilder.Append("\"UnlockedRegions\":" + SerializeUnlockedRegions() + ",");
+        if (mQuestMapDeckIdx.ContainsKey("main"))
+        {
+            stringBuilder.Append(MakeJS("DeckMain", mQuestMapDeckIdx["main"]) + ",");
+        }
+        if (mQuestMapDeckIdx.ContainsKey("fc"))
+        {
+            stringBuilder.Append(MakeJS("DeckFC", mQuestMapDeckIdx["fc"]) + ",");
+        }
+        if (mQuestMatchStats.ContainsKey("main"))
+        {
+            stringBuilder.Append(MakeJS("CWAttempts", mQuestMatchStats["main"].Attempts) + ",");
+            stringBuilder.Append(MakeJS("CWWins", mQuestMatchStats["main"].Wins) + ",");
+            stringBuilder.Append(MakeJS("CWLosses", mQuestMatchStats["main"].Losses) + ",");
+        }
+        if (mQuestMatchStats.ContainsKey("fc"))
+        {
+            stringBuilder.Append(MakeJS("FCAttempts", mQuestMatchStats["fc"].Attempts) + ",");
+            stringBuilder.Append(MakeJS("FCWins", mQuestMatchStats["fc"].Wins) + ",");
+            stringBuilder.Append(MakeJS("FCLosses", mQuestMatchStats["fc"].Losses) + ",");
+        }
+        if (mQuestMatchStats.ContainsKey("tcat"))
+        {
+            stringBuilder.Append(MakeJS("TCATAttempts", mQuestMatchStats["tcat"].Attempts) + ",");
+            stringBuilder.Append(MakeJS("TCATWins", mQuestMatchStats["tcat"].Wins) + ",");
+            stringBuilder.Append(MakeJS("TCATLosses", mQuestMatchStats["tcat"].Losses) + ",");
+        }
+        if (mQuestMatchStats.ContainsKey("elfisto"))
+        {
+            stringBuilder.Append(MakeJS("EFAttempts", mQuestMatchStats["elfisto"].Attempts) + ",");
+            stringBuilder.Append(MakeJS("EFWins", mQuestMatchStats["elfisto"].Wins) + ",");
+            stringBuilder.Append(MakeJS("EFLosses", mQuestMatchStats["elfisto"].Losses) + ",");
+        }
+        StringBuilder stringBuilder2 = new StringBuilder();
+        StringBuilder stringBuilder3 = new StringBuilder();
+        StringBuilder stringBuilder4 = new StringBuilder();
+        StringBuilder stringBuilder5 = new StringBuilder();
+        StringBuilder stringBuilder6 = new StringBuilder();
+        StringBuilder stringBuilder7 = new StringBuilder();
+        StringBuilder stringBuilder8 = new StringBuilder();
+        StringBuilder stringBuilder9 = new StringBuilder();
+        foreach (KeyValuePair<string, BonusQuestStats> bonusQuest in BonusQuests)
+        {
+            stringBuilder2.Append(",");
+            stringBuilder2.Append("\"" + bonusQuest.Key.ToString() + "\"");
+            stringBuilder3.Append(",");
+            stringBuilder3.Append(Convert.ToInt32(bonusQuest.Value.firstAppearance));
+            stringBuilder4.Append(",");
+            stringBuilder4.Append(bonusQuest.Value.ActiveQuestID);
+            stringBuilder5.Append(",");
+            stringBuilder5.Append(bonusQuest.Value.ReplacedQuestID);
+            stringBuilder6.Append(",");
+            stringBuilder6.Append(bonusQuest.Value.CachedMatchStats.Attempts);
+            stringBuilder7.Append(",");
+            stringBuilder7.Append(bonusQuest.Value.CachedMatchStats.Wins);
+            stringBuilder8.Append(",");
+            stringBuilder8.Append(bonusQuest.Value.CachedMatchStats.Losses);
+            stringBuilder9.Append(",");
+            stringBuilder9.Append("\"" + bonusQuest.Value.LastPlayedTime.ToString() + "\"");
+        }
+        stringBuilder.Append("\"BonusQuest_QuestTypes\":");
+        stringBuilder.Append('[');
+        string text = stringBuilder2.ToString();
+        if (!string.IsNullOrEmpty(text) && text.Length >= 1)
+        {
+            stringBuilder.Append(text.Substring(1));
+        }
+        stringBuilder.Append(']' + ",");
+        stringBuilder.Append("\"BonusQuest_FirstAppearance\":");
+        stringBuilder.Append('[');
+        text = stringBuilder3.ToString();
+        if (!string.IsNullOrEmpty(text) && text.Length >= 1)
+        {
+            stringBuilder.Append(text.Substring(1));
+        }
+        stringBuilder.Append(']' + ",");
+        stringBuilder.Append("\"BonusQuest_ActiveQuestIDs\":");
+        stringBuilder.Append('[');
+        text = stringBuilder4.ToString();
+        if (!string.IsNullOrEmpty(text) && text.Length >= 1)
+        {
+            stringBuilder.Append(text.Substring(1));
+        }
+        stringBuilder.Append(']' + ",");
+        stringBuilder.Append("\"BonusQuest_ReplacedQuestIDs\":");
+        stringBuilder.Append('[');
+        text = stringBuilder5.ToString();
+        if (!string.IsNullOrEmpty(text) && text.Length >= 1)
+        {
+            stringBuilder.Append(text.Substring(1));
+        }
+        stringBuilder.Append(']' + ",");
+        stringBuilder.Append("\"BonusQuest_StatsAttempts\":");
+        stringBuilder.Append('[');
+        text = stringBuilder6.ToString();
+        if (!string.IsNullOrEmpty(text) && text.Length >= 1)
+        {
+            stringBuilder.Append(text.Substring(1));
+        }
+        stringBuilder.Append(']' + ",");
+        stringBuilder.Append("\"BonusQuest_StatsWins\":");
+        stringBuilder.Append('[');
+        text = stringBuilder7.ToString();
+        if (!string.IsNullOrEmpty(text) && text.Length >= 1)
+        {
+            stringBuilder.Append(text.Substring(1));
+        }
+        stringBuilder.Append(']' + ",");
+        stringBuilder.Append("\"BonusQuest_StatsLosses\":");
+        stringBuilder.Append('[');
+        text = stringBuilder8.ToString();
+        if (!string.IsNullOrEmpty(text) && text.Length >= 1)
+        {
+            stringBuilder.Append(text.Substring(1));
+        }
+        stringBuilder.Append(']' + ",");
+        stringBuilder.Append("\"BonusQuest_LastPlayed\":");
+        stringBuilder.Append('[');
+        text = stringBuilder9.ToString();
+        if (!string.IsNullOrEmpty(text) && text.Length >= 1)
+        {
+            stringBuilder.Append(text.Substring(1));
+        }
+        stringBuilder.Append(']' + ",");
+        stringBuilder.Append(MakeJS("SideQuestManagerInfo", mSideQuestManagerInfo) + ",");
+        stringBuilder.Append("\"Tutorials\":" + SerializeTutorials());
+        stringBuilder.Append('}');
+        return stringBuilder.ToString();
+    }
 
-	public void Deserialize(string json)
-	{
-		Dictionary<string, object> dictionary;
-		try
-		{
-			dictionary = JsonReader.Deserialize<Dictionary<string, object>>(json);
-		}
-		catch (Exception e)
-		{
-			//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize");
-			//CrashAnalytics.LogException(e);
-			dictionary = GetDefaultGameStateDictionary();
-		}
-		version = TFUtils.LoadInt(dictionary, "PlayerInfoVersion", 4);
-		if (version >= 1)
-		{
-			string text = TFUtils.LoadString(dictionary, "PlayerName", PlayerName);
-			if (!string.IsNullOrEmpty(text))
-			{
-				PlayerName = text;
-			}
-			PlayerAge = TFUtils.LoadInt(dictionary, "PlayerAge", 0);
-			CurrentGameID = TFUtils.LoadInt(dictionary, "CurrentGameID", 0);
-			CampaignProgress = TFUtils.LoadInt(dictionary, "CampaignProgress", 0);
-			Avatar = TFUtils.LoadString(dictionary, "Avatar", string.Empty);
-			UsePresetDeck = TFUtils.LoadBoolAsInt(dictionary, "UsePresetDeck", false);
-			Tutorial = TFUtils.LoadBoolAsInt(dictionary, "Tutorial", false);
-			DeckID = TFUtils.LoadInt(dictionary, "DeckID", 0);
-			mCoins = encryptValue(TFUtils.LoadInt(dictionary, "Coins", ParametersManager.Instance.New_Player_Coins));
-			mGemStr = encryptValue(TFUtils.LoadInt(dictionary, "Gems", ParametersManager.Instance.New_Player_Gems));
-			mCoinsAccumulated = encryptValue(TFUtils.LoadInt(dictionary, "CoinsAccumulated", 0));
-			mGemsAccumulated = encryptValue(TFUtils.LoadInt(dictionary, "GemsAccumulated", 0));
-			mCurrentQuestIDs["main"] = TFUtils.LoadInt(dictionary, "CurrentQuest", QuestManager.Instance.GetFirstQuestID("main"));
-			mLastClearedQuestIDs["main"] = TFUtils.LoadInt(dictionary, "LastClearedQuest", 0);
-			NumMPGamesPlayed = TFUtils.LoadInt(dictionary, "NumMPGamesPlayed", 0);
-			Stamina = TFUtils.LoadInt(dictionary, "Stamina", ParametersManager.Instance.New_Player_Max_Stamina);
-			Stamina_Max = TFUtils.LoadInt(dictionary, "Stamina_Max", ParametersManager.Instance.New_Player_Max_Stamina);
-			mMaxInventory = encryptValue(TFUtils.LoadInt(dictionary, "MaxInventory", ParametersManager.Instance.New_Player_Max_Inventory));
-			SelectedDeck = TFUtils.LoadInt(dictionary, "SelectedDeck", 0);
-			SelectedMPDeck = TFUtils.LoadInt(dictionary, "SelectedMPDeck", 0);
-			NotificationEnabled = TFUtils.LoadBoolAsInt(dictionary, "NotificationEnabled", false);
-			Party = TFUtils.LoadString(dictionary, "Party", null);
-			PartyExpiration = TFUtils.LoadInt(dictionary, "PartyExpiration", 0);
-			mNumberofTrophies = TFUtils.LoadInt(dictionary, "NumberofTrophies", 0);
-			mMPPlayerName = TFUtils.LoadString(dictionary, "MPPlayerName", string.Empty);
-			mChecksum = TFUtils.LoadString(dictionary, "Magic", " ");
-			mGatchaKeyRewarded = TFUtils.LoadBoolAsInt(dictionary, "KeyRewarded", false);
-			TOSVersionAgreedTo = TFUtils.LoadInt(dictionary, "TOSVersionAgreedTo", 0);
-			PPVersionAgreedTo = TFUtils.LoadInt(dictionary, "PPVersionAgreedTo", 0);
-			try
-			{
-				MultiplayerRank = TFUtils.TryLoadString(dictionary, "MultiplayerRank");
-			}
-			catch (Exception e2)
-			{
-				//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 10);
-				//CrashAnalytics.LogException(e2);
-				MultiplayerRank = null;
-			}
-			try
-			{
-				string s = TFUtils.LoadString(dictionary, "DailyGiftTimestamp", DateTime.MinValue.ToString());
-				DailyGiftTimestamp = DateTime.Parse(s);
-			}
-			catch (Exception e3)
-			{
-				//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
-				//CrashAnalytics.LogException(e3);
-				TFUtils.ErrorLog("Bad/corrupted DailyGiftTimestamp in save game.");
-				DailyGiftTimestamp = TFUtils.ServerTime;
-			}
-			try
-			{
-				string s2 = TFUtils.LoadString(dictionary, "LastGiftTimestamp", DateTime.MinValue.ToString());
-				LastGiftTimestamp = DateTime.Parse(s2);
-			}
-			catch (Exception e4)
-			{
-				//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
-				//CrashAnalytics.LogException(e4);
-				TFUtils.ErrorLog("Bad/corrupted LastGiftTimestamp in save game.");
-				LastGiftTimestamp = GetNow();
-			}
-			NumUsedFreeGifts = TFUtils.LoadInt(dictionary, "NumUsedFreeGifts", 0);
-			try
-			{
-				string s3 = TFUtils.LoadString(dictionary, "LastGiftTimestamp", DateTime.MinValue.ToString());
-				LastGiftTimestamp = DateTime.Parse(s3);
-			}
-			catch (Exception e5)
-			{
-				//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
-				//CrashAnalytics.LogException(e5);
-				TFUtils.ErrorLog("Bad/corrupted LastGiftTimestamp in save game.");
-				LastGiftTimestamp = GetNow();
-			}
-			bool flag = false;
-			try
-			{
-				string s4 = TFUtils.LoadString(dictionary, "FirstCalendarTimestamp", DateTime.MinValue.ToString());
-				FirstCalendarTimestamp = DateTime.Parse(s4);
-				if (FirstCalendarTimestamp != DateTime.MinValue)
-				{
-					flag = true;
-				}
-			}
-			catch (Exception e6)
-			{
-				//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
-				//CrashAnalytics.LogException(e6);
-				TFUtils.ErrorLog("Bad/corrupted FirstCalendarTimestamp in save game.");
-				FirstCalendarTimestamp = GetNow();
-			}
-			try
-			{
-				string s5 = TFUtils.LoadString(dictionary, "LastCalendarTimestamp", DateTime.MinValue.ToString());
-				LastCalendarTimestamp = DateTime.Parse(s5);
-				if (LastCalendarTimestamp != DateTime.MinValue)
-				{
-					flag = true;
-				}
-			}
-			catch (Exception e7)
-			{
-				//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
-				//CrashAnalytics.LogException(e7);
-				TFUtils.ErrorLog("Bad/corrupted LastCalendarTimestamp in save game.");
-				LastCalendarTimestamp = GetNow();
-			}
-			uint? num = TFUtils.TryLoadUint(dictionary, "CalendarDaysClaimed");
-			CalendarDaysClaimed = (num.HasValue ? num.Value : 0u);
-			if (null != DebugFlagsScript.GetInstance() && DebugFlagsScript.GetInstance().resetCalendar)
-			{
-				TFUtils.DebugLog("DebugFlags.resetCalendar is true, resetting gift calendar data...");
-				FirstCalendarTimestamp = (LastCalendarTimestamp = DateTime.MinValue);
-				CalendarDaysClaimed = 0u;
-			}
-			if (flag)
-			{
-				string[] iNTRO_TUTORIALS = INTRO_TUTORIALS;
-				foreach (string item in iNTRO_TUTORIALS)
-				{
-					if (!tutorialsCompleted.Contains(item))
-					{
-						tutorialsCompleted.Add(item);
-					}
-				}
-			}
-			if (dictionary.ContainsKey("LastTimestamp"))
-			{
-				LastTimestamp = (string)dictionary["LastTimestamp"];
-				StaminaTimerController.GetInstance().Initiate(LastTimestamp);
-			}
-			else
-			{
-				StaminaTimerController.GetInstance().Initiate();
-			}
-			if (dictionary.ContainsKey("QuestStars"))
-			{
-				try
-				{
-					int[] array = (int[])dictionary["QuestStars"];
-					QuestProgress["main"] = new Dictionary<int, int>();
-					for (int j = 0; j < array.Count(); j++)
-					{
-						QuestProgress["main"].Add(j + 1, array[j]);
-					}
-				}
-				catch (InvalidCastException e8)
-				{
-					//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 30);
-					//CrashAnalytics.LogException(e8);
-				}
-			}
-			if (dictionary.ContainsKey("Tags"))
-			{
-				try
-				{
-					string[] collection = (string[])dictionary["Tags"];
-					Tags = new List<string>(collection);
-				}
-				catch (InvalidCastException)
-				{
-					Tags = new List<string>();
-				}
-			}
-			else
-			{
-				Tags = new List<string>();
-			}
-			if (dictionary.ContainsKey("GachaKeys"))
-			{
-				try
-				{
-					GachaKeys.Deserialize((object[])dictionary["GachaKeys"]);
-				}
-				catch (InvalidCastException)
-				{
-				}
-			}
-			if (dictionary.ContainsKey("DungeonProgress"))
-			{
-				try
-				{
-					Dictionary<string, object> dictionary2 = (Dictionary<string, object>)dictionary["DungeonProgress"];
-					if (dictionary2 != null && dictionary2.Count > 0)
-					{
-						DungeonProgress = new Dictionary<string, int>();
-						foreach (string key in dictionary2.Keys)
-						{
-							DungeonProgress[key] = Convert.ToInt32(dictionary2[key]);
-						}
-						UnlockDungeonQuests(DungeonProgress.Keys);
-					}
-				}
-				catch (Exception e9)
-				{
-					//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 40);
-					//CrashAnalytics.LogException(e9);
-				}
-			}
-			if (dictionary.ContainsKey("OccuranceCounter"))
-			{
-				try
-				{
-					Dictionary<string, object> dictionary3 = (Dictionary<string, object>)dictionary["OccuranceCounter"];
-					if (dictionary3 != null && dictionary3.Count > 0)
-					{
-						OccuranceCounter = new Dictionary<string, int>();
-						foreach (string key2 in dictionary3.Keys)
-						{
-							OccuranceCounter[key2] = Convert.ToInt32(dictionary3[key2]);
-						}
-					}
-				}
-				catch (Exception e10)
-				{
-					//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 40);
-					//CrashAnalytics.LogException(e10);
-				}
-				DebugFlagsScript instance = DebugFlagsScript.GetInstance();
-				if (null != instance)
-				{
-					instance.FCCompleteDemo = HasCompletedFCDemo();
-				}
-			}
-			if (dictionary.ContainsKey("AutoBattleSetting"))
-			{
-				AutoBattleSetting = TFUtils.LoadBool(dictionary, "AutoBattleSetting", false);
-			}
-			if (dictionary.ContainsKey("Tutorials"))
-			{
-				try
-				{
-					if (dictionary["Tutorials"].GetType() == typeof(string[]))
-					{
-						string[] collection2 = (string[])dictionary["Tutorials"];
-						tutorialsCompleted = new List<string>(collection2);
-					}
-				}
-				catch (InvalidCastException e11)
-				{
-					//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 50);
-					//CrashAnalytics.LogException(e11);
-				}
-			}
-			if (dictionary.ContainsKey("Fusion"))
-			{
-				FusionManager.Instance.InventoryFromDict((Dictionary<string, object>)dictionary["Fusion"]);
-			}
-			if (dictionary.ContainsKey("Inventory"))
-			{
-				DeckManager.InventoryFromDict((Dictionary<string, object>)dictionary["Inventory"]);
-			}
-			if (dictionary.ContainsKey("Leaders"))
-			{
-				LeaderManager.Instance.InventoryFromDict((Dictionary<string, object>)dictionary["Leaders"]);
-			}
-			else
-			{
-				LeaderManager.Instance.FillLeadersWithDummyData();
-			}
-			if (TFUtils.LoadBoolAsInt(dictionary, "HasRedeemedPig", false))
-			{
-				SetTag(Tag.GotCreaturePig);
-			}
-			if (TFUtils.LoadBoolAsInt(dictionary, "HasRedeemedSpell", false))
-			{
-				SetTag(Tag.GotSpellCerebral);
-			}
-			if (TFUtils.LoadBoolAsInt(dictionary, "HasRedeemedSpell_BriefPower", false))
-			{
-				SetTag(Tag.GotSpellBriefPower);
-			}
-			if (TFUtils.LoadBoolAsInt(dictionary, "HasRedeemedSnuggleTree", false))
-			{
-				SetTag(Tag.GotCreatureSnuggleTree);
-			}
-		}
-		if (version >= 2)
-		{
-			mCurrentQuestIDs["fc"] = TFUtils.LoadInt(dictionary, "CurrentFCQuestID", QuestManager.Instance.GetFirstQuestID("fc"));
-			mLastClearedQuestIDs["fc"] = TFUtils.LoadInt(dictionary, "LastClearedFCQuestID", 0);
-			DeserializeDictionary(dictionary, QuestProgress, "main", "QuestProgress_MainIDs", "QuestProgress_MainStars");
-			DeserializeDictionary(dictionary, QuestProgress, "fc", "QuestProgress_FCIDs", "QuestProgress_FCStars");
-			DeserializeDictionary(dictionary, QuestProgress, "tcat", "QuestProgress_TCatIDs", "QuestProgress_TCatStars");
-			DeserializeDictionary(dictionary, QuestProgress, "elfisto", "QuestProgress_ElfistoIDs", "QuestProgress_ElfistoStars");
-			mQuestMatchStats["main"] = new MatchStats();
-			mQuestMatchStats["main"].Attempts = TFUtils.LoadInt(dictionary, "CWAttempts", 0);
-			mQuestMatchStats["main"].Wins = TFUtils.LoadInt(dictionary, "CWWins", 0);
-			mQuestMatchStats["main"].Losses = TFUtils.LoadInt(dictionary, "CWLosses", 0);
-			mQuestMatchStats["fc"] = new MatchStats();
-			mQuestMatchStats["fc"].Attempts = TFUtils.LoadInt(dictionary, "FCAttempts", 0);
-			mQuestMatchStats["fc"].Wins = TFUtils.LoadInt(dictionary, "FCWins", 0);
-			mQuestMatchStats["fc"].Losses = TFUtils.LoadInt(dictionary, "FCLosses", 0);
-			if (dictionary.ContainsKey("TCATAttempts"))
-			{
-				mQuestMatchStats["tcat"] = new MatchStats();
-				mQuestMatchStats["tcat"].Attempts = TFUtils.LoadInt(dictionary, "TCATAttempts", 0);
-				mQuestMatchStats["tcat"].Wins = TFUtils.LoadInt(dictionary, "TCATWins", 0);
-				mQuestMatchStats["tcat"].Losses = TFUtils.LoadInt(dictionary, "TCATLosses", 0);
-			}
-			if (dictionary.ContainsKey("EFAttempts"))
-			{
-				mQuestMatchStats["elfisto"] = new MatchStats();
-				mQuestMatchStats["elfisto"].Attempts = TFUtils.LoadInt(dictionary, "EFAttempts", 0);
-				mQuestMatchStats["elfisto"].Wins = TFUtils.LoadInt(dictionary, "EFWins", 0);
-				mQuestMatchStats["elfisto"].Losses = TFUtils.LoadInt(dictionary, "EFLosses", 0);
-			}
-			mQuestMapDeckIdx["main"] = TFUtils.LoadInt(dictionary, "DeckMain", 0);
-			mQuestMapDeckIdx["fc"] = TFUtils.LoadInt(dictionary, "DeckFC", 0);
-			try
-			{
-				if (!dictionary.ContainsKey("BonusQuest_QuestTypes") || !dictionary.ContainsKey("BonusQuest_FirstAppearance") || !dictionary.ContainsKey("BonusQuest_ActiveQuestIDs") || !dictionary.ContainsKey("BonusQuest_ReplacedQuestIDs") || !dictionary.ContainsKey("BonusQuest_StatsAttempts") || !dictionary.ContainsKey("BonusQuest_StatsWins") || !dictionary.ContainsKey("BonusQuest_StatsLosses") || !dictionary.ContainsKey("BonusQuest_LastPlayed"))
-				{
-					throw new ApplicationException("missing bonusquest keys");
-				}
-				string[] array2 = (string[])dictionary["BonusQuest_QuestTypes"];
-				int[] array3 = (int[])dictionary["BonusQuest_FirstAppearance"];
-				int[] array4 = (int[])dictionary["BonusQuest_ActiveQuestIDs"];
-				int[] array5 = (int[])dictionary["BonusQuest_ReplacedQuestIDs"];
-				int[] array6 = (int[])dictionary["BonusQuest_StatsAttempts"];
-				int[] array7 = (int[])dictionary["BonusQuest_StatsWins"];
-				int[] array8 = (int[])dictionary["BonusQuest_StatsLosses"];
-				string[] array9 = (string[])dictionary["BonusQuest_LastPlayed"];
-				if (array2.Length != array4.Length || array2.Length != array5.Length)
-				{
-					UnityEngine.Debug.LogError(string.Format("Inconsistent array lengths between {0}({1}) and {2}({3})", "BonusQuest_QuestTypes", array2.Length, "BonusQuest_ActiveQuestIDs", array4.Length));
-				}
-				for (int k = 0; k < array2.Count(); k++)
-				{
-					BonusQuests[array2[k]] = new BonusQuestStats();
-					int activeQuestID = array4[k];
-					BonusQuests[array2[k]].firstAppearance = Convert.ToBoolean(array3[k]);
-					BonusQuests[array2[k]].ActiveQuestID = activeQuestID;
-					BonusQuests[array2[k]].ReplacedQuestID = array5[k];
-					try
-					{
-						BonusQuests[array2[k]].LastPlayedTime = Convert.ToDateTime(array9[k]);
-					}
-					catch (FormatException)
-					{
-						BonusQuests[array2[k]].LastPlayedTime = DateTime.MinValue;
-					}
-					BonusQuests[array2[k]].CachedMatchStats.Attempts = array6[k];
-					BonusQuests[array2[k]].CachedMatchStats.Wins = array7[k];
-					BonusQuests[array2[k]].CachedMatchStats.Losses = array8[k];
-				}
-			}
-			catch (InvalidCastException e12)
-			{
-				//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 30);
-				//CrashAnalytics.LogException(e12);
-				BonusQuests["fc"] = new BonusQuestStats();
-			}
-			catch (ApplicationException)
-			{
-				BonusQuests["fc"] = new BonusQuestStats();
-			}
-		}
-		if (version >= 3)
-		{
-			mQuestMatchStats["elfisto"] = new MatchStats();
-			mQuestMatchStats["elfisto"].Attempts = TFUtils.LoadInt(dictionary, "EFAttempts", 0);
-			mQuestMatchStats["elfisto"].Wins = TFUtils.LoadInt(dictionary, "EFWins", 0);
-			mQuestMatchStats["elfisto"].Losses = TFUtils.LoadInt(dictionary, "EFLosses", 0);
-			try
-			{
-				if (dictionary.ContainsKey("SideQuestManagerInfo"))
-				{
-					Dictionary<string, object> dictionary4 = (Dictionary<string, object>)dictionary["SideQuestManagerInfo"];
-					foreach (KeyValuePair<string, object> item2 in dictionary4)
-					{
-						SideQuestManagerInfo sideQuestManagerInfo = new SideQuestManagerInfo();
-						sideQuestManagerInfo.Deserialize(item2.Value);
-						mSideQuestManagerInfo.Add(item2.Key, sideQuestManagerInfo);
-					}
-				}
-			}
-			catch (Exception)
-			{
-			}
-		}
-		if (version >= 4)
-		{
-			try
-			{
-				UnlockedRegions = new Dictionary<string, HashSet<int>>();
-				if (dictionary.ContainsKey("UnlockedRegions"))
-				{
-					Dictionary<string, object> dictionary5 = (Dictionary<string, object>)dictionary["UnlockedRegions"];
-					foreach (KeyValuePair<string, object> item3 in dictionary5)
-					{
-						try
-						{
-							int[] collection3 = (int[])dictionary5[item3.Key];
-							UnlockedRegions[item3.Key] = new HashSet<int>(collection3);
-						}
-						catch (Exception)
-						{
-						}
-					}
-				}
-			}
-			catch (Exception)
-			{
-			}
-			MPDeckLeaderID = TFUtils.LoadString(dictionary, "MPDeckLeaderID", string.Empty);
-			if (string.IsNullOrEmpty(MPDeckLeaderID))
-			{
-				MPDeckLeaderID = DeckManager.Decks[SelectedMPDeck].Leader.Form.ID;
-			}
-			if (LeaderManager.Instance.IsLeaderFromFC(MPDeckLeaderID))
-			{
-				MPDeckLeaderID = "Leader_Jake";
-			}
-		}
-		version = 4;
-		PostDeserializeFixUpQuestProgress();
-		PostDeserializeFixUpTutorialFlow();
-	}
+    public void Deserialize(string json)
+    {
+        Dictionary<string, object> dictionary;
+        try
+        {
+            dictionary = JsonReader.Deserialize<Dictionary<string, object>>(json);
+        }
+        catch (Exception e)
+        {
+            Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize");
+            CrashAnalytics.LogException(e);
+            dictionary = GetDefaultGameStateDictionary();
+        }
+        version = TFUtils.LoadInt(dictionary, "PlayerInfoVersion", 4);
+        if (version >= 1)
+        {
+            string text = TFUtils.LoadString(dictionary, "PlayerName", PlayerName);
+            if (!string.IsNullOrEmpty(text))
+            {
+                PlayerName = text;
+            }
+            PlayerAge = TFUtils.LoadInt(dictionary, "PlayerAge", 0);
+            CurrentGameID = TFUtils.LoadInt(dictionary, "CurrentGameID", 0);
+            CampaignProgress = TFUtils.LoadInt(dictionary, "CampaignProgress", 0);
+            Avatar = TFUtils.LoadString(dictionary, "Avatar", string.Empty);
+            UsePresetDeck = TFUtils.LoadBoolAsInt(dictionary, "UsePresetDeck", false);
+            Tutorial = TFUtils.LoadBoolAsInt(dictionary, "Tutorial", false);
+            DeckID = TFUtils.LoadInt(dictionary, "DeckID", 0);
+            mCoins = encryptValue(TFUtils.LoadInt(dictionary, "Coins", ParametersManager.Instance.New_Player_Coins));
+            mGemStr = encryptValue(TFUtils.LoadInt(dictionary, "Gems", ParametersManager.Instance.New_Player_Gems));
+            mCoinsAccumulated = encryptValue(TFUtils.LoadInt(dictionary, "CoinsAccumulated", 0));
+            mGemsAccumulated = encryptValue(TFUtils.LoadInt(dictionary, "GemsAccumulated", 0));
+            mCurrentQuestIDs["main"] = TFUtils.LoadInt(dictionary, "CurrentQuest", QuestManager.Instance.GetFirstQuestID("main"));
+            mLastClearedQuestIDs["main"] = TFUtils.LoadInt(dictionary, "LastClearedQuest", 0);
+            NumMPGamesPlayed = TFUtils.LoadInt(dictionary, "NumMPGamesPlayed", 0);
+            Stamina = TFUtils.LoadInt(dictionary, "Stamina", ParametersManager.Instance.New_Player_Max_Stamina);
+            Stamina_Max = TFUtils.LoadInt(dictionary, "Stamina_Max", ParametersManager.Instance.New_Player_Max_Stamina);
+            mMaxInventory = encryptValue(TFUtils.LoadInt(dictionary, "MaxInventory", ParametersManager.Instance.New_Player_Max_Inventory));
+            SelectedDeck = TFUtils.LoadInt(dictionary, "SelectedDeck", 0);
+            SelectedMPDeck = TFUtils.LoadInt(dictionary, "SelectedMPDeck", 0);
+            NotificationEnabled = TFUtils.LoadBoolAsInt(dictionary, "NotificationEnabled", false);
+            Party = TFUtils.LoadString(dictionary, "Party", null);
+            PartyExpiration = TFUtils.LoadInt(dictionary, "PartyExpiration", 0);
+            mNumberofTrophies = TFUtils.LoadInt(dictionary, "NumberofTrophies", 0);
+            mMPPlayerName = TFUtils.LoadString(dictionary, "MPPlayerName", string.Empty);
+            mChecksum = TFUtils.LoadString(dictionary, "Magic", " ");
+            mGatchaKeyRewarded = TFUtils.LoadBoolAsInt(dictionary, "KeyRewarded", false);
+            TOSVersionAgreedTo = TFUtils.LoadInt(dictionary, "TOSVersionAgreedTo", 0);
+            PPVersionAgreedTo = TFUtils.LoadInt(dictionary, "PPVersionAgreedTo", 0);
+            try
+            {
+                MultiplayerRank = TFUtils.TryLoadString(dictionary, "MultiplayerRank");
+            }
+            catch (Exception e2)
+            {
+                Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 10);
+                CrashAnalytics.LogException(e2);
+                MultiplayerRank = null;
+            }
+            try
+            {
+                string s = TFUtils.LoadString(dictionary, "DailyGiftTimestamp", DateTime.MinValue.ToString());
+                DailyGiftTimestamp = DateTime.Parse(s);
+            }
+            catch (Exception e3)
+            {
+                Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
+                CrashAnalytics.LogException(e3);
+                TFUtils.ErrorLog("Bad/corrupted DailyGiftTimestamp in save game.");
+                DailyGiftTimestamp = TFUtils.ServerTime;
+            }
+            try
+            {
+                string s2 = TFUtils.LoadString(dictionary, "LastGiftTimestamp", DateTime.MinValue.ToString());
+                LastGiftTimestamp = DateTime.Parse(s2);
+            }
+            catch (Exception e4)
+            {
+                Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
+                CrashAnalytics.LogException(e4);
+                TFUtils.ErrorLog("Bad/corrupted LastGiftTimestamp in save game.");
+                LastGiftTimestamp = GetNow();
+            }
+            NumUsedFreeGifts = TFUtils.LoadInt(dictionary, "NumUsedFreeGifts", 0);
+            try
+            {
+                string s3 = TFUtils.LoadString(dictionary, "LastGiftTimestamp", DateTime.MinValue.ToString());
+                LastGiftTimestamp = DateTime.Parse(s3);
+            }
+            catch (Exception e5)
+            {
+                Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
+                CrashAnalytics.LogException(e5);
+                TFUtils.ErrorLog("Bad/corrupted LastGiftTimestamp in save game.");
+                LastGiftTimestamp = GetNow();
+            }
+            bool flag = false;
+            try
+            {
+                string s4 = TFUtils.LoadString(dictionary, "FirstCalendarTimestamp", DateTime.MinValue.ToString());
+                FirstCalendarTimestamp = DateTime.Parse(s4);
+                if (FirstCalendarTimestamp != DateTime.MinValue)
+                {
+                    flag = true;
+                }
+            }
+            catch (Exception e6)
+            {
+                Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
+                CrashAnalytics.LogException(e6);
+                TFUtils.ErrorLog("Bad/corrupted FirstCalendarTimestamp in save game.");
+                FirstCalendarTimestamp = GetNow();
+            }
+            try
+            {
+                string s5 = TFUtils.LoadString(dictionary, "LastCalendarTimestamp", DateTime.MinValue.ToString());
+                LastCalendarTimestamp = DateTime.Parse(s5);
+                if (LastCalendarTimestamp != DateTime.MinValue)
+                {
+                    flag = true;
+                }
+            }
+            catch (Exception e7)
+            {
+                Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 20);
+                CrashAnalytics.LogException(e7);
+                TFUtils.ErrorLog("Bad/corrupted LastCalendarTimestamp in save game.");
+                LastCalendarTimestamp = GetNow();
+            }
+            uint? num = TFUtils.TryLoadUint(dictionary, "CalendarDaysClaimed");
+            CalendarDaysClaimed = (num.HasValue ? num.Value : 0u);
+            if (null != DebugFlagsScript.GetInstance() && DebugFlagsScript.GetInstance().resetCalendar)
+            {
+                TFUtils.DebugLog("DebugFlags.resetCalendar is true, resetting gift calendar data...");
+                FirstCalendarTimestamp = (LastCalendarTimestamp = DateTime.MinValue);
+                CalendarDaysClaimed = 0u;
+            }
+            if (flag)
+            {
+                string[] iNTRO_TUTORIALS = INTRO_TUTORIALS;
+                foreach (string item in iNTRO_TUTORIALS)
+                {
+                    if (!tutorialsCompleted.Contains(item))
+                    {
+                        tutorialsCompleted.Add(item);
+                    }
+                }
+            }
+            if (dictionary.ContainsKey("LastTimestamp"))
+            {
+                LastTimestamp = (string)dictionary["LastTimestamp"];
+                StaminaTimerController.GetInstance().Initiate(LastTimestamp);
+            }
+            else
+            {
+                StaminaTimerController.GetInstance().Initiate();
+            }
+            if (dictionary.ContainsKey("QuestStars"))
+            {
+                try
+                {
+                    int[] array = (int[])dictionary["QuestStars"];
+                    QuestProgress["main"] = new Dictionary<int, int>();
+                    for (int j = 0; j < array.Count(); j++)
+                    {
+                        QuestProgress["main"].Add(j + 1, array[j]);
+                    }
+                }
+                catch (InvalidCastException e8)
+                {
+                    Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 30);
+                    CrashAnalytics.LogException(e8);
+                }
+            }
+            if (dictionary.ContainsKey("Tags"))
+            {
+                try
+                {
+                    string[] collection = (string[])dictionary["Tags"];
+                    Tags = new List<string>(collection);
+                }
+                catch (InvalidCastException)
+                {
+                    Tags = new List<string>();
+                }
+            }
+            else
+            {
+                Tags = new List<string>();
+            }
+            if (dictionary.ContainsKey("GachaKeys"))
+            {
+                try
+                {
+                    GachaKeys.Deserialize((object[])dictionary["GachaKeys"]);
+                }
+                catch (InvalidCastException)
+                {
+                }
+            }
+            if (dictionary.ContainsKey("DungeonProgress"))
+            {
+                try
+                {
+                    Dictionary<string, object> dictionary2 = (Dictionary<string, object>)dictionary["DungeonProgress"];
+                    if (dictionary2 != null && dictionary2.Count > 0)
+                    {
+                        DungeonProgress = new Dictionary<string, int>();
+                        foreach (string key in dictionary2.Keys)
+                        {
+                            DungeonProgress[key] = Convert.ToInt32(dictionary2[key]);
+                        }
+                        UnlockDungeonQuests(DungeonProgress.Keys);
+                    }
+                }
+                catch (Exception e9)
+                {
+                    Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 40);
+                    CrashAnalytics.LogException(e9);
+                }
+            }
+            if (dictionary.ContainsKey("OccuranceCounter"))
+            {
+                try
+                {
+                    Dictionary<string, object> dictionary3 = (Dictionary<string, object>)dictionary["OccuranceCounter"];
+                    if (dictionary3 != null && dictionary3.Count > 0)
+                    {
+                        OccuranceCounter = new Dictionary<string, int>();
+                        foreach (string key2 in dictionary3.Keys)
+                        {
+                            OccuranceCounter[key2] = Convert.ToInt32(dictionary3[key2]);
+                        }
+                    }
+                }
+                catch (Exception e10)
+                {
+                    Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 40);
+                    CrashAnalytics.LogException(e10);
+                }
+                DebugFlagsScript instance = DebugFlagsScript.GetInstance();
+                if (null != instance)
+                {
+                    instance.FCCompleteDemo = HasCompletedFCDemo();
+                }
+            }
+            if (dictionary.ContainsKey("AutoBattleSetting"))
+            {
+                AutoBattleSetting = TFUtils.LoadBool(dictionary, "AutoBattleSetting", false);
+            }
+            if (dictionary.ContainsKey("Tutorials"))
+            {
+                try
+                {
+                    if (dictionary["Tutorials"].GetType() == typeof(string[]))
+                    {
+                        string[] collection2 = (string[])dictionary["Tutorials"];
+                        tutorialsCompleted = new List<string>(collection2);
+                    }
+                }
+                catch (InvalidCastException e11)
+                {
+                    Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 50);
+                    CrashAnalytics.LogException(e11);
+                }
+            }
+            if (dictionary.ContainsKey("Fusion"))
+            {
+                FusionManager.Instance.InventoryFromDict((Dictionary<string, object>)dictionary["Fusion"]);
+            }
+            if (dictionary.ContainsKey("Inventory"))
+            {
+                DeckManager.InventoryFromDict((Dictionary<string, object>)dictionary["Inventory"]);
+            }
+            if (dictionary.ContainsKey("Leaders"))
+            {
+                LeaderManager.Instance.InventoryFromDict((Dictionary<string, object>)dictionary["Leaders"]);
+            }
+            else
+            {
+                LeaderManager.Instance.FillLeadersWithDummyData();
+            }
+            if (TFUtils.LoadBoolAsInt(dictionary, "HasRedeemedPig", false))
+            {
+                SetTag(Tag.GotCreaturePig);
+            }
+            if (TFUtils.LoadBoolAsInt(dictionary, "HasRedeemedSpell", false))
+            {
+                SetTag(Tag.GotSpellCerebral);
+            }
+            if (TFUtils.LoadBoolAsInt(dictionary, "HasRedeemedSpell_BriefPower", false))
+            {
+                SetTag(Tag.GotSpellBriefPower);
+            }
+            if (TFUtils.LoadBoolAsInt(dictionary, "HasRedeemedSnuggleTree", false))
+            {
+                SetTag(Tag.GotCreatureSnuggleTree);
+            }
+        }
+        if (version >= 2)
+        {
+            mCurrentQuestIDs["fc"] = TFUtils.LoadInt(dictionary, "CurrentFCQuestID", QuestManager.Instance.GetFirstQuestID("fc"));
+            mLastClearedQuestIDs["fc"] = TFUtils.LoadInt(dictionary, "LastClearedFCQuestID", 0);
+            DeserializeDictionary(dictionary, QuestProgress, "main", "QuestProgress_MainIDs", "QuestProgress_MainStars");
+            DeserializeDictionary(dictionary, QuestProgress, "fc", "QuestProgress_FCIDs", "QuestProgress_FCStars");
+            DeserializeDictionary(dictionary, QuestProgress, "tcat", "QuestProgress_TCatIDs", "QuestProgress_TCatStars");
+            DeserializeDictionary(dictionary, QuestProgress, "elfisto", "QuestProgress_ElfistoIDs", "QuestProgress_ElfistoStars");
+            mQuestMatchStats["main"] = new MatchStats();
+            mQuestMatchStats["main"].Attempts = TFUtils.LoadInt(dictionary, "CWAttempts", 0);
+            mQuestMatchStats["main"].Wins = TFUtils.LoadInt(dictionary, "CWWins", 0);
+            mQuestMatchStats["main"].Losses = TFUtils.LoadInt(dictionary, "CWLosses", 0);
+            mQuestMatchStats["fc"] = new MatchStats();
+            mQuestMatchStats["fc"].Attempts = TFUtils.LoadInt(dictionary, "FCAttempts", 0);
+            mQuestMatchStats["fc"].Wins = TFUtils.LoadInt(dictionary, "FCWins", 0);
+            mQuestMatchStats["fc"].Losses = TFUtils.LoadInt(dictionary, "FCLosses", 0);
+            if (dictionary.ContainsKey("TCATAttempts"))
+            {
+                mQuestMatchStats["tcat"] = new MatchStats();
+                mQuestMatchStats["tcat"].Attempts = TFUtils.LoadInt(dictionary, "TCATAttempts", 0);
+                mQuestMatchStats["tcat"].Wins = TFUtils.LoadInt(dictionary, "TCATWins", 0);
+                mQuestMatchStats["tcat"].Losses = TFUtils.LoadInt(dictionary, "TCATLosses", 0);
+            }
+            if (dictionary.ContainsKey("EFAttempts"))
+            {
+                mQuestMatchStats["elfisto"] = new MatchStats();
+                mQuestMatchStats["elfisto"].Attempts = TFUtils.LoadInt(dictionary, "EFAttempts", 0);
+                mQuestMatchStats["elfisto"].Wins = TFUtils.LoadInt(dictionary, "EFWins", 0);
+                mQuestMatchStats["elfisto"].Losses = TFUtils.LoadInt(dictionary, "EFLosses", 0);
+            }
+            mQuestMapDeckIdx["main"] = TFUtils.LoadInt(dictionary, "DeckMain", 0);
+            mQuestMapDeckIdx["fc"] = TFUtils.LoadInt(dictionary, "DeckFC", 0);
+            try
+            {
+                if (!dictionary.ContainsKey("BonusQuest_QuestTypes") || !dictionary.ContainsKey("BonusQuest_FirstAppearance") || !dictionary.ContainsKey("BonusQuest_ActiveQuestIDs") || !dictionary.ContainsKey("BonusQuest_ReplacedQuestIDs") || !dictionary.ContainsKey("BonusQuest_StatsAttempts") || !dictionary.ContainsKey("BonusQuest_StatsWins") || !dictionary.ContainsKey("BonusQuest_StatsLosses") || !dictionary.ContainsKey("BonusQuest_LastPlayed"))
+                {
+                    throw new ApplicationException("missing bonusquest keys");
+                }
+                string[] array2 = (string[])dictionary["BonusQuest_QuestTypes"];
+                int[] array3 = (int[])dictionary["BonusQuest_FirstAppearance"];
+                int[] array4 = (int[])dictionary["BonusQuest_ActiveQuestIDs"];
+                int[] array5 = (int[])dictionary["BonusQuest_ReplacedQuestIDs"];
+                int[] array6 = (int[])dictionary["BonusQuest_StatsAttempts"];
+                int[] array7 = (int[])dictionary["BonusQuest_StatsWins"];
+                int[] array8 = (int[])dictionary["BonusQuest_StatsLosses"];
+                string[] array9 = (string[])dictionary["BonusQuest_LastPlayed"];
+                if (array2.Length != array4.Length || array2.Length != array5.Length)
+                {
+                    UnityEngine.Debug.LogError(string.Format("Inconsistent array lengths between {0}({1}) and {2}({3})", "BonusQuest_QuestTypes", array2.Length, "BonusQuest_ActiveQuestIDs", array4.Length));
+                }
+                for (int k = 0; k < array2.Count(); k++)
+                {
+                    BonusQuests[array2[k]] = new BonusQuestStats();
+                    int activeQuestID = array4[k];
+                    BonusQuests[array2[k]].firstAppearance = Convert.ToBoolean(array3[k]);
+                    BonusQuests[array2[k]].ActiveQuestID = activeQuestID;
+                    BonusQuests[array2[k]].ReplacedQuestID = array5[k];
+                    try
+                    {
+                        BonusQuests[array2[k]].LastPlayedTime = Convert.ToDateTime(array9[k]);
+                    }
+                    catch (FormatException)
+                    {
+                        BonusQuests[array2[k]].LastPlayedTime = DateTime.MinValue;
+                    }
+                    BonusQuests[array2[k]].CachedMatchStats.Attempts = array6[k];
+                    BonusQuests[array2[k]].CachedMatchStats.Wins = array7[k];
+                    BonusQuests[array2[k]].CachedMatchStats.Losses = array8[k];
+                }
+            }
+            catch (InvalidCastException e12)
+            {
+                Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 30);
+                CrashAnalytics.LogException(e12);
+                BonusQuests["fc"] = new BonusQuestStats();
+            }
+            catch (ApplicationException)
+            {
+                BonusQuests["fc"] = new BonusQuestStats();
+            }
+        }
+        if (version >= 3)
+        {
+            mQuestMatchStats["elfisto"] = new MatchStats();
+            mQuestMatchStats["elfisto"].Attempts = TFUtils.LoadInt(dictionary, "EFAttempts", 0);
+            mQuestMatchStats["elfisto"].Wins = TFUtils.LoadInt(dictionary, "EFWins", 0);
+            mQuestMatchStats["elfisto"].Losses = TFUtils.LoadInt(dictionary, "EFLosses", 0);
+            try
+            {
+                if (dictionary.ContainsKey("SideQuestManagerInfo"))
+                {
+                    Dictionary<string, object> dictionary4 = (Dictionary<string, object>)dictionary["SideQuestManagerInfo"];
+                    foreach (KeyValuePair<string, object> item2 in dictionary4)
+                    {
+                        SideQuestManagerInfo sideQuestManagerInfo = new SideQuestManagerInfo();
+                        sideQuestManagerInfo.Deserialize(item2.Value);
+                        mSideQuestManagerInfo.Add(item2.Key, sideQuestManagerInfo);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+        if (version >= 4)
+        {
+            try
+            {
+                UnlockedRegions = new Dictionary<string, HashSet<int>>();
+                if (dictionary.ContainsKey("UnlockedRegions"))
+                {
+                    Dictionary<string, object> dictionary5 = (Dictionary<string, object>)dictionary["UnlockedRegions"];
+                    foreach (KeyValuePair<string, object> item3 in dictionary5)
+                    {
+                        try
+                        {
+                            int[] collection3 = (int[])dictionary5[item3.Key];
+                            UnlockedRegions[item3.Key] = new HashSet<int>(collection3);
+                        }
+                        catch (Exception)
+                        {
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+            MPDeckLeaderID = TFUtils.LoadString(dictionary, "MPDeckLeaderID", string.Empty);
+            if (string.IsNullOrEmpty(MPDeckLeaderID))
+            {
+                MPDeckLeaderID = DeckManager.Decks[SelectedMPDeck].Leader.Form.ID;
+            }
+            if (LeaderManager.Instance.IsLeaderFromFC(MPDeckLeaderID))
+            {
+                MPDeckLeaderID = "Leader_Jake";
+            }
+        }
+        version = 4;
+        PostDeserializeFixUpQuestProgress();
+        PostDeserializeFixUpTutorialFlow();
+    }
 
-	private void PostDeserializeFixUpQuestProgress()
-	{
-		QuestManager instance = QuestManager.Instance;
-		foreach (string questType in instance.GetQuestTypes())
-		{
-			if (!mCurrentQuestIDs.ContainsKey(questType) || mCurrentQuestIDs[questType] == 0)
-			{
-				QuestData firstQuest = instance.GetFirstQuest(questType);
-				if (firstQuest != null)
-				{
-					mCurrentQuestIDs[questType] = firstQuest.iQuestID;
-				}
-			}
-		}
-	}
+    private void PostDeserializeFixUpQuestProgress()
+    {
+        QuestManager instance = QuestManager.Instance;
+        foreach (string questType in instance.GetQuestTypes())
+        {
+            if (!mCurrentQuestIDs.ContainsKey(questType) || mCurrentQuestIDs[questType] == 0)
+            {
+                QuestData firstQuest = instance.GetFirstQuest(questType);
+                if (firstQuest != null)
+                {
+                    mCurrentQuestIDs[questType] = firstQuest.iQuestID;
+                }
+            }
+        }
+    }
 
-	private void PostDeserializeFixUpTutorialFlow()
-	{
-		string[] array = null;
-		if (GetQuestProgress("main", 4) > 0)
-		{
-			array = TUTORIAL_FIXUP_POST_MAIN_QUEST_4;
-		}
-		else if (GetQuestProgress("main", 2) > 0)
-		{
-			array = TUTORIAL_FIXUP_POST_MAIN_QUEST_2;
-		}
-		if (array != null)
-		{
-			string[] array2 = array;
-			foreach (string qname in array2)
-			{
-				TutorialManager.Instance.markTutorialCompleted(qname);
-			}
-		}
-		SLOTGame.GetInstance().FixupTutorialFlow();
-	}
+    private void PostDeserializeFixUpTutorialFlow()
+    {
+        string[] array = null;
+        if (GetQuestProgress("main", 4) > 0)
+        {
+            array = TUTORIAL_FIXUP_POST_MAIN_QUEST_4;
+        }
+        else if (GetQuestProgress("main", 2) > 0)
+        {
+            array = TUTORIAL_FIXUP_POST_MAIN_QUEST_2;
+        }
+        if (array != null)
+        {
+            string[] array2 = array;
+            foreach (string qname in array2)
+            {
+                TutorialManager.Instance.markTutorialCompleted(qname);
+            }
+        }
+        SLOTGame.GetInstance().FixupTutorialFlow();
+    }
 
-	private void DeserializeDictionary(Dictionary<string, object> newInfo, Dictionary<string, Dictionary<int, int>> dst, string dstKey, string keys, string vals)
+    private void DeserializeDictionary(Dictionary<string, object> newInfo, Dictionary<string, Dictionary<int, int>> dst, string dstKey, string keys, string vals)
 	{
 		if (!newInfo.ContainsKey(keys) || !newInfo.ContainsKey(vals))
 		{
@@ -2308,8 +2314,8 @@ public class PlayerInfoScript : MonoBehaviour
 		}
 		catch (InvalidCastException e)
 		{
-			//Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 30);
-			//CrashAnalytics.LogException(e);
+			Singleton<AnalyticsManager>.Instance.LogDebug("exception_deserialize", 30);
+			CrashAnalytics.LogException(e);
 		}
 	}
 
@@ -2343,8 +2349,8 @@ public class PlayerInfoScript : MonoBehaviour
 			catch (Exception e)
 			{
 				TFUtils.DebugLog("remote_save_exception", "saveload");
-				//Singleton<AnalyticsManager>.Instance.LogDebug("remote_save_exception", 0, 0, e);
-				//CrashAnalytics.LogException(e);
+				Singleton<AnalyticsManager>.Instance.LogDebug("remote_save_exception", 0, 0, e);
+				CrashAnalytics.LogException(e);
 				break;
 			}
 			DateTime timeOutTime = TFUtils.ServerTime + SAVE_TIMEOUT_TIME;
@@ -2353,7 +2359,7 @@ public class PlayerInfoScript : MonoBehaviour
 				if (TFUtils.ServerTime >= timeOutTime)
 				{
 					TFUtils.DebugLog("remote_save_timeout", "saveload");
-					//Singleton<AnalyticsManager>.Instance.LogDebug("remote_save_timeout");
+					Singleton<AnalyticsManager>.Instance.LogDebug("remote_save_timeout");
 					break;
 				}
 				yield return null;
@@ -2385,8 +2391,8 @@ public class PlayerInfoScript : MonoBehaviour
 		catch (Exception ex)
 		{
 			TFUtils.ErrorLog(ex.ToString());
-			//Singleton<AnalyticsManager>.Instance.LogDebug("save_exception", 0, 0, ex);
-			//CrashAnalytics.LogException(ex);
+			Singleton<AnalyticsManager>.Instance.LogDebug("save_exception", 0, 0, ex);
+			CrashAnalytics.LogException(ex);
 		}
 	}
 
@@ -2406,11 +2412,11 @@ public class PlayerInfoScript : MonoBehaviour
 			try
 			{
 				string[] array = SessionManager.GetInstance().PlayerID.Split('_');
-				//Singleton<AnalyticsManager>.Instance.LogDebug("corrupted_save", Convert.ToInt32(array[0]) / 8, Convert.ToInt32(array[1]));
+				Singleton<AnalyticsManager>.Instance.LogDebug("corrupted_save", Convert.ToInt32(array[0]) / 8, Convert.ToInt32(array[1]));
 			}
 			catch (Exception)
 			{
-				//Singleton<AnalyticsManager>.Instance.LogDebug("corrupted_save", -1, -1);
+				Singleton<AnalyticsManager>.Instance.LogDebug("corrupted_save", -1, -1);
 			}
 			SessionManager.GetInstance().ClearSaveStateLocal();
 		}
@@ -2659,22 +2665,22 @@ public class PlayerInfoScript : MonoBehaviour
 		SetQuestProgress(qd, 0);
 	}
 
-	public int SetQuestProgress(QuestData qd, int numStars, int maxProgress = 3)
-	{
-		if (qd == null)
-		{
-			return 0;
-		}
-		if (!QuestProgress.ContainsKey(qd.QuestType))
-		{
-			QuestProgress.Add(qd.QuestType, new Dictionary<int, int>());
-		}
-		int num = Math.Max(0, Math.Min(maxProgress, numStars));
-		QuestProgress[qd.QuestType][qd.iQuestID] = num;
-		return num;
-	}
+    public int SetQuestProgress(QuestData qd, int numStars, int maxProgress = 3)
+    {
+        if (qd == null)
+        {
+            return 0;
+        }
+        if (!QuestProgress.ContainsKey(qd.QuestType))
+        {
+            QuestProgress.Add(qd.QuestType, new Dictionary<int, int>());
+        }
+        int num = Math.Max(0, Math.Min(maxProgress, numStars));
+        QuestProgress[qd.QuestType][qd.iQuestID] = num;
+        return num;
+    }
 
-	public void ResetQuestProgress(string questType)
+    public void ResetQuestProgress(string questType)
 	{
 		QuestProgress[questType] = new Dictionary<int, int>();
 	}
@@ -2707,38 +2713,69 @@ public class PlayerInfoScript : MonoBehaviour
 		return questData;
 	}
 
-	public void SetCurrentQuest(QuestData quest)
-	{
-		if (quest != null)
-		{
-			mCurrentQuestType = quest.QuestType;
-			mCurrentQuestIDs[quest.QuestType] = quest.iQuestID;
-		}
-	}
+    public void SetCurrentQuest(QuestData quest)
 
-	public int GetCurrentQuestID()
-	{
-		return GetCurrentQuestID(mCurrentQuestType);
-	}
+    {
 
-	public int GetCurrentQuestID(string questType)
-	{
-		if (mCurrentQuestIDs.ContainsKey(questType))
-		{
-			return mCurrentQuestIDs[questType];
-		}
-		return 0;
-	}
+        if (quest != null)
 
-	public void UpdateCurrentQuestID(string questType, int questID)
-	{
-		if (!string.IsNullOrEmpty(questType))
-		{
-			mCurrentQuestIDs[questType] = questID;
-		}
-	}
+        {
 
-	public void SetLastClearedQuest(QuestData quest)
+            mCurrentQuestType = quest.QuestType;
+
+            mCurrentQuestIDs[quest.QuestType] = quest.iQuestID;
+
+        }
+
+    }
+
+
+
+    public int GetCurrentQuestID()
+
+    {
+
+        return GetCurrentQuestID(mCurrentQuestType);
+
+    }
+
+
+
+    public int GetCurrentQuestID(string questType)
+
+    {
+
+        if (mCurrentQuestIDs.ContainsKey(questType))
+
+        {
+
+            return mCurrentQuestIDs[questType];
+
+        }
+
+        return 0;
+
+    }
+
+
+
+    public void UpdateCurrentQuestID(string questType, int questID)
+
+    {
+
+        if (!string.IsNullOrEmpty(questType))
+
+        {
+
+            mCurrentQuestIDs[questType] = questID;
+
+        }
+
+    }
+
+
+
+    public void SetLastClearedQuest(QuestData quest)
 	{
 		if (quest != null)
 		{

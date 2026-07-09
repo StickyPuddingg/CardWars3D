@@ -512,6 +512,8 @@ public static class NGUITools
 		SetActiveSelf(t.gameObject, false);
 	}
 
+
+
 	public static void SetActive(GameObject go, bool state)
 	{
 		if (state)

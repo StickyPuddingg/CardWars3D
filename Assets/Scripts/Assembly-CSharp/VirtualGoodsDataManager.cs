@@ -46,6 +46,11 @@ public class VirtualGoodsDataManager : ILoadable
 	private Dictionary<string, object>[] LoadData()
 	{
 		string text = Path.Combine("Blueprints", "db_VirtualGoods.json");
+		Dictionary<string, object>[] binArray = BlueprintBinaryReader_dbl.TryRead(text);
+		if (binArray != null)
+		{
+			return binArray;
+		}
 		TFUtils.DebugLog("Loading VirtualGoods data from path: " + text);
 		string jsonFileContent = TFUtils.GetJsonFileContent(text);
 		return JsonReader.Deserialize<Dictionary<string, object>[]>(jsonFileContent);

@@ -51,12 +51,16 @@ public class CWQuestMapButton : MonoBehaviour
 		}
 	}
 
-	private void EnterMap()
-	{
-		CWMapController.Activate(false);
-		if (enterMapEvents != null)
-		{
-			enterMapEvents.SendMessage("OnClick", SendMessageOptions.DontRequireReceiver);
-		}
-	}
+    private void EnterMap()
+    {
+        // 1. Safely route through the Async Loading Screen pipeline instead of forcing immediate activation
+        // Replace "YourActualMapSceneName" with the exact string name of your heavy map scene file.
+        //SceneLoader.InitiateLoad("QuestMapScene");
+
+        // 2. Fire your click events safely as usual
+        if (enterMapEvents != null)
+        {
+            enterMapEvents.SendMessage("OnClick", SendMessageOptions.DontRequireReceiver);
+        }
+    }
 }

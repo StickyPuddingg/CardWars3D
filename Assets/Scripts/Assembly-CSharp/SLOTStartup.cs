@@ -1,43 +1,66 @@
 using System;
+using System.Collections;
 using UnityEngine;
-
-/* =================================================================================
- * 3DS PORT MIGRATION SUMMARY:
- * - DELETED `GooglePlayDownloader`: Completely removed all Android JNI hooks, 
- * OBB path strings, and Google Play Store server checks.
- * - PURGED COROUTINE OVERHEAD: Eliminated `loadLevel()` and its `WaitForSeconds` 
- * polling loop, saving precious CPU cycles on the 3DS ARM processor.
- * - DIRECT BOOTSTRAPPING: Configured `Update()` to transition directly to the 
- * main game scene on frame one since assets are already stored locally
- * ================================================================================= */
 
 public class SLOTStartup : MonoBehaviour
 {
-    public string startupScene = "AdventureTime";
-    private bool started;
+	public string startupScene;
 
-    private void Update()
-    {
-        if (!started)
-        {
-            started = true;
-            Startup();
-        }
-    }
+	private bool started;
 
-    private void Startup()
-    {
-        if (!string.IsNullOrEmpty(startupScene))
-        {
-            try
-            {
-                // Launch straight into your main scene manager
-                SLOTGameSingleton<SLOTSceneManager>.GetInstance().LoadLevel(startupScene);
-            }
-            catch (Exception ex)
-            {
-                Debug.LogError("Failed to boot startup scene on 3DS: " + ex.Message);
-            }
-        }
-    }
+	private string StoragePath;
+
+	private void Update()
+	{
+		if (!started)
+		{
+			started = true;
+			Startup();
+		}
+	}
+
+	private void DownloadOBB()
+	{
+		StoragePath = GooglePlayDownloader.GetExpansionFilePath();
+		if (StoragePath != null)
+		{
+			if (GooglePlayDownloader.GetMainOBBPath(StoragePath) == null)
+			{
+				GooglePlayDownloader.FetchOBB();
+			}
+			StartCoroutine(loadLevel());
+		}
+	}
+
+	protected IEnumerator loadLevel()
+	{
+		string mainPath;
+		do
+		{
+			yield return new WaitForSeconds(0.5f);
+			mainPath = GooglePlayDownloader.GetMainOBBPath(StoragePath);
+		}
+		while (mainPath == null);
+		Startup();
+	}
+
+	private void Startup()
+	{
+		if (startupScene != null && startupScene.Length > 0)
+		{
+			bool flag = false;
+			try
+			{
+				SLOTGameSingleton<SLOTSceneManager>.GetInstance().LoadLevel(startupScene);
+				flag = true;
+			}
+			catch (Exception)
+			{
+				flag = false;
+			}
+			if (flag)
+			{
+			}
+		}
+	}
 }

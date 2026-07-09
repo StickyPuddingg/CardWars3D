@@ -111,40 +111,49 @@ public class PlayQuestButton : AsyncData<string>
 
 	private void OnClick()
 	{
-		UIButtonSound component = GetComponent<UIButtonSound>();
-		if (cwQuestLoad != null && !cwQuestLoad.CanStartQuest())
+		try
 		{
-			component.audioClip = cwQuestLoad.errorSound;
-			return;
+			Logger.Log("PlayQuestButton.OnClick invoked");
+			UIButtonSound component = GetComponent<UIButtonSound>();
+			if (cwQuestLoad != null && !cwQuestLoad.CanStartQuest())
+			{
+				component.audioClip = cwQuestLoad.errorSound;
+				return;
+			}
+			if (GlobalFlags.Instance.InMPMode && Asyncdata.processed)
+			{
+				CWMPMapController.MPData mLastMPData = CWMPMapController.GetInstance().mLastMPData;
+				int num = 0;
+				string leader = "Leader_Jake";
+				if (CWDeckController.GetInstance() != null)
+				{
+					int currentMPDeck = CWDeckController.GetInstance().currentMPDeck;
+					Deck deck = PlayerInfoScript.GetInstance().DeckManager.Decks[currentMPDeck];
+					leader = deck.Leader.Form.ID;
+					num = deck.Leader.Rank;
+				}
+				if ((bool)LoadingActivityShow)
+				{
+					LoadingActivityShow.Play(true);
+				}
+				if ((bool)RefreshMatchScript)
+				{
+					RefreshMatchScript.StopAllCoroutines();
+				}
+				global::Multiplayer.Multiplayer.MatchGetDeck(SessionManager.GetInstance().theSession, mLastMPData.mMatchID, num, leader, num, StringCallback);
+			}
+			if (!GlobalFlags.Instance.InMPMode)
+			{
+				HeartAnimation();
+			}
+			component.audioClip = (cwQuestLoad != null ? cwQuestLoad.okSound : null);
+			GlobalFlags.Instance.enableMapDrag = true;
 		}
-		if (GlobalFlags.Instance.InMPMode && Asyncdata.processed)
+		catch (System.Exception ex)
 		{
-			CWMPMapController.MPData mLastMPData = CWMPMapController.GetInstance().mLastMPData;
-			int num = 0;
-			string leader = "Leader_Jake";
-			if (CWDeckController.GetInstance() != null)
-			{
-				int currentMPDeck = CWDeckController.GetInstance().currentMPDeck;
-				Deck deck = PlayerInfoScript.GetInstance().DeckManager.Decks[currentMPDeck];
-				leader = deck.Leader.Form.ID;
-				num = deck.Leader.Rank;
-			}
-			if ((bool)LoadingActivityShow)
-			{
-				LoadingActivityShow.Play(true);
-			}
-			if ((bool)RefreshMatchScript)
-			{
-				RefreshMatchScript.StopAllCoroutines();
-			}
-			global::Multiplayer.Multiplayer.MatchGetDeck(SessionManager.GetInstance().theSession, mLastMPData.mMatchID, num, leader, num, StringCallback);
+			Logger.Error("Exception in PlayQuestButton.OnClick: " + ex.ToString());
+			throw;
 		}
-		if (!GlobalFlags.Instance.InMPMode)
-		{
-			HeartAnimation();
-		}
-		component.audioClip = cwQuestLoad.okSound;
-		GlobalFlags.Instance.enableMapDrag = true;
 	}
 
 	private void HeartAnimation()

@@ -25,9 +25,13 @@ public class RPSMatrix : ILoadable
 	public IEnumerator Load()
 	{
 		string filePath = Path.Combine("Blueprints", "db_RPS.json");
-		TFUtils.DebugLog("RPSMatrix: reading text from filePath");
-		string json = TFUtils.GetJsonFileContent(filePath);
-		Dictionary<string, object>[] data = JsonReader.Deserialize<Dictionary<string, object>[]>(json);
+		Dictionary<string, object>[] data = BlueprintBinaryReader_dbl.TryRead(filePath);
+		if (data == null)
+		{
+			TFUtils.DebugLog("RPSMatrix: reading text from filePath");
+			string json = TFUtils.GetJsonFileContent(filePath);
+			data = JsonReader.Deserialize<Dictionary<string, object>[]>(json);
+		}
 		if (LoadingManager.ShouldYield())
 		{
 			yield return null;

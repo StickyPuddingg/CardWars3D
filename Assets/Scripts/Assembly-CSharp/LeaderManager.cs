@@ -53,13 +53,42 @@ public class LeaderManager : ILoadable
 					CharacterID = TFUtils.LoadString(dict, "CharacterID"),
 					IconAtlas = TFUtils.LoadString(dict, "IconAtlas")
 				};
-				if (!uiAtlasMap.ContainsKey(newLeader.IconAtlas))
+				if (!string.IsNullOrEmpty(newLeader.IconAtlas) && !uiAtlasMap.ContainsKey(newLeader.IconAtlas))
 				{
-					SLOTResoureRequest req = SLOTGameSingleton<SLOTResourceManager>.GetInstance().LoadResourceAsync(newLeader.IconAtlas, typeof(GameObject));
-					yield return req.asyncOp;
-					GameObject atlasGo = (GameObject)req.asset;
-					UIAtlas uiAtlas = atlasGo.GetComponent<UIAtlas>();
-					uiAtlasMap.Add(newLeader.IconAtlas, uiAtlas);
+					SLOTResourceManager resourceManager = SLOTGameSingleton<SLOTResourceManager>.GetInstance();
+					if (resourceManager == null)
+					{
+						TFUtils.DebugLog("LeaderManager: resource manager is null while loading atlas " + newLeader.IconAtlas + " for leader " + key);
+					}
+					else
+					{
+						SLOTResoureRequest req = resourceManager.LoadResourceAsync(newLeader.IconAtlas, typeof(GameObject));
+						yield return req.asyncOp;
+						if (req == null || req.asset == null)
+						{
+							TFUtils.DebugLog("LeaderManager: failed to load atlas asset " + newLeader.IconAtlas + " for leader " + key);
+						}
+						else
+						{
+							GameObject atlasGo = req.asset as GameObject;
+							if (atlasGo == null)
+							{
+								TFUtils.DebugLog("LeaderManager: atlas GameObject is null for " + newLeader.IconAtlas + " leader " + key);
+							}
+							else
+							{
+								UIAtlas uiAtlas = atlasGo.GetComponent<UIAtlas>();
+								if (uiAtlas == null)
+								{
+									TFUtils.DebugLog("LeaderManager: UIAtlas component missing on atlas " + newLeader.IconAtlas + " for leader " + key);
+								}
+								else
+								{
+uiAtlasMap[newLeader.IconAtlas] = uiAtlas;
+								}
+							}
+						}
+					}
 				}
 				newLeader.SpriteName = TFUtils.LoadString(dict, "SpriteName");
 				newLeader.SpriteNameHero = TFUtils.LoadString(dict, "SpriteNameHero");
@@ -107,7 +136,14 @@ public class LeaderManager : ILoadable
 				newLeader.CritDamageMod = TFUtils.TryLoadNullableFloat(dict, "CritDamageMod");
 				newLeader.FCWorld = TFUtils.LoadBoolAsInt(dict, "FCWorld");
 				newLeader.StartLevel = TFUtils.LoadInt(dict, "StartLevel", 1);
-				leaderForms.Add(key, newLeader);
+				if (leaderForms.ContainsKey(key))
+				{
+					TFUtils.DebugLog("LeaderManager: duplicate leader ID skipped: " + key);
+				}
+				else
+				{
+					leaderForms.Add(key, newLeader);
+				}
 				if (LoadingManager.ShouldYield())
 				{
 					yield return null;
@@ -119,6 +155,39 @@ public class LeaderManager : ILoadable
 	public void Destroy()
 	{
 		instance = null;
+	}
+
+	private LeaderForm GetLeaderFormOrFallback(string leaderID)
+	{
+		LeaderForm value;
+		if (leaderForms.TryGetValue(leaderID, out value) && value != null)
+		{
+			return value;
+		}
+		if (leaderForms.TryGetValue("Leader_Jake", out value) && value != null)
+		{
+			return value;
+		}
+		Logger.Error("[LeaderManager] Missing leader form for '" + leaderID + "' and default 'Leader_Jake' is unavailable.");
+		return new LeaderForm
+		{
+			ID = "Leader_Jake",
+			Name = "Jake",
+			CharacterID = "Leader_Jake",
+			IconAtlas = string.Empty,
+			SpriteName = string.Empty,
+			SpriteNameHero = string.Empty,
+			FrameSpriteName = string.Empty,
+			Desc = "Unknown leader",
+			LvUpSchemeID = string.Empty,
+			BaseHP = 0,
+			MaxXP = 0,
+			ScriptName = string.Empty,
+			Cooldown = 0,
+			BaseVal1 = 0,
+			BaseVal2 = 0,
+			StartLevel = 1
+		};
 	}
 
 	public bool IsLeaderFromFC(string a_leaderID)
@@ -136,7 +205,7 @@ public class LeaderManager : ILoadable
 		{
 			return a_rank * 5 + value.BaseHP;
 		}
-		value = leaderForms["Leader_Jake"];
+		value = GetLeaderFormOrFallback("Leader_Jake");
 		return a_rank * 5 + value.BaseHP;
 	}
 
@@ -149,7 +218,7 @@ public class LeaderManager : ILoadable
 			string text = value.Desc.Replace("<val1>", value.BaseVal1.ToString());
 			return text.Replace("<val2>", value.BaseVal2.ToString());
 		}
-		value = leaderForms["Leader_Jake"];
+		value = GetLeaderFormOrFallback("Leader_Jake");
 		string text2 = value.Desc.Replace("<val1>", value.BaseVal1.ToString());
 		return text2.Replace("<val2>", value.BaseVal2.ToString());
 	}
@@ -162,7 +231,7 @@ public class LeaderManager : ILoadable
 		{
 			return value.SpriteName;
 		}
-		value = leaderForms["Leader_Jake"];
+		value = GetLeaderFormOrFallback("Leader_Jake");
 		return value.SpriteName;
 	}
 
@@ -174,23 +243,20 @@ public class LeaderManager : ILoadable
 		{
 			return value.CharacterID;
 		}
-		value = leaderForms["Leader_Jake"];
+		value = GetLeaderFormOrFallback("Leader_Jake");
 		return value.CharacterID;
 	}
 
 	public LeaderItem CreateLeader(string leaderID, int Rank)
 	{
-		if (!leaderForms.ContainsKey(leaderID))
+		LeaderForm leaderForm;
+		if (!leaderForms.TryGetValue(leaderID, out leaderForm) || leaderForm == null)
 		{
-			LeaderForm leaderForm = leaderForms["Leader_Jake"];
-			LeaderItem leaderItem = new LeaderItem(leaderForm);
-			leaderItem.XP = XPManager.Instance.FindRequiredXP(leaderForm.LvUpSchemeID, Rank);
-			return leaderItem;
+			leaderForm = GetLeaderFormOrFallback("Leader_Jake");
 		}
-		LeaderForm leaderForm2 = leaderForms[leaderID];
-		LeaderItem leaderItem2 = new LeaderItem(leaderForm2);
-		leaderItem2.XP = XPManager.Instance.FindRequiredXP(leaderForm2.LvUpSchemeID, Rank);
-		return leaderItem2;
+		LeaderItem leaderItem = new LeaderItem(leaderForm);
+		leaderItem.XP = XPManager.Instance.FindRequiredXP(leaderForm.LvUpSchemeID, Rank);
+		return leaderItem;
 	}
 
 	public bool AlreadyOwned(string leaderID)
@@ -291,8 +357,8 @@ public class LeaderManager : ILoadable
 				string text = (string)dictionary["form"];
 				if (!leaderForms.ContainsKey(text))
 				{
-					//Singleton<AnalyticsManager>.Instance.LogDebug("badleader_" + text);
-					//CrashAnalytics.LogException(new Exception("Leader not found - " + text));
+					Singleton<AnalyticsManager>.Instance.LogDebug("badleader_" + text);
+					CrashAnalytics.LogException(new Exception("Leader not found - " + text));
 				}
 				else
 				{
@@ -322,8 +388,8 @@ public class LeaderManager : ILoadable
 		}
 		catch (InvalidCastException e)
 		{
-			//Singleton<AnalyticsManager>.Instance.LogDebug("exception_inventoryfromdict");
-			//CrashAnalytics.LogException(e);
+			Singleton<AnalyticsManager>.Instance.LogDebug("exception_inventoryfromdict");
+			CrashAnalytics.LogException(e);
 		}
 	}
 

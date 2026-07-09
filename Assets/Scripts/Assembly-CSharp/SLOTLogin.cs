@@ -28,7 +28,7 @@ public class SLOTLogin : MonoBehaviour
 			{
 				PlayerInfoScript.GetInstance().PlayerName = component.text;
 				instance.OnReadyCallback = OnReady;
-				instance.Login(false, null, component.text);
+				instance.Login(component.text);
 			}
 			base.transform.localPosition = new Vector3(0f, 1000f, 0f);
 			back_button.transform.localPosition = new Vector3(0f, 1000f, 0f);

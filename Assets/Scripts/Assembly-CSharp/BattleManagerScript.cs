@@ -35,6 +35,7 @@ public class BattleManagerScript : MonoBehaviour
 	private void Awake()
 	{
 		g_battleManager = this;
+		Singleton<AnalyticsManager>.Instance.IncBattleCount();
 	}
 
 	public static BattleManagerScript GetInstance()

@@ -1,228 +1,142 @@
 using UnityEngine;
 
-/* =================================================================================
- * CHANGES SUMMARY STICKY:
- * - COMMENTED OUT asset bundle downloading states (`State.CheckAssetDownloads`, `State.CheckingAssetDownloads`).
- * - MODIFIED `UpdateState()` logic to bypass checking states and launch `State.LoadScene` immediately.
- * - COMMENTED OUT `CheckAssetDownloads()`, `CheckAssetDownloadsCallback()`, `ShowAssetDownloadProgressCallback()`, 
- * and `AssetBundleLoadedCallback()` blocks.
- * - COMMENTED OUT `RetryClicked()` and network-error message components that depend on web connections.
- * ================================================================================= */
-
 public class AssetLoaderUI : MonoBehaviour
 {
-    private enum State
-    {
-        Init,
-        // CheckAssetDownloads,     // Commented out for 3DS local setup
-        // CheckingAssetDownloads,   // Commented out for 3DS local setup
-        LoadScene,
-        LoadingScene
-    }
-
-    public string startupSceneName = "AdventureTime";
-
-    public UITexture barTexture;
-
-    public UITexture barBG;
-
-    public GameObject retryButton;
-
-    public UILabel messageLabel;
-
-    public BusyIconController busyIconController;
-
-    private float origWidth;
-
-    private State state;
-
-    private string failedToLoadURL;
-
-    private bool popupDone = true;
-
-    private void Start()
-    {
-        if (barTexture != null)
-        {
-            origWidth = barTexture.transform.localScale.x;
-        }
-        if (busyIconController == null)
-        {
-            busyIconController = SLOTGame.GetInstance();
-        }
-        ShowRetryButton(false);
-        ShowProgressBar(false);
-        HideMessage();
-    }
-
-    public void SetProgress(float progress)
-    {
-        if (barTexture != null)
-        {
-            if (progress < 0f)
-            {
-                progress = 0f;
-            }
-            else if (progress > 1f)
-            {
-                progress = 1f;
-            }
-            Vector3 localScale = barTexture.transform.localScale;
-            localScale.x = origWidth * progress;
-            barTexture.transform.localScale = localScale;
-        }
-    }
-
-    private void Update()
-    {
-        UpdateState();
-    }
-
-    private void UpdateState()
-    {
-        switch (state)
-        {
-            case State.Init:
-                // Route straight to scene loading instead of looking for web connections
-                state = State.LoadScene;
-                break;
-            /* case State.CheckAssetDownloads:
-                CheckAssetDownloads();
-                break;
-            case State.CheckingAssetDownloads:
-                break;
-            */
-            case State.LoadScene:
-                busyIconController.ShowBusyIcon(true);
-                SLOTGameSingleton<SLOTSceneManager>.GetInstance().LoadLevelAsync(startupSceneName, LoadLevelDoneCallback);
-                state = State.LoadingScene;
-                break;
-        }
-    }
-
-    private void LoadLevelDoneCallback()
-    {
-        busyIconController.ShowBusyIcon(false);
-    }
-
-    /*
-	private void CheckAssetDownloads()
+	public enum State
 	{
-		state = State.CheckingAssetDownloads;
-		ShowProgressBar(true);
-		ShowAssetDownloadProgressCallback(0f, 1f);
-		busyIconController.ShowBusyIcon(true);
-		SLOTGame.GetInstance().CheckAssetDownloads(CheckAssetDownloadsCallback, ShowAssetDownloadProgressCallback, AssetBundleLoadedCallback);
+		Init,
+		LoadScene,
+		LoadingScene
 	}
 
-	public void CheckAssetDownloadsCallback(bool success, string err)
+	public string startupSceneName = "AdventureTime";
+
+	public UITexture barTexture;
+
+	public UITexture barBG;
+
+	public GameObject retryButton;
+
+	public UILabel messageLabel;
+
+	public BusyIconController busyIconController;
+
+	private float origWidth;
+
+	private State state;
+
+	private void Start()
 	{
-		HideMessage();
-		if (success)
+		if (barTexture != null)
 		{
-			ShowProgressBar(false);
-			busyIconController.ShowBusyIcon(false);
-			state = State.LoadScene;
-			return;
+			origWidth = barTexture.transform.localScale.x;
 		}
-		busyIconController.ShowBusyIcon(false);
-		if (failedToLoadURL != null)
+		if (busyIconController == null)
 		{
+			busyIconController = SLOTGame.GetInstance();
 		}
-		string errorMessage = ((err == null || err.Length <= 0) ? KFFLocalization.Get("!!ERROR_DOWNLOADING_ASSETS") : err);
-		ShowRetryMessage(errorMessage);
-	}
-
-	public void ShowAssetDownloadProgressCallback(float percent, float totalpercent)
-	{
-		ShowMessage(string.Format(KFFLocalization.Get("!!FORMAT_DOWNLOADING_ASSETS"), (percent / totalpercent * 100f).ToString("f1")));
-		SetProgress((!(totalpercent <= 0f)) ? (percent / totalpercent) : 0f);
-	}
-
-	private void ShowRetryMessage(string errorMessage)
-	{
-		ShowMessage(errorMessage);
-		ShowRetryButton(true);
+		// -s Assets ship with the 3DS build, so do not check remote downloads or show an asset-progress flow.
+		ShowRetryButton(false);
 		ShowProgressBar(false);
-		popupDone = false;
+		HideMessage();
+		if (busyIconController != null)
+		{
+			busyIconController.ShowBusyIcon(false);
+		}
+		state = State.LoadScene;
 	}
 
-	public bool AssetBundleLoadedCallback(string url, AssetBundle bundle)
+	public void SetProgress(float progress)
 	{
-		if (bundle != null)
+		if (barTexture != null)
 		{
-			int num = url.LastIndexOf('/');
-			switch ((num < 0) ? url : url.Substring(num + 1))
+			if (progress < 0f)
 			{
-			case "Resources.assetbundle":
-				if (SLOTGameSingleton<SLOTResourceManager>.GetInstance().SetAssetBundle(bundle))
-				{
-					return true;
-				}
-				break;
-			case "Scenes.assetbundle":
-				if (SLOTGameSingleton<SLOTSceneManager>.GetInstance().SetAssetBundle(bundle))
-				{
-					return true;
-				}
-				break;
+				progress = 0f;
 			}
+			else if (progress > 1f)
+			{
+				progress = 1f;
+			}
+			Vector3 localScale = barTexture.transform.localScale;
+			localScale.x = origWidth * progress;
+			barTexture.transform.localScale = localScale;
 		}
-		else if (failedToLoadURL == null)
-		{
-			failedToLoadURL = url;
-		}
-		return false;
 	}
-	*/
 
-    private void ShowMessage(string message)
-    {
-        if (messageLabel != null)
-        {
-            NGUITools.SetActive(messageLabel.gameObject, true);
-            messageLabel.text = message;
-        }
-    }
+	private void Update()
+	{
+		UpdateState();
+	}
 
-    private void HideMessage()
-    {
-        if (messageLabel != null)
-        {
-            NGUITools.SetActive(messageLabel.gameObject, false);
-        }
-    }
+	private void UpdateState()
+	{
+		switch (state)
+		{
+		case State.Init:
+			state = State.LoadScene;
+			break;
+		case State.LoadScene:
+			// -s Skip the download-check path and load the startup scene directly.
+			if (busyIconController != null)
+			{
+				busyIconController.ShowBusyIcon(true);
+			}
+			SLOTGameSingleton<SLOTSceneManager>.GetInstance().LoadLevelAsync(startupSceneName, LoadLevelDoneCallback);
+			state = State.LoadingScene;
+			break;
+		}
+	}
 
-    private void ShowRetryButton(bool b)
-    {
-        if (retryButton != null)
-        {
-            NGUITools.SetActive(retryButton.gameObject, b);
-        }
-    }
+	private void LoadLevelDoneCallback()
+	{
+		if (busyIconController != null)
+		{
+			busyIconController.ShowBusyIcon(false);
+		}
+	}
 
-    private void ShowProgressBar(bool b)
-    {
-        if (barTexture != null)
-        {
-            NGUITools.SetActive(barTexture.gameObject, b);
-        }
-        if (barBG != null)
-        {
-            NGUITools.SetActive(barBG.gameObject, b);
-        }
-    }
+	private void ShowMessage(string message)
+	{
+		if (messageLabel != null)
+		{
+			NGUITools.SetActive(messageLabel.gameObject, true);
+			messageLabel.text = message;
+		}
+	}
 
-    /*
+	private void HideMessage()
+	{
+		if (messageLabel != null)
+		{
+			NGUITools.SetActive(messageLabel.gameObject, false);
+		}
+	}
+
+	private void ShowRetryButton(bool b)
+	{
+		if (retryButton != null)
+		{
+			NGUITools.SetActive(retryButton.gameObject, b);
+		}
+	}
+
+	private void ShowProgressBar(bool b)
+	{
+		if (barTexture != null)
+		{
+			NGUITools.SetActive(barTexture.gameObject, b);
+		}
+		if (barBG != null)
+		{
+			NGUITools.SetActive(barBG.gameObject, b);
+		}
+	}
+
 	private void RetryClicked()
 	{
 		ShowRetryButton(false);
 		HideMessage();
-		if (!popupDone)
-		{
-			popupDone = true;
-			CheckAssetDownloads();
-		}
+		state = State.LoadScene;
 	}
-	*/
 }

@@ -606,39 +606,55 @@ public class CWBattleSequenceController : MonoBehaviour
 			cWBattleRingPlayAnim.animTarget = ((!cWBattleRingPlayAnim.name.Contains("_P1_")) ? gameObject2 : gameObject);
 		}
 	}
-    private GameObject GetTweenTarget(string result)
-    {
-        GameObject gameObject = null;
-        switch (result)
-        {
-            case "Crit":
-                gameObject = critTweenTarget;
-                // 3DS Optimization: Removed AnalyticsManager counter tracking logic
-                break;
-            case "Hit":
-                gameObject = hitTweenTarget;
-                // 3DS Optimization: Removed Hit and Block analytic increments
-                break;
-            case "Miss":
-                gameObject = missTweenTarget;
-                // 3DS Optimization: Removed Miss analytic increment
-                break;
-            case "CritDamage":
-                gameObject = critDamageTweenTargets[(int)player];
-                break;
-            case "HitDamage":
-                gameObject = hitDamageTweenTargets[(int)player];
-                break;
-            case "MissDamage":
-                gameObject = missDamageTweenTargets[(int)player];
-                break;
-            case "MissDamageNoCreature":
-                gameObject = missNoCreatureDamageTweenTarget;
-                break;
-        }
-        return gameObject;
-    }
-    private void Update()
+
+	private GameObject GetTweenTarget(string result)
+	{
+		GameObject gameObject = null;
+		switch (result)
+		{
+		case "Crit":
+			gameObject = critTweenTarget;
+			if (BattlePhaseManager.GetInstance().Phase == BattlePhase.P1Battle)
+			{
+				Singleton<AnalyticsManager>.Instance.IncBR_CritCount();
+			}
+			else if (BattlePhaseManager.GetInstance().Phase == BattlePhase.P2Battle)
+			{
+				Singleton<AnalyticsManager>.Instance.IncBR_CounterCount();
+			}
+			break;
+		case "Hit":
+			gameObject = hitTweenTarget;
+			if (BattlePhaseManager.GetInstance().Phase == BattlePhase.P1Battle)
+			{
+				Singleton<AnalyticsManager>.Instance.IncBR_HitCount();
+			}
+			else if (BattlePhaseManager.GetInstance().Phase == BattlePhase.P2Battle)
+			{
+				Singleton<AnalyticsManager>.Instance.IncBR_BlockCount();
+			}
+			break;
+		case "Miss":
+			gameObject = missTweenTarget;
+			Singleton<AnalyticsManager>.Instance.IncBR_MissCount();
+			break;
+		case "CritDamage":
+			gameObject = critDamageTweenTargets[(int)player];
+			break;
+		case "HitDamage":
+			gameObject = hitDamageTweenTargets[(int)player];
+			break;
+		case "MissDamage":
+			gameObject = missDamageTweenTargets[(int)player];
+			break;
+		case "MissDamageNoCreature":
+			gameObject = missNoCreatureDamageTweenTarget;
+			break;
+		}
+		return gameObject;
+	}
+
+	private void Update()
 	{
 		if (animateFlag)
 		{

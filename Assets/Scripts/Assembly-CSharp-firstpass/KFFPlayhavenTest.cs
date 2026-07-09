@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class KFFPlayhavenTest : MonoBehaviour
 {
-	/*public bool DisplayTest;
+	public bool DisplayTest;
 
 	public void OnGUI()
 	{
@@ -17,5 +17,5 @@ public class KFFPlayhavenTest : MonoBehaviour
 				KFFRequestorController.GetInstance().RequestContent("test_placement_2");
 			}
 		}
-	}*/
+	}
 }

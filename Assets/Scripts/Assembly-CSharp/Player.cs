@@ -71,10 +71,6 @@ public class Player
 		return CreateUnauthedPlayer();
 	}
 
-	public static void LoadFromNetwork(string key, Session session, bool doFacebookAuth, string fbAccessToken)
-	{
-		session.Auth.AuthUser(session, session.AsyncResponder(key), doFacebookAuth, fbAccessToken);
-	}
 
 	public static Player LoadFromDataDict(Dictionary<string, object> data)
 	{

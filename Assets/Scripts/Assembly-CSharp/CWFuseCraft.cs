@@ -73,7 +73,7 @@ public class CWFuseCraft : MonoBehaviour
 		}
 		CardItem cardItem = new CardItem(card);
 		deckManager.AddCard(cardItem);
-		//Singleton<AnalyticsManager>.Instance.LogCardCrafted(cardItem.Form.ID); analytics shit -s
+		Singleton<AnalyticsManager>.Instance.LogCardCrafted(cardItem.Form.ID);
 		PlayerInfoScript.GetInstance().Save();
 		StartCoroutine(DelayUpdateDisplay());
 	}

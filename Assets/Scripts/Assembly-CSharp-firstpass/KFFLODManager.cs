@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class KFFLODManager
 {
-	/*private const string KEY_LOW_END_OVERRIDE = "IsLowEndOverride";
+	private const string KEY_LOW_END_OVERRIDE = "IsLowEndOverride";
 
 	private static bool isFirstCall = true;
 
@@ -27,7 +27,7 @@ public class KFFLODManager
 
 	public static bool IsLowEndDevice(bool ignoreOverride = false)
 	{
-		return false;
+		return true;
 	}
 
 	public static string GetHiLowResFolderName()
@@ -38,5 +38,4 @@ public class KFFLODManager
 		}
 		return hiResFolderName;
 	}
-	*/
 }

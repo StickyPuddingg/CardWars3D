@@ -397,9 +397,9 @@ public class GameState
 		LandscapeManagerScript.GetInstance().PoolLandscape();
 		Deck deck2 = Decks[(int)PlayerType.User];
 		deck2.Shuffle();
-		//Singleton<AnalyticsManager>.Instance.LogQuestStart();
-		//Singleton<AnalyticsManager>.Instance.LogLeaderEquipped(deck2.Leader.Form.ID, deck2.Leader.Rank);
-		//Singleton<AnalyticsManager>.Instance.LogDeckEquipped(deck2.GetCards());
+		Singleton<AnalyticsManager>.Instance.LogQuestStart();
+		Singleton<AnalyticsManager>.Instance.LogLeaderEquipped(deck2.Leader.Form.ID, deck2.Leader.Rank);
+		Singleton<AnalyticsManager>.Instance.LogDeckEquipped(deck2.GetCards());
 		LeaderCooldown[(int)PlayerType.User] = deck2.Leader.Form.Cooldown;
 		Hands[(int)PlayerType.User].Clear();
 		for (int i = 0; i < 5; i++)

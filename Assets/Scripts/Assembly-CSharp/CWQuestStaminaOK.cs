@@ -7,6 +7,6 @@ public class CWQuestStaminaOK : MonoBehaviour
 		PlayerInfoScript instance = PlayerInfoScript.GetInstance();
 		instance.Gems--;
 		instance.Stamina = Mathf.Max(instance.Stamina_Max, instance.Stamina);
-        //Singleton<AnalyticsManager>.Instance.LogRechargePurchase(); - more analytical shit removed -s
-    }
+		Singleton<AnalyticsManager>.Instance.LogRechargePurchase();
+	}
 }

@@ -29,6 +29,12 @@ public class SQUtils
 			return value2;
 		}
 		string filename = Path.Combine(foldername, fname);
+		Dictionary<string, object>[] binArray = BlueprintBinaryReader_dbl.TryRead(filename);
+		if (binArray != null)
+		{
+			jsonCache.Add(foldername + fname, binArray);
+			return binArray;
+		}
 		try
 		{
 			value = TFUtils.GetJsonFileContent(filename);

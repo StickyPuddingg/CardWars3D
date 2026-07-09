@@ -190,19 +190,10 @@ public class TutorialManager : ILoadable
 		return playerInfoScript.tutorialsCompleted.Contains(qname);
 	}
 
-	public bool isTutorialCompleted(TutorialTrigger trigger)
-	{
-		TutorialInfo tutorialInfo = Find(trigger);
-		if (tutorialInfo != null)
-		{
-			if (isTutorialCompleted(tutorialInfo.TutorialID))
-			{
-				return true;
-			}
-			return false;
-		}
-		return true;
-	}
+public bool isTutorialCompleted(TutorialTrigger trigger)
+{
+    return true;
+}
 
 	public void StartAfterDelay(string id, float waitTime, bool onlyOnce = false, GameObject Pointer = null, GameObject Pointer2 = null)
 	{

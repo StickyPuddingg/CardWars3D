@@ -159,6 +159,11 @@ public class DungeonDataManager : ILoadable
 	private Dictionary<string, object>[] LoadJsonData(string fileName)
 	{
 		string text = Path.Combine("Blueprints", fileName);
+		Dictionary<string, object>[] binArray = BlueprintBinaryReader_dbl.TryRead(text);
+		if (binArray != null)
+		{
+			return binArray;
+		}
 		TFUtils.DebugLog("Loading dungeon data from path: " + text);
 		string jsonFileContent = TFUtils.GetJsonFileContent(text);
 		return JsonReader.Deserialize<Dictionary<string, object>[]>(jsonFileContent);

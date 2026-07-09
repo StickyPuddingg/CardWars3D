@@ -156,8 +156,12 @@ public class QuestManager : ILoadable
 			yield return null;
 		}
 		string filePath = Path.Combine("Blueprints", "db_Quest.json");
-		string json = TFUtils.GetJsonFileContent(filePath);
-		Dictionary<string, object>[] data2 = JsonReader.Deserialize<Dictionary<string, object>[]>(json);
+		Dictionary<string, object>[] data2 = BlueprintBinaryReader_dbl.TryRead(filePath);
+		if (data2 == null)
+		{
+			string json = TFUtils.GetJsonFileContent(filePath);
+			data2 = JsonReader.Deserialize<Dictionary<string, object>[]>(json);
+		}
 		if (LoadingManager.ShouldYield())
 		{
 			yield return null;
@@ -191,8 +195,12 @@ public class QuestManager : ILoadable
 			}
 		}
 		string filePath2 = Path.Combine("Blueprints", "db_QuestExtra.json");
-		string json2 = TFUtils.GetJsonFileContent(filePath2);
-		Dictionary<string, object>[] data = JsonReader.Deserialize<Dictionary<string, object>[]>(json2);
+		Dictionary<string, object>[] data = BlueprintBinaryReader_dbl.TryRead(filePath2);
+		if (data == null)
+		{
+			string json2 = TFUtils.GetJsonFileContent(filePath2);
+			data = JsonReader.Deserialize<Dictionary<string, object>[]>(json2);
+		}
 		if (LoadingManager.ShouldYield())
 		{
 			yield return null;

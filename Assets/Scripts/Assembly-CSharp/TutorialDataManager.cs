@@ -25,8 +25,13 @@ public class TutorialDataManager : ILoadable
 
 	public Dictionary<string, object>[] LoadTutorialData()
 	{
-		string fname = Path.Combine("Blueprints", "db_Tutorial.json");
-		fname = SessionManager.GetInstance().GetStreamingAssetsPath(fname);
+		string relativeName = Path.Combine("Blueprints", "db_Tutorial.json");
+		Dictionary<string, object>[] binArray = BlueprintBinaryReader_dbl.TryRead(relativeName);
+		if (binArray != null)
+		{
+			return binArray;
+		}
+		string fname = SessionManager.GetInstance().GetStreamingAssetsPath(relativeName);
 		TFUtils.DebugLog("CardDataScript Tutorial path: " + fname);
 		string jsonFileContent = TFUtils.GetJsonFileContent(fname);
 		return JsonReader.Deserialize<Dictionary<string, object>[]>(jsonFileContent);

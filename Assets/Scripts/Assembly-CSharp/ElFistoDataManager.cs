@@ -67,6 +67,11 @@ public class ElFistoDataManager : ILoadable
 	private Dictionary<string, object>[] LoadData()
 	{
 		string text = Path.Combine("Blueprints", "db_ElFisto.json");
+		Dictionary<string, object>[] binArray = BlueprintBinaryReader_dbl.TryRead(text);
+		if (binArray != null)
+		{
+			return binArray;
+		}
 		TFUtils.DebugLog("Loading ElFisto data from path: " + text);
 		string jsonFileContent = TFUtils.GetJsonFileContent(text);
 		return JsonReader.Deserialize<Dictionary<string, object>[]>(jsonFileContent);

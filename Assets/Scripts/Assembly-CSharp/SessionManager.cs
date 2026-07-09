@@ -131,7 +131,8 @@ public class SessionManager : MonoBehaviour
 
 	private void Start()
 	{
-		GameObject[] array = GameObject.FindGameObjectsWithTag("SessionMgr");
+        TFUtils.Init();
+        GameObject[] array = GameObject.FindGameObjectsWithTag("SessionMgr");
 		if (array.Length > 1)
 		{
 			GameObject[] array2 = array;
@@ -147,7 +148,8 @@ public class SessionManager : MonoBehaviour
 		DeviceID = LoadDeviceId();
 		session = null;
 		State = States.WAITING_FOR_USERID;
-	}
+        Login(DeviceID);
+    }
 
 	public string LoadDeviceId()
 	{
@@ -161,14 +163,13 @@ public class SessionManager : MonoBehaviour
 		return text;
 	}
 
-	public void Login(bool doFacebookLogin, string fbAccessToken, string fbid)
+	public void Login(string name)
 	{
-		string text = ((fbid != null) ? fbid : "default");
-		if (!(text == LoginID) || session == null || !session.IsAuthenticated())
+		if (session == null || !session.IsAuthenticated())
 		{
-			LoginID = ((fbid != null) ? fbid : "default");
+			LoginID = name;
 			State = States.LOGGING_IN;
-			session = new Session(1, DeviceID, fbid, doFacebookLogin, fbAccessToken);
+			session = new Session(1, DeviceID);
 			session.TheGame = new Game();
 		}
 	}
@@ -480,8 +481,10 @@ public class SessionManager : MonoBehaviour
 	{
 		loadingDataFinished = false;
 		//Language.ReloadLanguage();
-		StartCoroutine(LoadingManager.Instance.LoadAll(FinishedLoadingData));
-	}
+		//StartCoroutine(LoadingManager.Instance.LoadAll(FinishedLoadingData));
+		FinishedLoadingData();
+
+    }
 
 	private void StartCheckSaveConflict()
 	{
@@ -511,126 +514,87 @@ public class SessionManager : MonoBehaviour
 		return checkSaveConflictFinished;
 	}
 
-	private void Update()
-	{
-		if (session != null)
-		{
-			session.Update();
-		}
-		if (State == States.LOGGING_IN && IsLoggedIn())
-		{
-			PlayerID = session.ThePlayer.playerId;
-			State = States.VALIDATE_PATCH;
-			session.ValidateLastPatch();
-		}
-		if (State == States.VALIDATE_PATCH && !session.ValidatingLastPatch)
-		{
-			State = States.VERSION_CHECK;
-			StartSyncStreamingAssets();
-		}
-		if (State == States.VERSION_CHECK)
-		{
-			if (!checkedVersion)
-			{
-				checkedVersion = true;
-				session.GetServerVersion();
-			}
-			if (GetServerVersion() != null)
-			{
-				if (GetServerVersion() > new Version(Application.version))
-				{
-					NeedsForcedUpdate = true;
-					State = States.WAITING_FOR_RESTART;
-				}
-				else
-				{
-					State = States.PATCHING;
-				}
-				checkedVersion = false;
-			}
-		}
-		if (State == States.PATCHING && IsPatchingSyncDone())
-		{
-			if (!isPatched)
-			{
-				State = States.LOAD_DATA;
-				StartLoadingData();
-			}
-			else
-			{
-				State = States.CHECK_SAVE_CONFLICT;
-				StartCheckSaveConflict();
-			}
-		}
-		if (State == States.LOAD_DATA && IsLoadDataDone())
-		{
-			State = States.CHECK_SAVE_CONFLICT;
-			StartCheckSaveConflict();
-		}
-		if (State == States.CHECK_SAVE_CONFLICT && IsCheckSaveConflictDone())
-		{
-			PlayerInfoScript.ValidateAndFixLocalSave();
-			State = States.LOADING;
-			if (!GetInstance().LocalRemoteSaveGameConflict)
-			{
-				LoadFromServer();
-			}
-		}
-		if (State == States.LOADING && IsSaveDone())
-		{
-			PlayerInfoScript.Load();
-			QuestManager.Instance.InitializeQuestStates();
-			SideQuestManager.Instance.InitializeQuestStates();
-			//Singleton<AnalyticsManager>.Instance.LogTotalXP();
-			//Singleton<AnalyticsManager>.Instance.LogTotalCoins();
-			State = States.MESSAGE_FETCH;
-			session.GetMessagesList();
-		}
-		if (State == States.MESSAGE_FETCH && IsMessageSyncDone())
-		{
-			State = States.SAVING;
-			PlayerInfoScript.GetInstance().Save();
-		}
-		if (State == States.SAVING && IsSaveDone())
-		{
-			State = States.READY;
-			if (myOnReadyCallback != null)
-			{
-				myOnReadyCallback();
-			}
-		}
-		if (State == States.QUERYING && IsSaveDone())
-		{
-			State = States.READY;
-			if (myOnReadyCallback != null)
-			{
-				myOnReadyCallback();
-			}
-		}
-		if (saveToServerResponse.HasValue)
-		{
-			HandleSaveResponse();
-		}
-		if (attemptConnectionResponse.HasValue)
-		{
-			HandleConnectionResponse();
-		}
-		if (session != null && session.TheGame != null)
-		{
-			if (session.TheGame.needsSaveSuccessfulDialog)
-			{
-				session.TheGame.needsSaveSuccessfulDialog = false;
-				DebugPopupScript.CreateSavePopup(true);
-			}
-			if (session.TheGame.needsSaveFailedDialog)
-			{
-				session.TheGame.needsSaveFailedDialog = false;
-				DebugPopupScript.CreateSavePopup(false);
-			}
-		}
-	}
+    private void Update()
+    {
+        if (session != null)
+        {
+            session.Update();
+        }
+        if (State == States.LOGGING_IN && IsLoggedIn())
+        {
+            PlayerID = session.ThePlayer.playerId;
+            // -s Skip remote validation and patching entirely for the 3DS build.
+            State = States.LOAD_DATA;
+            StartLoadingData();
+        }
+        if (State == States.LOAD_DATA && IsLoadDataDone())
+        {
+            State = States.CHECK_SAVE_CONFLICT;
+            StartCheckSaveConflict();
+        }
+        if (State == States.CHECK_SAVE_CONFLICT)
+        {
+            // -s Bypass save conflict/network polling and resolve locally.
+            PlayerInfoScript.ValidateAndFixLocalSave();
+            State = States.LOADING;
+            PlayerInfoScript.Load();
+            QuestManager.Instance.InitializeQuestStates();
+            SideQuestManager.Instance.InitializeQuestStates();
+            Singleton<AnalyticsManager>.Instance.LogTotalXP();
+            Singleton<AnalyticsManager>.Instance.LogTotalCoins();
+            State = States.SAVING;
+            PlayerInfoScript.GetInstance().Save();
+        }
+        if (State == States.LOADING && IsSaveDone())
+        {
+            State = States.SAVING;
+            PlayerInfoScript.GetInstance().Save();
+        }
+        if (State == States.MESSAGE_FETCH && IsMessageSyncDone())
+        {
+            State = States.SAVING;
+            PlayerInfoScript.GetInstance().Save();
+        }
+        if (State == States.SAVING && IsSaveDone())
+        {
+            State = States.READY;
+            if (myOnReadyCallback != null)
+            {
+                myOnReadyCallback();
+            }
+        }
+        if (State == States.QUERYING && IsSaveDone())
+        {
+            State = States.READY;
+            if (myOnReadyCallback != null)
+            {
+                myOnReadyCallback();
+            }
+        }
+        if (saveToServerResponse.HasValue)
+        {
+            HandleSaveResponse();
+        }
+        if (attemptConnectionResponse.HasValue)
+        {
+            HandleConnectionResponse();
+        }
+        if (session != null && session.TheGame != null)
+        {
+            if (session.TheGame.needsSaveSuccessfulDialog)
+            {
+                session.TheGame.needsSaveSuccessfulDialog = false;
+                DebugPopupScript.CreateSavePopup(true);
+            }
+            if (session.TheGame.needsSaveFailedDialog)
+            {
+                session.TheGame.needsSaveFailedDialog = false;
+                DebugPopupScript.CreateSavePopup(false);
+            }
+        }
+    }
 
-	public void OnApplicationPause(bool paused)
+    public void OnApplicationPause(bool paused)
 	{
 		TFUtils.DebugLog("Application pausing" + paused);
 		if (!paused && session != null)
@@ -640,21 +604,8 @@ public class SessionManager : MonoBehaviour
 		if (!paused && IsReady() && IsLoggedIn())
 		{
 			StartSyncStreamingAssets();
-			//Singleton<AnalyticsManager>.Instance.LogTotalXP();
-			//Singleton<AnalyticsManager>.Instance.LogTotalCoins();
-		}
-	}
-
-	private void onExternalMessage(string msg)
-	{
-		session.onExternalMessage(msg);
-	}
-
-	public void ClearMessages()
-	{
-		if (session != null && session.TheGame != null && session.TheGame.MyMessages != null)
-		{
-			session.TheGame.MyMessages.Clear();
+			Singleton<AnalyticsManager>.Instance.LogTotalXP();
+			Singleton<AnalyticsManager>.Instance.LogTotalCoins();
 		}
 	}
 

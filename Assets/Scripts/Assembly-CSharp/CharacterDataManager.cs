@@ -29,6 +29,11 @@ public class CharacterDataManager : ILoadable
 	public Dictionary<string, object>[] LoadCharacterData()
 	{
 		string text = Path.Combine("Blueprints", "db_Characters.json");
+		Dictionary<string, object>[] binArray = BlueprintBinaryReader_dbl.TryRead(text);
+		if (binArray != null)
+		{
+			return binArray;
+		}
 		TFUtils.DebugLog("CharacterData path: " + text);
 		string jsonFileContent = TFUtils.GetJsonFileContent(text);
 		return JsonReader.Deserialize<Dictionary<string, object>[]>(jsonFileContent);
@@ -77,7 +82,18 @@ public class CharacterDataManager : ILoadable
 				Data.BattleMusic = string.Empty;
 			}
 			Data.GoVO = TFUtils.LoadString(dict, "GoVO");
-			Characters.Add(Data.ID, Data);
+			if (string.IsNullOrEmpty(Data.ID))
+			{
+				TFUtils.DebugLog("CharacterDataManager: skipping character with missing ID.");
+			}
+			else if (Characters.ContainsKey(Data.ID))
+			{
+				TFUtils.DebugLog("CharacterDataManager: duplicate character ID skipped: " + Data.ID);
+			}
+			else
+			{
+				Characters.Add(Data.ID, Data);
+			}
 			if (LoadingManager.ShouldYield())
 			{
 				yield return null;

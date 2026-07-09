@@ -18,7 +18,7 @@ public class CWGachaOpenChest : MonoBehaviour
 
 	public GameObject VFX_Normal_Open;
 
-private void OnClick()
+	private void OnClick()
 	{
 		CWGachaController instance = CWGachaController.GetInstance();
 		PlayerInfoScript instance2 = PlayerInfoScript.GetInstance();
@@ -40,9 +40,14 @@ private void OnClick()
 			{
 				cameraTarget.followFlag = false;
 			}
-
-			// 3DS Optimization: Removed the conditional check and logging for Normal/Premium chest purchases
-
+			if (instance.activeChest == CWGachaController.ChestType.Normal)
+			{
+				Singleton<AnalyticsManager>.Instance.LogNormalChestPurchase();
+			}
+			else
+			{
+				Singleton<AnalyticsManager>.Instance.LogPremiumChestPurchase();
+			}
 			if (instance.activeChest == CWGachaController.ChestType.Premium && instance.vfx != null)
 			{
 				instance.vfx.useCustomCoords = false;

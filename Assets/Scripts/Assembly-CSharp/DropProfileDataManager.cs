@@ -51,6 +51,11 @@ public class DropProfileDataManager : ILoadable
 	private Dictionary<string, object>[] LoadData()
 	{
 		string text = Path.Combine("Blueprints", "db_DropProfile.json");
+		Dictionary<string, object>[] binArray = BlueprintBinaryReader_dbl.TryRead(text);
+		if (binArray != null)
+		{
+			return binArray;
+		}
 		TFUtils.DebugLog("Loading DropProfile data from path: " + text);
 		string jsonFileContent = TFUtils.GetJsonFileContent(text);
 		return JsonReader.Deserialize<Dictionary<string, object>[]>(jsonFileContent);

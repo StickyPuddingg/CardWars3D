@@ -28,7 +28,7 @@ public class CWOutOfGemBranch : MonoBehaviour
 		{
 			okTween.SendMessage("OnClick", SendMessageOptions.DontRequireReceiver);
 		}
-		//Singleton<AnalyticsManager>.Instance.LogReshufflePurchase(); - more analytical shit removed -s
+		Singleton<AnalyticsManager>.Instance.LogReshufflePurchase();
 	}
 
 	private void Update()

@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{62D9D1FC-687D-5C45-FED7-BE2DCEDE2AAF}</ProjectGuid>
+    <ProjectGuid>{52919CAB-94CA-F247-1EA2-1E21B7FAE226}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -46,10 +46,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CustomStuff\CustomScenes\LightmapExample\Rotate.cs" />
-     <Compile Include="Assets\CustomStuff\Debug\MemoryMonitor.cs" />
      <Compile Include="Assets\NGUI270Revive\Scripts\Rebased\RebasedEditorGUIUtility.cs" />
      <Compile Include="Assets\NGUI270Revive\Scripts\Rebased\RebasedUndo.cs" />
+     <Compile Include="Assets\Resources\props\TestChestLoader.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\ActiveAnimation.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\AnimationOrTween\Direction.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\AnimationOrTween\DisableCondition.cs" />
@@ -70,19 +69,6 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\DiscreteGestureRecognizer.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\DragGesture.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\DragRecognizer.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\Etcetera2GUIManager.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\EtceteraAndroid.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\EtceteraAndroidEventListener.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\EtceteraAndroidManager.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\EtceteraEventListener.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\EtceteraGUIManager.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\EtceteraGUIManagerThree.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\EtceteraGUIManagerTwo.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\EtceteraManager.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\EtceteraTwoEventListener.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\EtceteraTwoManager.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\EtceteraUIManager.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\EtceteraUIManagerTwo.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\EventDispatcher.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\FGInputProvider.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\FGMouseInputProvider.cs" />
@@ -132,7 +118,17 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\GestureRecognizer.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\GestureRecognizerDelegate.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\GestureResetMode.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\GoogleIAB.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\GoogleIABEventListener.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\GoogleIABManager.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\GooglePlayDownloader.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\GooglePurchase.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\GoogleSkuInfo.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\GraphTexture.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\IABUIManager.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\IAP.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\IAPComboUI.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\IAPProduct.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\IgnoreTimeScale.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\JSON.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\JsonFx.Json\DataReaderProvider.cs" />
@@ -167,14 +163,12 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\KFFLODManager.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\KFFLocalization.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\KFFNetwork2.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\KFFPlayhavenPlacement.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\KFFPlayhavenReward.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\KFFPlayhavenTest.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\KFFRandom.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\KFFRequestorController.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\KFFServerRequestResult.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\KFFSoundPlayer.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\KFFUpsightManager.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\Kochava.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\KontagentBinding.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\KontagentSession.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\Language.cs" />
@@ -191,6 +185,7 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\NGUIDebug.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\NGUIMath.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\NGUITools.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\OmnitureWrapper.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\P31Prefs.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\PinchGesture.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\PinchRecognizer.cs" />
@@ -302,13 +297,11 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\UpsightMonoBehavior.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\UpsightPurchase.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\UpsightReward.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\UpsightRewardParser.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\WWWInfo.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\XMLNode.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\XMLNodeList.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\XMLParser.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\XmlBypass.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp-firstpass\_UpsightReward.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\AIDecision.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\AIDeckManager.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\AIManager.cs" />
@@ -347,8 +340,9 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp\ActivateObjectScript.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\AdjacentATKBonus.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\AdjacentDEFBonus.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\AnalyticsManager.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\AnalyticsShopContext.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\AndroidBackButton.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp\AndroidQuit.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\AndroidUiStack.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\AnimFadeOut.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\AnimatedAlpha.cs" />
@@ -357,7 +351,6 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp\AssetLoaderUI.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\AsyncData.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\AsyncLoader.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp\AsyncSceneLoader.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\AttackCreature.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\AttackCreatureCorn.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\AttackCreatureCotton.cs" />
@@ -655,6 +648,7 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp\ConnectivityController.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\ConvertOpponentAttToHP.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\CornLODScript.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\CrashAnalytics.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\CreatureATKBonus.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\CreatureAnimationsButtonScript.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\CreatureBattleScript.cs" />
@@ -741,7 +735,6 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp\DebugDisplayStarCount.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\DebugFPS.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\DebugFingerGestureOn.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp\DebugFinishQuest.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\DebugFlagsScript.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\DebugFloopActionCamera.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\DebugGUI.cs" />
@@ -749,7 +742,6 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp\DebugInDevelopment.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\DebugLooting.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\DebugMapSetStar.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp\DebugNisPlayer.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\DebugPauseGame.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\DebugPauseGamePause.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\DebugPauseGameStep.cs" />
@@ -873,6 +865,7 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp\GetLeaderboardRewards.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\GiftMessage.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\GlobalFlags.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\GooglePurchaseListener.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\HUDFPS.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\HealAdjacent.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\HealAdjacentDEFAndDiscard.cs" />
@@ -911,6 +904,7 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp\HeroDamageOnEntry.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\HeroIconScript.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\HowOldAreYou.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\IAPButtonScript.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\IAndroidBackActivator.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\ICWSerializable.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\ILoadable.cs" />
@@ -923,6 +917,11 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp\IncreaseHitArea.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\ItemPrice.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\JakeGhostToggle.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\KFFKochavaAnalytics.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\KFFNotificationManager.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\KFFPlayhavenPlacement.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\KFFPlayhavenReward.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\KFFUpsightManager.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\KFFUpsightVGController.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\KeyItemController.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\KeyListController.cs" />
@@ -1003,6 +1002,8 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp\Multiplayer\Multiplayer.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\Multiplayer\MultiplayerData.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\Multiplayer\MultiplayerDataCallback.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\Multiplayer\NotificationCallback.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\Multiplayer\RecentNotification.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\Multiplayer\RecordCallback.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\Multiplayer\RecordData.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\Multiplayer\ResponseFlag.cs" />
@@ -1073,18 +1074,15 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp\NisTriggerSfx.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\NisTriggerTween.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\NisTweenAlpha.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\NotificationCheckScript.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\NotificationListItem.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\NotificationListItem_PlayerAttacked.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\NotificationTicker.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\NotificationUI.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\NowLoadingScript.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\NsRenderManager.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\NsSharedManager.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\ObjectPairTable.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp\Obsolete\Notifications\KFFNotificationManager.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp\Obsolete\Notifications\NotificationCallback.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp\Obsolete\Notifications\NotificationCheckScript.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp\Obsolete\Notifications\NotificationListItem.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp\Obsolete\Notifications\NotificationListItem_PlayerAttacked.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp\Obsolete\Notifications\NotificationTicker.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp\Obsolete\Notifications\NotificationUI.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp\Obsolete\Notifications\RecentNotification.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\OldUserScript.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\OnlineStatusPopup.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\OpenUrlScript.cs" />
@@ -1144,7 +1142,6 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp\Range.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\RankManager.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\RarityGate.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp\ReauthenticationHelper.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\RecipeData.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\RecipeIngredientData.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\ReduceATK.cs" />
@@ -1156,7 +1153,6 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp\ReduceTypeCostLeader.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\RefreshMatch.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\ReloadButton.cs" />
-     <Compile Include="Assets\Scripts\Assembly-CSharp\ReloadDetection.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\ReloadHandler.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\RemoveBackgroundScript.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\ResetButtonScript.cs" />
@@ -1190,6 +1186,7 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp\SLOTLoadPage.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\SLOTLogin.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\SLOTMusic.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\SLOTOmniture.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\SLOTResourceManager.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\SLOTResoureRequest.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\SLOTSavePlayerInfo.cs" />
@@ -1213,6 +1210,7 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp\SampleBase.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\SampleUI.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\SaveGameScript.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\ScheduleData.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\ScheduleDataManager.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\ScreenColorScript.cs" />
@@ -1271,6 +1269,7 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp\SwapATKDEFSelf.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\SwipeParticlesEmitter.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\SwizzleCrypto.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\TFAnalytics.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\TFBilling.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\TFFalseTimeoutJsonResponseHandler.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\TFServer.cs" />
@@ -1336,6 +1335,7 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp\ULSpriteAnimationSetting.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\UVScroll.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\UnityUtils.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\UpsightRewardParser.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\UserIDScript.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\UserInfo.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\VOButtonTrigger.cs" />
@@ -1356,6 +1356,7 @@
      <Compile Include="Assets\Scripts\Assembly-CSharp\XPManager.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\XorCrypto.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\YouGotThisController.cs" />
+     <Compile Include="Assets\Scripts\Assembly-CSharp\_UpsightReward.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\iOSPurchaseListener.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\iTween.cs" />
      <Compile Include="Assets\Scripts\Assembly-CSharp\iTweenEvent.cs" />
@@ -1418,34 +1419,107 @@
      <Compile Include="Assets\Scripts\P31RestKit\Prime31\ThreadingCallbackHelper.cs" />
      <Compile Include="Assets\Scripts\P31RestKit\Prime31\Utils.cs" />
      <Compile Include="Assets\Scripts\StartButtonAccountLabel.cs" />
+     <Compile Include="Assets\debloat\StickyScripts\Logger.cs" />
+     <Compile Include="Assets\debloat\StickyScripts\MemoryMonitor.cs" />
+     <Compile Include="Assets\debloat\scripts\AnalyticsManager_dbl.cs" />
+     <Compile Include="Assets\debloat\scripts\AssetLoadMonitor_dbl.cs" />
+     <Compile Include="Assets\debloat\scripts\BlueprintBinaryReader_dbl.cs" />
+     <Compile Include="Assets\debloat\scripts\CrashLogger_dbl.cs" />
+     <Compile Include="Assets\debloat\scripts\DisableNetworkSystem_dbl.cs" />
+     <Compile Include="Assets\debloat\scripts\DisableTutorialSystem_dbl.cs" />
+     <Compile Include="Assets\debloat\scripts\ExecutionMonitor_dbl.cs" />
+     <Compile Include="Assets\debloat\scripts\KFFNetwork2_dbl.cs" />
+     <Compile Include="Assets\debloat\scripts\SLOTGame_dbl.cs" />
+     <Compile Include="Assets\debloat\scripts\SLOTLogin_dbl.cs" />
+     <Compile Include="Assets\debloat\scripts\SLOTSceneManager_dbl.cs" />
+     <Compile Include="Assets\debloat\scripts\SLOTStartup_dbl.cs" />
+     <Compile Include="Assets\debloat\scripts\SQWebFileServer_dbl.cs" />
+     <Compile Include="Assets\debloat\scripts\SessionManagerWatchdog_dbl.cs" />
+     <Compile Include="Assets\debloat\scripts\SkipAuthForDebloat.cs" />
+     <Compile Include="Assets\debloat\scripts\TFWebFileServer_dbl.cs" />
+     <Compile Include="Assets\debloat\scripts\TutorialAnimTrigger_dbl.cs" />
+     <Compile Include="Assets\debloat\scripts\TutorialManager_dbl.cs" />
+     <Compile Include="Assets\debloat\scripts\TutorialMonitor_dbl.cs" />
+     <None Include="Assets\Shader\Custom3DSshader\Terrain3Layer.shader" />
      <None Include="Assets\Resources\shaders\Unlit-Alpha-With-Fade.shader" />
      <None Include="Assets\Resources\shaders\Unlit - Transparent Colored (Packed) (SoftClip).shader" />
+     <None Include="Assets\Shader\Custom3DSshader\VegetationWindyGrass.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\VegetationLeaves.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\DiffuseDetailTransparent.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\ColorDissolve.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\Ghost Door.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\Terrain2Layer.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\VegetationWindyLeaves.shader" />
      <None Include="Assets\Shader\TransparencyWithZ.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\Alpha-VertexLit.shader" />
      <None Include="Assets\StreamingAssets\debugLogChannels.txt" />
      <None Include="Assets\Editor\RID-Tools\tools\3dsreleases.xml" />
+     <None Include="Assets\Shader\Custom3DSshader\3DS_Skybox.shader" />
      <None Include="Assets\Resources\shaders\Unlit - Depth.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\Normal-VertexLit.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\DungeonDiffuse.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\Color.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\Unlit-Color-NoCull.shader" />
      <None Include="Assets\Shader\UnitColoredTransparent.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\LightmapTerrain3Layer.shader" />
      <None Include="Assets\Resources\shaders\GUI - Text Shader (AlphaClip).shader" />
      <None Include="Assets\Resources\shaders\Unlit - Premultiplied Colored (AlphaClip).shader" />
+     <None Include="Assets\Shader\Custom3DSshader\SelfIllumination.shader" />
      <None Include="Assets\Resources\shaders\Unlit - Transparent Colored (AlphaClip).shader" />
      <None Include="Assets\Editor\RID-Tools\ExtTools\ignore_3dstool.txt" />
+     <None Include="Assets\Shader\Custom3DSshader\VegetationLeavesLit.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\sonic_rimlit.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\TerrainN3DS.shader" />
      <None Include="Assets\Resources\shaders\Unlit - Dynamic Font.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\VegetationGrass.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\VertexLit Specular.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\FlagShader.shader" />
      <None Include="Assets\Resources\shaders\Unlit - Masked Colored.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\ShieldShader.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\GhostShader.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\VegetationLeavesNoVertex.shader" />
      <None Include="Assets\Resources\shaders\Unlit - Additive Colored.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\PulsarIllumination.shader" />
      <None Include="Assets\Resources\shaders\GUI - Text Shader (SoftClip).shader" />
-     <None Include="Assets\Shader\Unlit - Transparent Colored Overlay.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\Ghost Fast3DSTextured.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\LightmapTerrain.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\SimpleTerrain.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\PulsarIlluminationBrightPositionLitStatic.shader" />
      <None Include="Assets\Resources\shaders\Unlit - Transparent Colored (Packed) (AlphaClip) .shader" />
      <None Include="Assets\Resources\shaders\Unlit - Dynamic Font (AlphaClip).shader" />
+     <None Include="Assets\Shader\Custom3DSshader\DiffuseDetail.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\IceShader.shader" />
      <None Include="Assets\Resources\shaders\Unlit - Premultiplied Colored.shader" />
      <None Include="Assets\Resources\shaders\Unlit - Transparent Colored (SoftClip).shader" />
+     <None Include="Assets\Shader\Custom3DSshader\SimpleLightmap.shader" />
      <None Include="Assets\Resources\shaders\Unlit - Premultiplied Colored (SoftClip).shader" />
+     <None Include="Assets\Shader\Custom3DSshader\VegetationGrassNoVertex.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\PulsarIlluminationBrightPosition.shader" />
      <None Include="Assets\Resources\shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\ShinyGhostTexturedPlayer.shader" />
      <None Include="Assets\Resources\shaders\Unlit-Alpha-With-Fade2.shader" />
      <None Include="Assets\Resources\shaders\Unlit - Depth Cutout.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\Ghost Fast3DSTexturedNoCull.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\SelfIlluminationAdjustable.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\DungeonGhostShader.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\PulsarIlluminationBrightPositionLit.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\TextureDissolve.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\LegacyTextureCombiner.shader" />
      <None Include="Assets\Resources\shaders\Unlit - Dynamic Font (SoftClip).shader" />
+     <None Include="Assets\Shader\Custom3DSshader\PulsarIlluminationBright.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\Normal-Diffuse.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\3ds_text.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\PostProcessVertex.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\Ghost Fast3DS.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\ShinyGhostTextured.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\Vertex RimLit.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\VegetationIce.shader" />
      <None Include="Assets\Editor\RID-Tools\ExtTools\boot9\place your boo9.bin here.txt" />
      <None Include="Assets\Editor\RID-Tools\ExtTools\comercialreleases.xml" />
-     <None Include="Assets\CustomStuff\CustomScenes\LightmapExample\Simple.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\VegetationGrassLit.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\SelfIlluminationLit.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\Simple.shader" />
+     <None Include="Assets\Shader\Custom3DSshader\OutlineShader.shader" />
      <None Include="Assets\Resources\shaders\Unlit - Transparent Colored (Packed).shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

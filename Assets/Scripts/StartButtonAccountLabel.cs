@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class StartButtonAccountLabel : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
 
-		var PlayerName = PlayerInfoScript.GetInstance().GetPlayerCode();
+		var PlayerName = PlayerInfoScript.GetInstance().PlayerName;
 
 		if (PlayerName == "ua" || PlayerName == string.Empty)
 		{

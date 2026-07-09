@@ -3,19 +3,13 @@ using UnityEngine;
 
 public class MarketGems : MonoBehaviour
 {
-    /* =================================================================================
- * SUMMARY:
-* Commented out a majority of the script to avoid errors with obsolete IAP scripts
- * ================================================================================= */
+	public IAPButtonScript[] IAPScripts;
 
-
-    //public IAPButtonScript[] IAPScripts;
-
-    private void Start()
+	private void Start()
 	{
 	}
 
-	/*private void OnEnable()
+	private void OnEnable()
 	{
 		PurchaseManager instance = Singleton<PurchaseManager>.Instance;
 		bool allowPurchase = true;
@@ -47,5 +41,4 @@ public class MarketGems : MonoBehaviour
 			iAPButtonScript.Setup();
 		}
 	}
-	*/
 }
