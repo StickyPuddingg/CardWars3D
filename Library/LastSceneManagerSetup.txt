@@ -1,13 +1,4 @@
 sceneSetups:
-- path: Assets/debloat/StartupScene_dbl.unity
+- path: Assets/Scene/3DS/StartupScene3DS.unity
   isLoaded: 1
   isActive: 1
-- path: Assets/Scene/LoadingScreen.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/Scene/AdventureTime.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/Scene/QuestMapScene.unity
-  isLoaded: 0
-  isActive: 0

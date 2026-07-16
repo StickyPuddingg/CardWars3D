@@ -11,21 +11,35 @@ public class SceneLoader : MonoBehaviour
     }
 
     public LoaderMode mode = LoaderMode.Startup;
-    public string nextScene = "LoadingScreen";
+    public string nextScene = "LoadingScreen3DS";
 
-    // Made static so it survives scene transitions and is accessible globally
-    public static string DestinationScene = "AdventureTime";
+    // Track both the destination and the historical source scene across frames
+    public static string DestinationScene = "AdventureTime3DS";
+    public static string PreviousScene = ""; // <--- NEW: Track where we came from
+
     public float minimumWaitTime = 8f;
 
-    // Helper method to safely initiate a transition from buttons
+    // Updated helper to capture the current active scene before transitioning
     public static void InitiateLoad(string targetScene)
     {
+        // 1. Record our current location before we swap levels
+        try
+        {
+            PreviousScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        }
+        catch (Exception)
+        {
+            // Fallback for older Unity configurations where GetActiveScene might lack wrapper bindings
+            PreviousScene = Application.loadedLevelName;
+        }
+
         DestinationScene = targetScene;
+
         SLOTSceneManager sceneManager = SLOTGameSingleton<SLOTSceneManager>.GetInstance();
         if (sceneManager != null)
         {
-            // First, load the dedicated intermediate Loading Screen scene
-            sceneManager.LoadLevel("LoadingScreen");
+            // Note: Swapped to load your local 3DS loading screen asset name safely
+            sceneManager.LoadLevel("LoadingScreen3DS");
         }
         else
         {
@@ -33,15 +47,8 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        Logger.Error("[AsyncSceneLoader] AWAKE: Component active on: " + gameObject.name);
-    }
-
     private IEnumerator Start()
     {
-        Logger.Error(string.Format("[AsyncSceneLoader] START: Processing mode: {0}", mode));
-
         if (mode == LoaderMode.Startup)
         {
             yield return StartCoroutine(InitializeStartup());
@@ -53,6 +60,14 @@ public class SceneLoader : MonoBehaviour
         }
         else if (mode == LoaderMode.LoadingBuffer)
         {
+            // 2. RUN ROUTING OVERRIDE LOGIC HERE:
+            // Detect if our historical origin requires a redirection to the Battle Scene
+            if (PreviousScene == "AdventureTime3DS")
+            {
+                Logger.Error("[AsyncSceneLoader] Route Intercept: Came from AdventureTime3DS. Rerouting destination to BattleScene3DS.");
+                DestinationScene = "BattleScene3DS";
+            }
+
             yield return StartCoroutine(RunLoadingBuffer());
 
             if (!string.IsNullOrEmpty(DestinationScene))
@@ -74,7 +89,6 @@ public class SceneLoader : MonoBehaviour
             if (sceneManager != null)
             {
                 sceneManager.LoadLevel(sceneName);
-                Logger.Error(string.Format("[AsyncSceneLoader] SUCCESS: Loaded level '{0}'", sceneName));
             }
             else
             {
@@ -106,18 +120,16 @@ public class SceneLoader : MonoBehaviour
     {
         float startTime = Time.realtimeSinceStartup;
 
-        Logger.Error("[AsyncSceneLoader] BUFFER: Clearing memory states to prevent crashes...");
         GC.Collect();
         yield return null;
         yield return Resources.UnloadUnusedAssets();
-        yield return null; // Additional frames ease memory spikes
+        yield return null;
 
         float elapsed = Time.realtimeSinceStartup - startTime;
         float waitTime = Mathf.Max(0f, minimumWaitTime - elapsed);
 
         if (waitTime > 0f)
         {
-            Logger.Error(string.Format("[AsyncSceneLoader] BUFFER: Holding for {0:F2} seconds...", waitTime));
             yield return new WaitForSeconds(waitTime);
         }
     }

@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using UnityEngine;
+using UnityEngine.N3DS;
 
 public class SessionManager : MonoBehaviour
 {
@@ -131,8 +132,8 @@ public class SessionManager : MonoBehaviour
 
 	private void Start()
 	{
-        TFUtils.Init();
-        GameObject[] array = GameObject.FindGameObjectsWithTag("SessionMgr");
+		TFUtils.Init();
+		GameObject[] array = GameObject.FindGameObjectsWithTag("SessionMgr");
 		if (array.Length > 1)
 		{
 			GameObject[] array2 = array;
@@ -148,12 +149,38 @@ public class SessionManager : MonoBehaviour
 		DeviceID = LoadDeviceId();
 		session = null;
 		State = States.WAITING_FOR_USERID;
-        Login(DeviceID);
+
+        // --- Place at the very end of SessionManager.Start() ---
+
+        try
+        {
+            if (session != null)
+            {
+                System.Type type = session.GetType();
+                Logger.Error("[SessionManager][SessionCheck] Reflecting fields on Session type: " + type.Name);
+
+                // Print all boolean and string values on the session to see what is missing
+                System.Reflection.FieldInfo[] fields = type.GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                foreach (System.Reflection.FieldInfo field in fields)
+                {
+                    if (field.FieldType == typeof(bool) || field.FieldType == typeof(string))
+                    {
+                        Logger.Error(string.Format("[SessionManager][SessionCheck] Field '{0}' = {1}", field.Name, field.GetValue(session)));
+                    }
+                }
+            }
+        }
+        catch (System.Exception ex)
+        {
+            Logger.Error("[SessionManager][SessionCheck] Reflection failed: " + ex.Message);
+        }
+
     }
+
 
 	public string LoadDeviceId()
 	{
-		string path = Path.Combine(Application.persistentDataPath, "deviceName");
+		string path = Path.Combine(UnityEngine.Application.persistentDataPath, "deviceName");
 		if (File.Exists(path))
 		{
 			return File.ReadAllText(path);
@@ -163,39 +190,84 @@ public class SessionManager : MonoBehaviour
 		return text;
 	}
 
-	public void Login(string name)
-	{
-		if (session == null || !session.IsAuthenticated())
-		{
-			LoginID = name;
-			State = States.LOGGING_IN;
-			session = new Session(1, DeviceID);
-			session.TheGame = new Game();
-		}
-	}
+public void Login(string name)
+{
+    if (session == null || !session.IsAuthenticated())
+    {
+        LoginID = name;
+        State = States.LOGGING_IN;
+        session = new Session(1, DeviceID);
+        session.TheGame = new Game();
 
-	public void Logout()
+            if (session.ThePlayer == null)
+            {
+				Logger.Error("[SessionManager] WARNING: session.ThePlayer is null.");
+            }
+        }
+}
+
+	// Helper to safely get the 64-bit device ID as a string and determine if it's a new player
+	public string Get3DSDeviceId(out bool isNewPlayer)
+	{
+		string deviceIdStr = "3DS_Fallback_ID";
+
+		try
+		{
+			// Seed it with an application unique ID (e.g., 12345 or your title ID seed)
+			ulong rawId = Config.GetTransferableId();
+			deviceIdStr = rawId.ToString();
+		}
+		catch (System.Exception ex)
+		{
+			Logger.Error("[PlayerInfoScript] Failed to fetch Config.GetTransferableId: " + ex.Message);
+		}
+
+		// Check if the system already has a saved file or name for this user to determine 'isNew'
+		isNewPlayer = !PlayerPrefs.HasKey("SocialLogin") && !PlayerPrefs.HasKey("SavePlayerName");
+
+		return deviceIdStr;
+	}
+    public string Build3DSPlayerName()
+    {
+        // -s Use the requested 3DS config user-name API directly.
+        try
+        {
+            string userName;
+            bool isNameProfane;
+            Config.GetUserName(out userName, out isNameProfane);
+            return userName;
+        }
+        catch (Exception)
+        {
+            // -s Fall back to a generated value when the config call is unavailable.
+            return null;
+        }
+    }
+
+    public void Logout()
 	{
 		session = null;
 		State = States.WAITING_FOR_USERID;
 	}
 
-	public bool IsLoggedIn()
-	{
-		bool result = false;
-		if (session != null)
-		{
-			result = session.IsLoggedIn();
-		}
-		return result;
-	}
+    public bool IsLoggedIn()
+    {
+        // If the session doesn't exist, or the internal player object hasn't spun up yet,
+        // we are NOT ready to progress.
+        if (session == null || session.ThePlayer == null)
+        {
+            return false;
+        }
 
-	public bool IsAuthenticated()
-	{
-		return session != null && session.IsAuthenticated();
-	}
+        // If the player object exists, fall back to the session's internal login verification
+        return session.IsLoggedIn();
+    }
+    public bool IsAuthenticated()
+    {
+        return session != null && session.IsAuthenticated();
+    }
 
-	public bool IsReady()
+    public bool IsReady()
 	{
 		return IsLoggedIn() && State == States.READY;
 	}
@@ -217,16 +289,13 @@ public class SessionManager : MonoBehaviour
 
 	private bool IsSaveDone()
 	{
-		if (session == null || session.TheGame == null)
-		{
 			return true;
-		}
-		return session.TheGame.IsDoneServerAccess();
+
 	}
 
 	public string GetStreamingAssetsPath(string fname)
 	{
-		string result = Path.Combine(Application.streamingAssetsPath, fname);
+		string result = Path.Combine(UnityEngine.Application.streamingAssetsPath, fname);
 		if (DebugFlagsScript.GetInstance().UseLocalJsonFiles)
 		{
 			return result;
@@ -277,7 +346,7 @@ public class SessionManager : MonoBehaviour
 		{
 			TFUtils.DebugLog("LocalRemoteSaveGameConflict, not saving to server until resolved", "saveload");
 		}
-		else if (Application.internetReachability == NetworkReachability.NotReachable)
+		else if (UnityEngine.Application.internetReachability == NetworkReachability.NotReachable)
 		{
 			STDErrorDialog sTDErrorDialog = STDErrorDialog.GetInstance();
 			if (sTDErrorDialog != null)
@@ -335,7 +404,7 @@ public class SessionManager : MonoBehaviour
 
 	private void AttemptConnection()
 	{
-		if (Application.internetReachability == NetworkReachability.NotReachable)
+		if (UnityEngine.Application.internetReachability == NetworkReachability.NotReachable)
 		{
 			STDErrorDialog.GetInstance().ShowError("Error N01: Connection Interrupted", AttemptConnection);
 		}
@@ -477,21 +546,12 @@ public class SessionManager : MonoBehaviour
 		}
 	}
 
-	private void StartLoadingData()
-	{
-		loadingDataFinished = false;
-		//Language.ReloadLanguage();
-		//StartCoroutine(LoadingManager.Instance.LoadAll(FinishedLoadingData));
-		FinishedLoadingData();
-
+    private void StartLoadingData()
+    {
+        loadingDataFinished = false;
+        Logger.Error("[SessionManager] StartLoadingData invoked manually. Handing off to LoadingManager.");
+        StartCoroutine(LoadingManager.Instance.LoadAll(FinishedLoadingData));
     }
-
-	private void StartCheckSaveConflict()
-	{
-		checkSaveConflictFinished = false;
-		PlayerInfoScript.ValidateAndFixLocalSave();
-		CheckFromServer();
-	}
 
 	public void FinishedLoadingData()
 	{
@@ -520,21 +580,71 @@ public class SessionManager : MonoBehaviour
         {
             session.Update();
         }
-        if (State == States.LOGGING_IN && IsLoggedIn())
+
+        // --- Replace the LOGGING_IN block in SessionManager.Update() with this ---
+
+        if (State == States.LOGGING_IN)
         {
-            PlayerID = session.ThePlayer.playerId;
-            // -s Skip remote validation and patching entirely for the 3DS build.
-            State = States.LOAD_DATA;
-            StartLoadingData();
+            bool loggedIn = IsLoggedIn();
+            bool hasSession = (session != null);
+            bool sessionAuthenticated = (session != null && session.IsAuthenticated());
+
+            if (!loggedIn)
+            {
+                if (Time.frameCount % 300 == 0)
+                {
+                    Logger.Error(string.Format(
+                        "[SessionManager][GateCheck] Stuck in LOGGING_IN. IsLoggedIn(): {0} | session != null: {1} | IsAuthenticated(): {2}",
+                        loggedIn,
+                        hasSession,
+                        sessionAuthenticated
+                    ));
+                }
+            }
+            else
+            {
+                Logger.Log("[SessionManager][GateCheck] SUCCESS: IsLoggedIn() passed! Initializing data handoff.");
+                PlayerID = session.ThePlayer.playerId;
+                State = States.LOAD_DATA;
+                StartLoadingData();
+                return;
+            }
         }
+        else
+        {
+            // Failsafe: What if the state changed somewhere else entirely?
+            if (State != States.READY && State != States.LOAD_DATA && Time.frameCount % 300 == 0)
+            {
+                Logger.Error(string.Format("[SessionManager][GateCheck] Warning: Current state is '{0}', NOT LOGGING_IN. Initialization bypassed.", State));
+            }
+        }
+
+
         if (State == States.LOAD_DATA && IsLoadDataDone())
         {
-            State = States.CHECK_SAVE_CONFLICT;
-            StartCheckSaveConflict();
+            // BYPASS REMOTE SERVER CHECK: Instead of moving to CHECK_SAVE_CONFLICT 
+            // and calling the broken network method, jump directly to LOADING locally.
+
+            TFUtils.DebugLog("[SessionManager] Bypassing remote server ETag check. Forcing local data load pipeline.");
+
+            // Explicitly handle what the conflict state was supposed to trigger locally
+            PlayerInfoScript.ValidateAndFixLocalSave();
+            PlayerInfoScript.Load();
+
+            // Initialize game systems
+            QuestManager.Instance.InitializeQuestStates();
+            SideQuestManager.Instance.InitializeQuestStates();
+            Singleton<AnalyticsManager>.Instance.LogTotalXP();
+            Singleton<AnalyticsManager>.Instance.LogTotalCoins();
+
+            // Jump straight to the local save verification phase
+            State = States.SAVING;
+            PlayerInfoScript.GetInstance().Save();
+            return; // Force frame exit to allow saving to process safely
         }
+
         if (State == States.CHECK_SAVE_CONFLICT)
         {
-            // -s Bypass save conflict/network polling and resolve locally.
             PlayerInfoScript.ValidateAndFixLocalSave();
             State = States.LOADING;
             PlayerInfoScript.Load();
@@ -544,11 +654,14 @@ public class SessionManager : MonoBehaviour
             Singleton<AnalyticsManager>.Instance.LogTotalCoins();
             State = States.SAVING;
             PlayerInfoScript.GetInstance().Save();
+            return; // <--- FORCE EXIT FRAME
         }
+
         if (State == States.LOADING && IsSaveDone())
         {
             State = States.SAVING;
             PlayerInfoScript.GetInstance().Save();
+            return; // <--- FORCE EXIT FRAME
         }
         if (State == States.MESSAGE_FETCH && IsMessageSyncDone())
         {

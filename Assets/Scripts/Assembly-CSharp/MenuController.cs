@@ -114,14 +114,36 @@ public class MenuController : ReloadHandler
     // Helper method to respect the top-level debug configuration
     private void LogDebugError(string message)
     {
-        if (enableDebugLogs)
-        {
             Logger.Error(message);
-        }
+       
     }
 
     private void Awake()
     {
+
+
+        // --- Place inside Awake() or Start() ---
+
+        if (LogoPanel == null)
+        {
+            Logger.Error("[MenuController][Checklist] CRITICAL: 'LogoPanel' field is null in the Inspector!");
+        }
+
+        if (AsyncLoaders == null)
+        {
+            Logger.Error("[MenuController][Checklist] WARNING: 'AsyncLoaders' GameObject is null. Async steps will bypass immediately.");
+        }
+        else if (AsyncLoaders.GetComponents<AsyncLoader>().Length == 0)
+        {
+            Logger.Error("[MenuController][Checklist] WARNING: 'AsyncLoaders' is assigned but contains 0 AsyncLoader components.");
+        }
+
+        if (StartShow == null)
+        {
+            Logger.Error("[MenuController][Checklist] CRITICAL: 'StartShow' UI target is missing. Menu state progression will break.");
+        }
+
+
         if (g_menuController == null)
         {
             g_menuController = this;

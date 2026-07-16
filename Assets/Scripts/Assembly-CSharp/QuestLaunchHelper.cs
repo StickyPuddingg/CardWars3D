@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -56,7 +57,24 @@ public class QuestLaunchHelper : MonoBehaviour
 		gameState.BattleResolver = questBattleResolver;
 		yield return StartCoroutine(PlayVO(gameState.GetCharacter(PlayerType.Opponent)));
 		yield return Resources.UnloadUnusedAssets();
-		SLOTGameSingleton<SLOTSceneManager>.GetInstance().LoadLevel("LoadingScreen");
+
+
+        // ----------------------------------------------------------------------
+        // 3DS ROUTING OVERRIDE:
+        // Inform the SceneLoader static fields about the combat transition target 
+        // so the LoadingScreen3DS buffer handles it properly.
+        // ----------------------------------------------------------------------
+        SceneLoader.DestinationScene = "BattleScene3DS";
+        try
+        {
+            SceneLoader.PreviousScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        }
+        catch (Exception)
+        {
+            SceneLoader.PreviousScene = Application.loadedLevelName; // Backward compatibility fallback
+        }
+
+        SLOTGameSingleton<SLOTSceneManager>.GetInstance().LoadLevel("LoadingScreen3DS");
 		yield return new WaitForSeconds(0.05f);
 		CleanupNisHelper();
 		launchingQuestId = null;

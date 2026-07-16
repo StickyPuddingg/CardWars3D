@@ -65,6 +65,16 @@ public class TutorialMonitor_dbl : MonoBehaviour
 
 	public void StartTutorial(TutorialInfo info)
 	{
+	}
 
+	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+	public static void AutoInitialize()
+	{
+		if (instance == null)
+		{
+			GameObject go = new GameObject("[TutorialMonitor_dbl]");
+			instance = go.AddComponent<TutorialMonitor_dbl>();
+			Object.DontDestroyOnLoad(go);
+		}
 	}
 }

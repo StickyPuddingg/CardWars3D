@@ -140,6 +140,7 @@
      <None Include="Assets\Resources\shaders\GUI - Text Shader (SoftClip).shader" />
      <None Include="Assets\Shader\Custom3DSshader\Ghost Fast3DSTextured.shader" />
      <None Include="Assets\Shader\Custom3DSshader\LightmapTerrain.shader" />
+     <None Include="Assets\Shader\Unlit - Transparent Colored Overlay.shader" />
      <None Include="Assets\Shader\Custom3DSshader\SimpleTerrain.shader" />
      <None Include="Assets\Shader\Custom3DSshader\PulsarIlluminationBrightPositionLitStatic.shader" />
      <None Include="Assets\Resources\shaders\Unlit - Transparent Colored (Packed) (AlphaClip) .shader" />

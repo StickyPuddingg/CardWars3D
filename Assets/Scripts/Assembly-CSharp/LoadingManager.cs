@@ -28,7 +28,6 @@ public class LoadingManager
 
     private LoadingManager()
     {
-
         LoadableList = new List<ILoadable>();
         LoadableList.Add(ParametersManager.Instance);
         LoadableList.Add(FactionManager.Instance);
@@ -86,76 +85,60 @@ public class LoadingManager
 
     public IEnumerator LoadAll(OnFinishedDelegate callback)
     {
-        Logger.Error("[LoadingManager] LoadAll sequence started. Total managers to load: " + LoadableList.Count);
+        Logger.Log("LoadingManager: Starting data load sequence for " + LoadableList.Count + " managers.");
 
-        for (int i = 0; i < LoadableList.Count; i++)
+        foreach (ILoadable ldr in LoadableList)
         {
-            ILoadable ldr = LoadableList[i];
             if (ldr != null)
             {
-                string managerName = ldr.GetType().ToString();
-                Logger.Error(string.Format("[LoadingManager] [{0}/{1}] STEP START: Loading {2}...", (i + 1), LoadableList.Count, managerName));
+                string loaderName = ldr.GetType().Name;
+                Logger.Log("LoadingManager: Internal Load processing started for: " + loaderName);
 
                 IEnumerator current = null;
+
+                // Protect against errors when fetching the .Load() iterator method
                 try
                 {
                     current = ldr.Load();
                 }
                 catch (Exception ex)
                 {
-                    Logger.Error(string.Format("[LoadingManager] CRITICAL EXCEPTION getting IEnumerator from {0}: {1}\n{2}", managerName, ex.Message, ex.StackTrace));
-                    continue; // Skip to next manager if gathering the iterator crashes
+                    Logger.Error("LoadingManager: ERROR - Failed to fetch loader routine for " + loaderName + ". Skipping! Details: " + ex.Message);
+                    continue;
                 }
 
                 if (current != null)
                 {
                     bool hasNext = true;
-                    int iterations = 0;
-
                     while (hasNext)
                     {
+                        // Protect against errors inside the manager's actual execution loop
                         try
                         {
                             hasNext = current.MoveNext();
                         }
                         catch (Exception ex)
                         {
-                            Logger.Error(string.Format("[LoadingManager] CRITICAL EXCEPTION inside {0}.Load() MoveNext loop: {1}\n{2}", managerName, ex.Message, ex.StackTrace));
-                            break; // Break the while loop so initialization doesn't lock up entirely
+                            Logger.Error("LoadingManager: ERROR - Exception caught during loading loop of " + loaderName + ". Skipping remaining steps! Details: " + ex.Message);
+                            break; // Exits the while loop to safely proceed to the next manager
                         }
 
                         if (hasNext)
                         {
-                            iterations++;
-                            if (iterations % 500 == 0) // Alert if a single manager runs an extreme amount of iterations
-                            {
-                                Logger.Error(string.Format("[LoadingManager] WARNING: {0}.Load() is taking an abnormally long time... Loop count: {1}", managerName, iterations));
-                            }
                             yield return current.Current;
                         }
                     }
                 }
 
-                Logger.Error(string.Format("[LoadingManager] STEP COMPLETE: Finished loading {0}", managerName));
-            }
-            else
-            {
-                Logger.Error(string.Format("[LoadingManager] [{0}/{1}] STEP WARNING: Element in LoadableList is NULL! Skipping.", (i + 1), LoadableList.Count));
+                Logger.Log("LoadingManager: Successfully loaded and initialized: " + loaderName);
             }
         }
 
-        Logger.Error("[LoadingManager] LoadAll sequence successfully completed all steps.");
+        Logger.Log("LoadingManager: All loadable sequences evaluated. Firing completion callback.");
 
         if (callback != null)
         {
-            try
-            {
-                callback();
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(string.Format("[LoadingManager] EXCEPTION inside OnFinishedDelegate callback: {0}\n{1}", ex.Message, ex.StackTrace));
-            }
+            callback();
         }
     }
 

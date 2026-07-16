@@ -3,128 +3,169 @@ using UnityEngine.SceneManagement;
 
 public class SLOTSceneManager : SLOTGameSingleton<SLOTSceneManager>
 {
-	public delegate void LoadLevelAsyncCallback();
+    public delegate void LoadLevelAsyncCallback();
 
-	public bool useLocalScenes;
+    public bool useLocalScenes;
 
-	private AssetBundle assetBundle;
+    private AssetBundle assetBundle;
 
-	private LoadLevelAsyncCallback loadLevelAsyncCallback;
+    private LoadLevelAsyncCallback loadLevelAsyncCallback;
 
-	private AsyncOperation asyncOperation;
+    private AsyncOperation asyncOperation;
 
-	public bool SetAssetBundle(AssetBundle bundle)
-	{
-		if (bundle != null && !useLocalScenes)
-		{
-			assetBundle = bundle;
-			return true;
-		}
-		return false;
-	}
+    // Automatically register to Unity's scene loaded callback
+    protected void Awake()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
-	private static string GetLevelName(string name)
-	{
-		if (SLOTGame.IsLowEndDevice())
-		{
-			return name;
-		}
-		return name;
-	}
+    private void OnDestroy()
+    {
+        // Unsubscribe from event to prevent memory leaks
+        SceneManager.sceneLoaded -= OnSceneLoaded;
 
-	public void LoadLevel(string name)
-	{
-		if (name != null && name.Length > 0)
-		{
-			CheckAsyncOperationDone(true);
-            //Application.LoadLevel(GetLevelName(name));
-            SceneManager.LoadScene(GetLevelName(name));
+        if (assetBundle != null)
+        {
+            assetBundle.Unload(true);
+            assetBundle = null;
         }
-	}
+    }
 
-	public void LoadLevelAdditive(string name)
-	{
-		if (name != null && name.Length > 0)
-		{
-			CheckAsyncOperationDone(true);
-            //Application.LoadLevelAdditive(GetLevelName(name));
-            SceneManager.LoadScene(GetLevelName(name), LoadSceneMode.Additive);
+    // This automatically triggers whenever ANY scene finishes loading successfully
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        string currentActiveScene = SceneManager.GetActiveScene().name;
+        Logger.Error(string.Format("SLOTSceneManager STATE: Finished loading scene '{0}' (Mode: {1}). Current Active Scene is now: '{2}'", scene.name, mode, currentActiveScene));
+    }
+
+    // Checks for the target scene
+    private bool IsMenuScene(string name)
+    {
+        if (name != "AdventureTime3DS")
+        {
+            Logger.Error(string.Format("SLOTSceneManager: Blocked attempt to '{0}'. Remaining dormant for AdventureTime3DS.", name));
+            return false;
         }
-	}
+        return true;
+    }
 
-	public AsyncOperation LoadLevelAsync(string name)
-	{
-		return LoadLevelAsync(name, null);
-	}
+    public bool SetAssetBundle(AssetBundle bundle)
+    {
+        if (bundle != null && !useLocalScenes)
+        {
+            assetBundle = bundle;
+            return true;
+        }
+        return false;
+    }
 
-	public AsyncOperation LoadLevelAsync(string name, LoadLevelAsyncCallback cb)
-	{
-		if (name == null || name.Length <= 0)
-		{
-			return null;
-		}
-		CheckAsyncOperationDone(true);
-		AsyncOperation result = Application.LoadLevelAsync(GetLevelName(name));
-		if (cb != null)
-		{
-			loadLevelAsyncCallback = cb;
-			asyncOperation = result;
-		}
-		else
-		{
-			loadLevelAsyncCallback = null;
-			asyncOperation = null;
-		}
-		return result;
-	}
+    private static string GetLevelName(string name)
+    {
+        if (SLOTGame.IsLowEndDevice())
+        {
+            return name;
+        }
+        return name;
+    }
 
-	public AsyncOperation LoadLevelAdditiveAsync(string name)
-	{
-		return LoadLevelAdditiveAsync(name, null);
-	}
+    public void LoadLevel(string name)
+    {
+        if (name != null && name.Length > 0)
+        {
+            string targetScene = GetLevelName(name);
+            Logger.Log(string.Format("SLOTSceneManager ATTEMPT: Standard loading level '{0}' (Current active: '{1}')", targetScene, SceneManager.GetActiveScene().name));
 
-	public AsyncOperation LoadLevelAdditiveAsync(string name, LoadLevelAsyncCallback cb)
-	{
-		if (name == null || name.Length <= 0)
-		{
-			return null;
-		}
-		CheckAsyncOperationDone(true);
-		AsyncOperation result = Application.LoadLevelAdditiveAsync(GetLevelName(name));
-		if (cb != null)
-		{
-			loadLevelAsyncCallback = cb;
-			asyncOperation = result;
-		}
-		else
-		{
-			loadLevelAsyncCallback = null;
-			asyncOperation = null;
-		}
-		return result;
-	}
+            CheckAsyncOperationDone(true);
+            SceneManager.LoadScene(targetScene);
+        }
+    }
 
-	private void OnDestroy()
-	{
-		if (assetBundle != null)
-		{
-			assetBundle.Unload(true);
-			assetBundle = null;
-		}
-	}
+    public void LoadLevelAdditive(string name)
+    {
+        if (name != null && name.Length > 0)
+        {
+            string targetScene = GetLevelName(name);
+            Logger.Log(string.Format("SLOTSceneManager ATTEMPT: Additive loading level '{0}' (Current active: '{1}')", targetScene, SceneManager.GetActiveScene().name));
 
-	private void Update()
-	{
-		CheckAsyncOperationDone(false);
-	}
+            CheckAsyncOperationDone(true);
+            SceneManager.LoadScene(targetScene, LoadSceneMode.Additive);
+        }
+    }
 
-	private void CheckAsyncOperationDone(bool forceDone)
-	{
-		if (asyncOperation != null && loadLevelAsyncCallback != null && (asyncOperation.isDone || forceDone))
-		{
-			loadLevelAsyncCallback();
-			asyncOperation = null;
-			loadLevelAsyncCallback = null;
-		}
-	}
+    public AsyncOperation LoadLevelAsync(string name)
+    {
+        return LoadLevelAsync(name, null);
+    }
+
+    public AsyncOperation LoadLevelAsync(string name, LoadLevelAsyncCallback cb)
+    {
+        if (name == null || name.Length <= 0)
+        {
+            return null;
+        }
+
+        string targetScene = GetLevelName(name);
+        Logger.Log(string.Format("SLOTSceneManager ATTEMPT: Async loading level '{0}' (Current active: '{1}')", targetScene, SceneManager.GetActiveScene().name));
+
+        CheckAsyncOperationDone(true);
+
+        AsyncOperation result = SceneManager.LoadSceneAsync(targetScene, LoadSceneMode.Single);
+
+        if (cb != null)
+        {
+            loadLevelAsyncCallback = cb;
+            asyncOperation = result;
+        }
+        else
+        {
+            loadLevelAsyncCallback = null;
+            asyncOperation = null;
+        }
+        return result;
+    }
+
+    public AsyncOperation LoadLevelAdditiveAsync(string name)
+    {
+        return LoadLevelAdditiveAsync(name, null);
+    }
+
+    public AsyncOperation LoadLevelAdditiveAsync(string name, LoadLevelAsyncCallback cb)
+    {
+        if (name == null || name.Length <= 0)
+        {
+            return null;
+        }
+
+        string targetScene = GetLevelName(name);
+        Logger.Log(string.Format("SLOTSceneManager ATTEMPT: Additive Async loading level '{0}' (Current active: '{1}')", targetScene, SceneManager.GetActiveScene().name));
+
+        CheckAsyncOperationDone(true);
+        AsyncOperation result = SceneManager.LoadSceneAsync(targetScene, LoadSceneMode.Additive);
+        if (cb != null)
+        {
+            loadLevelAsyncCallback = cb;
+            asyncOperation = result;
+        }
+        else
+        {
+            loadLevelAsyncCallback = null;
+            asyncOperation = null;
+        }
+        return result;
+    }
+
+    private void Update()
+    {
+        CheckAsyncOperationDone(false);
+    }
+
+    private void CheckAsyncOperationDone(bool forceDone)
+    {
+        if (asyncOperation != null && loadLevelAsyncCallback != null && (asyncOperation.isDone || forceDone))
+        {
+            loadLevelAsyncCallback();
+            asyncOperation = null;
+            loadLevelAsyncCallback = null;
+        }
+    }
 }

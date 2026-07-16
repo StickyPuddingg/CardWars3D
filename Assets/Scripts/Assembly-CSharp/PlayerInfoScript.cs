@@ -9,7 +9,6 @@ using System.Reflection;
 using System.Text;
 using JsonFx.Json;
 using UnityEngine;
-using UnityEngine.N3DS;
 using UnityEngine.SceneManagement;
 
 public class PlayerInfoScript : MonoBehaviour
@@ -232,14 +231,7 @@ public class PlayerInfoScript : MonoBehaviour
 	{
 		get
 		{
-			// -s
-			string deviceLocale = Config.GetLanguage().ToString();
-			int @int = PlayerPrefs.GetInt("PlayerAge");
-			if (deviceLocale == "gb")
-			{
-				return @int < DefaultAgeGateUK;
-			}
-			return @int < DefaultAgeGate;
+			return false;
 		}
 	}
 
@@ -535,13 +527,14 @@ public class PlayerInfoScript : MonoBehaviour
 
 	public bool IsReady()
 	{
+		Logger.Error("SET SESSION MANAGER TO READY!!!");
 		SessionManager instance = SessionManager.GetInstance();
 		return instance.IsReady();
 	}
 
 	private void Initialize()
 	{
-		CrashAnalytics.LogBreadcrumb("playerreset " + PlayerName);
+        Logger.Error("playerreset " + PlayerName);
 		DeckManager.InitializeNewPlayer();
 		LeaderManager.Instance.FillLeadersWithDummyData();
 		string text;
@@ -564,7 +557,7 @@ public class PlayerInfoScript : MonoBehaviour
 			text = GetDefaultGameStateJson();
 		}
 		Deserialize(text);
-		CrashAnalytics.LogBreadcrumb("playerloaded " + g_playerInfoScript.PlayerName);
+		Logger.Error("playerloaded " + g_playerInfoScript.PlayerName);
 	}
 
 	public string GetValue(string fieldName)
@@ -1499,23 +1492,6 @@ public class PlayerInfoScript : MonoBehaviour
 		}
 	}
 
-	private static string Build3DSPlayerName()
-	{
-		// -s Use the requested 3DS config user-name API directly.
-		try
-		{
-			string userName;
-			bool isNameProfane;
-			Config.GetUserName(out userName, out isNameProfane);
-			return userName;
-		}
-		catch (Exception)
-		{
-			// -s Fall back to a generated value when the config call is unavailable.
-			return null;
-		}
-	}
-
     public void Login()
     {
         if (LoginAttempted)
@@ -1526,10 +1502,13 @@ public class PlayerInfoScript : MonoBehaviour
         LoadTimeStamp();
         string text = null;
 
-        // -s Replace the old name-based console API usage with 3DS system config data.
-        string consoleName = Build3DSPlayerName();
+        SessionManager instance = SessionManager.GetInstance();
+        // 1. Fetch 3DS Console Identity Data
+        string consoleName = instance.Build3DSPlayerName();
+        bool isNewPlayer = false;
+        string consoleId = instance.Get3DSDeviceId(out isNewPlayer);
 
-        // -s Keep the existing login flow intact and only use the 3DS identity when it is available.
+        // Keep the existing login flow intact and only use the 3DS identity when it is available.
         PlayerName = consoleName;
 
         text = PlayerPrefs.GetString("SocialLogin", null);
@@ -1543,10 +1522,29 @@ public class PlayerInfoScript : MonoBehaviour
             PlayerName = text;
             SavePlayerName(PlayerName);
         }
-        SessionManager instance = SessionManager.GetInstance();
+
         instance.OnReadyCallback = null;
-        TFUtils.WarnLog("Login: SocialID= " + text + ", PlayerName= " + PlayerName);
+        TFUtils.WarnLog("Login: SocialID= " + text + ", PlayerName= " + PlayerName + ", ConsoleID= " + consoleId);
+
+        // 2. Hand off the PlayerName to the session manager login engine
         instance.Login(PlayerName);
+
+        // 3. CRITICAL FALLBACK FIX: Instantly resolve the null session.ThePlayer block using our console details
+        if (instance.theSession != null && instance.theSession.ThePlayer == null)
+        {
+            try
+            {
+                Logger.Log(string.Format("[PlayerInfoScript] Local Session Player was null! Forcing mock via ConsoleID: {0} (New Player: {1})", consoleId, isNewPlayer));
+
+                // Instantiating Player using the exact custom 3DS ID signatures requested
+                instance.theSession.ThePlayer = new Player(consoleId, isNewPlayer);
+
+            }
+            catch (System.Exception ex)
+            {
+                Logger.Error("[PlayerInfoScript] Crash prevented during local fallback Player constructor initialization: " + ex.Message);
+            }
+        }
     }
 
     private void OnLoginSucceed()
